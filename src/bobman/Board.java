@@ -91,6 +91,7 @@ public class Board  extends JFrame implements ActionListener{
 	}
 	private void update() 
 	{
+		System.out.println("Test");
 		this.repaint();
 		
 	}
