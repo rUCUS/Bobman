@@ -91,7 +91,7 @@ public class Board  extends JFrame implements ActionListener{
 	}
 	private void update() 
 	{
-		System.out.println("ugly mehdi");
+		System.out.println("LIBAN ADEN");
 		this.repaint();
 		
 	}
