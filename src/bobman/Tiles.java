@@ -5,6 +5,8 @@ import javax.swing.JPanel;
 public class Tiles extends JPanel 
 {
 	private int xPos,yPos,order;
+	private boolean walkable;
+	private boolean destroyable;
 	
 	public Tiles(int xPos,int yPos, int order)
 	{
@@ -12,6 +14,9 @@ public class Tiles extends JPanel
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.order = order;
+		walkable = true;
+		destroyable = false;
+		
 	}
 
 	public int getxPos() {

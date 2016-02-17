@@ -3,17 +3,28 @@ package bobman;
 public class Player 
 {
 	private int hp;
-	private int xPos;
-	private int yPos;
+	private double xPos;
+	private double yPos;
 	private Bomb bomb;
 	private UserInterface Ui;
-	private int speed;
+	private double speed;
 	
-	public int getSpeed() {
+	public Player(int hp, double xPos, double yPos, Bomb bomb, double speed)
+	{
+		this.hp = hp;
+		this.bomb = bomb;
+		this.xPos = xPos;
+		this.yPos = yPos;
+		this.speed = speed;
+		
+		initBomb();
+	}
+	
+	public double getSpeed() {
 		return speed;
 	}
 
-	public void setSpeed(int speed) {
+	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
 
@@ -25,32 +36,23 @@ public class Player
 		this.hp = hp;
 	}
 
-	public int getxPos() {
+	public double getxPos() {
 		return xPos;
 	}
 
-	public void setxPos(int xPos) {
+	public void setxPos(double xPos) {
 		this.xPos = xPos;
 	}
 
-	public int getyPos() {
+	public double getyPos() {
 		return yPos;
 	}
 
-	public void setyPos(int yPos) {
+	public void setyPos(double yPos) {
 		this.yPos = yPos;
 	}
 
-	public Player(int hp, int xPos, int yPos, Bomb bomb, int speed)
-	{
-		this.hp = hp;
-		this.bomb = bomb;
-		this.xPos = xPos;
-		this.yPos = yPos;
-		this.speed = speed;
-		
-		initBomb();
-	}
+	
 	
 	public void throwBomb()
 	{
@@ -86,6 +88,11 @@ public class Player
 	{
 		bomb.setxPos(this.getxPos());
 		bomb.setyPos(this.getyPos());
+	}
+	
+	public void startPos()
+	{
+		
 	}
 	
 

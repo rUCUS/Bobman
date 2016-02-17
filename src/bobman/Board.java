@@ -49,29 +49,33 @@ public class Board  extends JFrame implements ActionListener{
 		gameBoard = new JPanel();
 		gameBoard.setLayout(new GridLayout(13,13,1,1));
 		gameBoard.setBackground(Color.black);
-		Tiles onlyForTheLoop;
+		Tiles k;
 		for( int i=0; i<169; i++)
 		{
-			gameBoard.add(onlyForTheLoop =new Tiles(i%13,i/13,i));
-			if (onlyForTheLoop.getxPos() == 0 || onlyForTheLoop.getyPos() == 0 
-					|| onlyForTheLoop.getxPos() == 12 || onlyForTheLoop.getyPos()==12)
+			gameBoard.add(k =new Tiles(i%13,i/13,i));
+			if (k.getxPos() == 0 || k.getyPos() == 0 
+					|| k.getxPos() == 12 || k.getyPos()==12)
 			{
-				onlyForTheLoop.setBackground(Color.black);
+				k.setBackground(Color.black);
+				k.add(new Wall(k.getxPos(),k.getY(),
+				k.getOrder()));
 			}
-			else if(onlyForTheLoop.getxPos() % 2 == 0 && onlyForTheLoop.getyPos()% 2 == 0)
+			else if (k.getxPos() % 2 == 0 && k.getyPos()% 2 == 0)
 			{
-				onlyForTheLoop.setBackground(Color.black);
+				k.setBackground(Color.black);
+				k.add(new Wall(k.getxPos(),k.getY(),
+				k.getOrder()));
 			}
 			
-		
 		}
+		
 		split = new JSplitPane(JSplitPane.VERTICAL_SPLIT, startMenu,gameBoard);
 		this.getContentPane().add(split);
 		this.setVisible(true);
+		this.setSize(400, 400);
 		
 		Timer timer = new Timer(1000,this);
 		timer.start();
-		this.pack();
 		
 		
 		
