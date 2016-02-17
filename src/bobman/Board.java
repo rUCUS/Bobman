@@ -10,6 +10,7 @@ import javafx.scene.shape.Circle;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JSplitPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -22,8 +23,8 @@ public class Board  extends JFrame implements ActionListener{
 	private Game game;
 	private Bomb bomb;
 	private Graphics g;
-	private JPanel PGround;
-	private Container cunt;
+	private JPanel startMenu,gameBoard;
+	private JSplitPane split;
 	private JButton button1,button2,button3,button4;
 	public Board()
 	{ 	
@@ -32,28 +33,45 @@ public class Board  extends JFrame implements ActionListener{
 		game = new Game();
 		player = new Player(100,10,10,bomb,1);
 		this.setDefaultCloseOperation(Board.EXIT_ON_CLOSE);
-		JPanel pGround = new JPanel();
+		JPanel startMenu = new JPanel();
 		button1 = new JButton("New Game");
 		button1.addActionListener(this);
-		pGround.add(button1);
+		startMenu.add(button1);
 		button2 = new JButton("Restart");
 		button2.addActionListener(this);
-		pGround.add(button2);
+		startMenu.add(button2);
 		button3 = new JButton("Quit");
 		button3.addActionListener(this);
-		pGround.add(button3);
+		startMenu.add(button3);
 		button4 = new JButton("Pause");
 		button4.addActionListener(this);
-		pGround.add(button4);
-		this.add(pGround);
-		cunt = this.getContentPane();
-		cunt.setLayout(new GridLayout(4,4,1,1));
-		cunt.setBackground(Color.yellow);
-		this.pack();
-		this.setVisible(true);
-		Timer timer = new Timer(500,this);
-		timer.start();
+		startMenu.add(button4);
+		gameBoard = new JPanel();
+		gameBoard.setLayout(new GridLayout(13,13,1,1));
+		gameBoard.setBackground(Color.black);
+		Tiles onlyForTheLoop;
+		for( int i=0; i<169; i++)
+		{
+			gameBoard.add(onlyForTheLoop =new Tiles(i%13,i/13,i));
+			if (onlyForTheLoop.getxPos() == 0 || onlyForTheLoop.getyPos() == 0 
+					|| onlyForTheLoop.getxPos() == 12 || onlyForTheLoop.getyPos()==12)
+			{
+				onlyForTheLoop.setBackground(Color.black);
+			}
+			else if(onlyForTheLoop.getxPos() % 2 == 0 && onlyForTheLoop.getyPos()% 2 == 0)
+			{
+				onlyForTheLoop.setBackground(Color.black);
+			}
+			
 		
+		}
+		split = new JSplitPane(JSplitPane.VERTICAL_SPLIT, startMenu,gameBoard);
+		this.getContentPane().add(split);
+		this.setVisible(true);
+		
+		Timer timer = new Timer(1000,this);
+		timer.start();
+		this.pack();
 		
 		
 		
@@ -64,7 +82,6 @@ public class Board  extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) 
 	{
 		update();
-		this.pack();
 		if (e.getSource() == button1)
 		{
 			game.newGame();
@@ -91,7 +108,6 @@ public class Board  extends JFrame implements ActionListener{
 	}
 	private void update() 
 	{
-		System.out.println("Test");
 		this.repaint();
 		
 	}
