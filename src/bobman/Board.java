@@ -7,6 +7,7 @@ import java.awt.Image;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import java.util.TreeMap;
 
 import javafx.scene.shape.Circle;
@@ -31,6 +32,8 @@ public class Board  extends JFrame implements ActionListener{
 	private JSplitPane split;
 	private JButton button1,button2,button3,button4;
 	private TreeMap<Integer,Tiles> tiles;
+	Random rand = new Random();
+	int r;
 	public Board()
 	{ 	
 		super();
@@ -53,50 +56,26 @@ public class Board  extends JFrame implements ActionListener{
 		button4.addActionListener(this);
 		startMenu.add(button4);
 		gameBoard = new JPanel();
-		gameBoard.setLayout(new GridLayout(29,29));
+		gameBoard.setLayout(new GridLayout(13,13));
 		gameBoard.setBackground(Color.black);
 		Tiles k;
-		for( int i=0; i<841; i++)
+		for( int i=0; i<169; i++)
 		{
-			gameBoard.add(k =new Tiles(i%29,i/29,i));
+			gameBoard.add(k =new Tiles(i%13,i/13,i));
 			tiles.put(i, k);
-			if (k.getxPos() == 0 || k.getyPos() == 0 
-					|| k.getxPos() == 28 || k.getyPos()==28
-					|| k.getxPos() == 27 || k.getyPos()== 27)
+			if (k.getxPos() == 0 || k.getyPos() == 0
+				|| k.getxPos() == 12 || k.getyPos()==12)
 			{
 				k.setBackground(Color.black);
 				k.add(new Wall(k.getxPos(),k.getY(),
 				k.getOrder()));
 				
 			}
-			else if (k.getxPos() % 4 == 0 && k.getyPos()% 4 == 0)
+			else if (k.getxPos() % 2 == 0 && k.getyPos()% 2 == 0)
 			{
 				k.setBackground(Color.black);
 				k.add(new Wall(k.getxPos(),k.getY(),
 				k.getOrder()));
-				if(i>1)
-				{
-					k = tiles.get(i-1);
-					k.setBackground(Color.black);
-					k.add(new Wall(k.getxPos(),k.getY(),
-					k.getOrder()));
-				}
-				if(i>25)
-				{
-					
-				
-					k = tiles.get(i-29);
-					k.setBackground(Color.black);
-					k.add(new Wall(k.getxPos(),k.getY(),
-					k.getOrder()));
-				}
-				if(i>26)
-				{
-					k = tiles.get(i-30);
-					k.setBackground(Color.black);
-					k.add(new Wall(k.getxPos(),k.getY(),
-				    k.getOrder()));
-				}
 			}
 			
 		}
@@ -144,6 +123,9 @@ public class Board  extends JFrame implements ActionListener{
 	}
 	private void update() 
 	{
+		//r = rand.nextInt(8) + 100;
+		//Tiles k = tiles.get(r);
+		//k.setBackground(Color.blue);
 		this.repaint();
 		
 	}
