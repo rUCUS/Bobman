@@ -2,6 +2,8 @@ package bobman;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +11,7 @@ import java.util.TreeMap;
 
 import javafx.scene.shape.Circle;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
@@ -143,6 +146,11 @@ public class Board  extends JFrame implements ActionListener{
 	{
 		this.repaint();
 		
+	}
+	
+	public void skapaSpelare1(){
+		ImageIcon player = new ImageIcon("Desktop/Firefox_wallpaper.png");
+		Image player1 = player.getImage();
 	}
 	
 
