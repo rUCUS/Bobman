@@ -17,7 +17,7 @@ public class Dwall extends Tiles
 	public Dwall(int xPos, int yPos, int order) throws IOException 
 	{
 		super(xPos, yPos, order);
-		this.setBackground(Color.red);
+		
 	}
 
 	public void initTiles() throws IOException

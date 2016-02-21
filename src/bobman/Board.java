@@ -51,8 +51,9 @@ public class Board  extends JFrame implements ActionListener{
 		initBoard();
 		split = new JSplitPane(JSplitPane.VERTICAL_SPLIT, startMenu,gameBoard);
 		this.getContentPane().add(split);
-		this.setVisible(true);
 		this.pack();
+		this.setVisible(true);
+		
 		timer.start();
 		
 		

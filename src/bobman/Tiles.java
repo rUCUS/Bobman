@@ -72,6 +72,7 @@ public class Tiles extends JPanel
 		picLabel = new JLabel(new ImageIcon(myPicture));
 		picLabel.requestFocusInWindow();
 		this.add(picLabel);
+		
 	}
 
 	public void removeFloor() 

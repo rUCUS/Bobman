@@ -113,7 +113,7 @@ public class Levels
 					used.add(p.getOrder());
 					p.removeFloor();
 					p.add(new Dwall(p.getxPos(),p.getY(),p.getOrder()));
-					p.setBackground(Color.red);
+					p.setBackground(Color.black);
 					enoughDWalls++;
 				}
 				
@@ -122,6 +122,7 @@ public class Levels
 		}	
 		
 		board.repaint();
+		board.setVisible(true);
 	}
 	
 	public void levelTwo()
