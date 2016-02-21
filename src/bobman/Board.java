@@ -45,15 +45,14 @@ public class Board  extends JFrame implements ActionListener{
 		tiles = new TreeMap<>();
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
-		
-		
 		initStartmenu();
 		initBoard();
+		
+		
 		split = new JSplitPane(JSplitPane.VERTICAL_SPLIT, startMenu,gameBoard);
 		this.getContentPane().add(split);
 		this.pack();
 		this.setVisible(true);
-		
 		timer.start();
 		
 		
@@ -61,6 +60,8 @@ public class Board  extends JFrame implements ActionListener{
 		
 	}
 	
+
+
 	public void initStartmenu() 
 	{
 		startMenu = new JPanel();

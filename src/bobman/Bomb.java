@@ -1,10 +1,13 @@
 package bobman;
 
-public class Bomb 
+import javax.swing.JLabel;
+
+public class Bomb extends JLabel
 {
 	int damage;
 	double xPos;
 	double yPos;
+	
 	
 	public Bomb(int damage)
 	{
