@@ -1,9 +1,11 @@
 package bobman;
 
-public class HanSolo extends Player {
-
-	public HanSolo(int hp, int xPos, int yPos, Bomb bomb, int speed) {
-		super(hp, xPos, yPos, bomb,speed);
+public class HanSolo extends Player 
+{
+	private Board board;
+	public HanSolo(Board board, int hp, int xPos, int yPos, Bomb bomb, int speed) 
+	{
+		super(board,hp, xPos, yPos, bomb,speed);
 		
 	}
 

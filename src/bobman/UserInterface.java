@@ -7,11 +7,15 @@ import java.util.ArrayList;
 public class UserInterface implements KeyListener
 {
 	private ArrayList<Integer> keysDown;
+	private Board board;
+	private Player player;
 	
 	
 	
-	public UserInterface()
+	public UserInterface(Player player,Board board)
 	{
+		this.player = player;
+		this.board = board;
 		keysDown = new ArrayList<>();
 	}
 
