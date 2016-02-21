@@ -7,7 +7,6 @@ public class Tiles extends JPanel
 	private int xPos,yPos,order;
 	private boolean walkable;
 	private boolean destroyable;
-	private JPanel content;
 	
 	public Tiles(int xPos,int yPos, int order)
 	{
@@ -44,14 +43,4 @@ public class Tiles extends JPanel
 		this.order = order;
 	}
 	
-	public JPanel getContent()
-	{
-		return content;
-	}
-	
-	public void setContent(JPanel content)
-	{
-		this.content = content;
-	}
-
 }

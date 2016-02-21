@@ -20,6 +20,7 @@ public class GameMenu
 		 * SER IDENTISK UT MED RESTART FAST SKA GÖRA FLERA BANOR SOM MAN FÅR VÄLJA
 		 * EFTERÅT NÄR MAN STARTAR SPELET SAMT KARAKTÄRER SÅ DENNA KOMMER UTVECKLAS.....
 		 */
+		levels.chooseLevel();
 		levels.initBaseLevel();
 		board.startTheGame();
 		status = false;
@@ -29,6 +30,7 @@ public class GameMenu
 	{
 		
 		levels.initBaseLevel();
+		levels.sameLevel();
 		board.startTheGame();
 		status = false;	}
 	
@@ -50,15 +52,5 @@ public class GameMenu
 			status = false;
 		}
 	}
-
-	public Board getBoard() {
-		return board;
-	}
-
-	public void setBoard(Board board) {
-		this.board = board;
-	}
-	
-	
 	
 }

@@ -36,7 +36,7 @@ public class Board  extends JFrame implements ActionListener{
 	private Levels levels;
 	private Timer timer = new Timer(1000,this);
 	Random rand = new Random();
-	int r,currentLevel;
+	int r;
 	public Board()
 	{ 	
 		super();
@@ -151,7 +151,7 @@ public class Board  extends JFrame implements ActionListener{
 		/* ANVÄNDS FÖR ATT TESTA OM MINA KNAPPAR I STARTMENU FUNGEAR
 		 * TILLS JAG HAR IMPLEMENTERAT SPELET.
 		 */
-		r = rand.nextInt(8) + 100;
+		r = rand.nextInt(50) + 30;
 		Tiles k = tiles.get(r);
 		k.setBackground(Color.blue);
 		this.repaint();
@@ -177,17 +177,5 @@ public class Board  extends JFrame implements ActionListener{
 		button4.setText("Pause");
 		
 	}
-
-	public int getCurrentLevel() {
-		return currentLevel;
-	}
-
-	public void setCurrentLevel(int currentLevel) {
-		this.currentLevel = currentLevel;
-	}
-	
-	
-	
-
 
 }
