@@ -1,6 +1,7 @@
 package bobman;
 
 import java.awt.Color;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
@@ -25,7 +26,7 @@ public class Levels
 		
 	}
 	
-	public void initBaseLevel() 
+	public void initBaseLevel() throws IOException 
 	{
 		Tiles l;
 		
@@ -34,6 +35,7 @@ public class Levels
 			l = tiles.get(i);
 			l.setBackground(Color.white);
 			l.removeAll();
+			l.initTiles();
 		}
 		
 		for( int i=0; i<169; i++)
@@ -46,6 +48,7 @@ public class Levels
 					l.add(new Wall(l.getxPos(),l.getY(),
 					l.getOrder()));
 					l.notDestroyable();
+					l.removeFloor();
 					
 				}
 				else if (l.getxPos() % 2 == 0 && l.getyPos()% 2 == 0)
@@ -54,13 +57,14 @@ public class Levels
 					l.add(new Wall(l.getxPos(),l.getY(),
 					l.getOrder()));
 					l.notDestroyable();
+					l.removeFloor();
 				}
 			
 		}		
 		
 	}
 	
-	public void chooseLevel() 
+	public void chooseLevel() throws IOException 
 	{
 		String[] options = new String[] {"Level one", "Level two", "Level three", "Quit"};
 		currentLevel =  JOptionPane.showOptionDialog(null, "To start the game", "choose level",
@@ -70,7 +74,7 @@ public class Levels
 		
 	}
 	
-	public void sameLevel()
+	public void sameLevel() throws IOException
 	{
 		switch(currentLevel)
 		{
@@ -87,12 +91,13 @@ public class Levels
 		}
 	}
 
-	public void levelOne()
+	public void levelOne() throws IOException
 	{
+		Set<Integer> used = new HashSet<Integer>();
 		int randomnumber;
 		int enoughDWalls = 0;
 		Tiles p;
-		while(enoughDWalls < 84)
+		while(enoughDWalls < 60)
 		{
 			randomnumber = rand.nextInt(169);
 			if (playerSpace.contains(randomnumber))
@@ -103,12 +108,20 @@ public class Levels
 			p = tiles.get(randomnumber);
 			if (p.isDestroyable())
 			{
-				p.add(new Dwall(p.getxPos(),p.getY(),p.getOrder()));
-				p.setBackground(Color.red);
-				enoughDWalls++;
+				if(!(used.contains(p.getOrder())))
+				{
+					used.add(p.getOrder());
+					p.removeFloor();
+					p.add(new Dwall(p.getxPos(),p.getY(),p.getOrder()));
+					p.setBackground(Color.red);
+					enoughDWalls++;
+				}
+				
 			}
 
-		}		
+		}	
+		
+		board.repaint();
 	}
 	
 	public void levelTwo()

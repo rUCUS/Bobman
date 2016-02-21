@@ -7,6 +7,7 @@ import java.awt.Image;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.Random;
 import java.util.TreeMap;
 
@@ -36,7 +37,7 @@ public class Board  extends JFrame implements ActionListener{
 	private Levels levels;
 	private Timer timer = new Timer(1000,this);
 	int r;
-	public Board()
+	public Board() throws IOException
 	{ 	
 		super();
 		this.setDefaultCloseOperation(Board.EXIT_ON_CLOSE);
@@ -51,7 +52,7 @@ public class Board  extends JFrame implements ActionListener{
 		split = new JSplitPane(JSplitPane.VERTICAL_SPLIT, startMenu,gameBoard);
 		this.getContentPane().add(split);
 		this.setVisible(true);
-		this.setSize(800, 800);
+		this.pack();
 		timer.start();
 		
 		
@@ -74,23 +75,19 @@ public class Board  extends JFrame implements ActionListener{
 		button4 = new JButton("Pause");
 		button4.addActionListener(this);
 		startMenu.add(button4);
-		
 	}
 	
-	public void initBoard() 
+	public void initBoard() throws IOException 
 	{
 		gameBoard = new JPanel();
-		gameBoard.setLayout(new GridLayout(13,13));
+		gameBoard.setLayout(new GridLayout(13,13,1,1));
 		Tiles k;
 		for( int i=0; i<169; i++)
 		{
 			gameBoard.add(k =new Tiles(i%13,i/13,i));
-			k.setBackground(Color.white);
 			tiles.put(i, k);
 		}
-		
 		levels.initBaseLevel();
-		
 	}
 	
 
@@ -101,13 +98,23 @@ public class Board  extends JFrame implements ActionListener{
 		if (e.getSource() == button1)
 			
 		{
-			gameMenu.newGame();
+			try {
+				gameMenu.newGame();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		}
 		
 		if (e.getSource() == button2)
 		{
-			gameMenu.restart();
+			try {
+				gameMenu.restart();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		}
 		

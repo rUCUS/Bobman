@@ -1,6 +1,7 @@
 package bobman;
 
 import java.awt.Color;
+import java.io.IOException;
 
 public class GameMenu
 {
@@ -14,7 +15,7 @@ public class GameMenu
 		this.levels = levels;
 	}
 
-	public void newGame()
+	public void newGame() throws IOException
 	{
 		levels.chooseLevel();
 		levels.initBaseLevel();
@@ -23,7 +24,7 @@ public class GameMenu
 		status = false;
 	}
 	
-	public void restart()
+	public void restart() throws IOException
 	{
 		
 		levels.initBaseLevel();
