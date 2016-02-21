@@ -6,13 +6,13 @@ public class Player extends JLabel
 {
 	private Board board;
 	private int hp;
-	private double xPos;
-	private double yPos;
+	private int xPos;
+	private int yPos;
 	private Bomb bomb;
-	private double speed;
+	private int speed;
 	private boolean isPlayerAlive;
 	
-	public Player(Board board,int hp, double xPos, double yPos, Bomb bomb, double speed)
+	public Player(Board board,int hp, int xPos, int yPos, Bomb bomb, int speed)
 	{
 		this.board = board;
 		this.hp = hp;
@@ -53,15 +53,15 @@ public class Player extends JLabel
 		return xPos;
 	}
 
-	public void setxPos(double xPos) {
+	public void setxPos(int xPos) {
 		this.xPos = xPos;
 	}
 
-	public double getyPos() {
+	public int getyPos() {
 		return yPos;
 	}
 
-	public void setyPos(double yPos) {
+	public void setyPos(int yPos) {
 		this.yPos = yPos;
 	}
 
