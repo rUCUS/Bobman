@@ -68,7 +68,7 @@ public class Tiles extends JPanel
 	
 	public void initTiles() throws IOException
 	{
-		BufferedImage myPicture = ImageIO.read(new File("src/Bobman/floor.png"));
+		myPicture = ImageIO.read(new File("src/sprite/floor.png"));
 		picLabel = new JLabel(new ImageIcon(myPicture));
 		picLabel.requestFocusInWindow();
 		this.add(picLabel);

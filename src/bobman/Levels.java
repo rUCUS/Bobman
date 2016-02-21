@@ -128,11 +128,15 @@ public class Levels
 	public void levelTwo()
 	{
 		System.out.println("level2");
+		//Teleport
 	}
 	
 	public void levelThree()
 	{
 		System.out.println("level3");
+		/*
+		 * tom map spelare ska ha full kraft oavsett karaktär
+		 */
 	}
 	
 	public int getCurrentLevel() {

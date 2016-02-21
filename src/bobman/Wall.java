@@ -24,7 +24,7 @@ public class Wall extends Tiles
 	
 	public void initTiles() throws IOException
 	{
-		BufferedImage myPicture = ImageIO.read(new File("src/Bobman/barrel.png"));
+		BufferedImage myPicture = ImageIO.read(new File("src/sprite/barrel.png"));
 		picLabel = new JLabel(new ImageIcon(myPicture));
 		this.add(picLabel);
 	}

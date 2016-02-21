@@ -22,7 +22,7 @@ public class Dwall extends Tiles
 
 	public void initTiles() throws IOException
 	{
-		BufferedImage myPicture = ImageIO.read(new File("src/Bobman/wall.png"));
+		BufferedImage myPicture = ImageIO.read(new File("src/sprite/wall.png"));
 		picLabel = new JLabel(new ImageIcon(myPicture));
 		this.add(picLabel);
 	}
