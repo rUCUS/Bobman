@@ -15,7 +15,7 @@ public class Tiles extends JPanel
 		this.yPos = yPos;
 		this.order = order;
 		walkable = true;
-		destroyable = false;
+		destroyable = true;
 		
 	}
 
@@ -43,4 +43,13 @@ public class Tiles extends JPanel
 		this.order = order;
 	}
 	
+	public void notDestroyable()
+	{
+		destroyable = false;
+	}
+	
+	public boolean isDestroyable()
+	{
+		return destroyable;
+	}
 }

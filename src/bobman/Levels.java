@@ -1,6 +1,10 @@
 package bobman;
 
 import java.awt.Color;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 import java.util.TreeMap;
 
 import javax.swing.JOptionPane;
@@ -10,7 +14,9 @@ public class Levels
 	
 	private Board board;
 	private TreeMap<Integer,Tiles> tiles;
+	private static final Set<Integer> playerSpace = new HashSet<Integer>(Arrays.asList(14,15,16,27,40,128,141,152,153,154));
 	private int currentLevel;
+	Random rand = new Random();	
 	
 	public Levels(Board board, TreeMap<Integer,Tiles> tiles)
 	{
@@ -27,16 +33,28 @@ public class Levels
 		{
 			l = tiles.get(i);
 			l.setBackground(Color.white);
+			l.removeAll();
+		}
+		
+		for( int i=0; i<169; i++)
+		{
+			l=tiles.get(i);
 			if (l.getxPos() == 0 || l.getyPos() == 0
-				|| l.getxPos() == 12 || l.getyPos()==12)
-			{
-				l.setBackground(Color.black);
-				
-			}
-			else if (l.getxPos() % 2 == 0 && l.getyPos()% 2 == 0)
-			{
-				l.setBackground(Color.black);
-			}
+					|| l.getxPos() == 12 || l.getyPos()==12)
+				{
+					l.setBackground(Color.black);
+					l.add(new Wall(l.getxPos(),l.getY(),
+					l.getOrder()));
+					l.notDestroyable();
+					
+				}
+				else if (l.getxPos() % 2 == 0 && l.getyPos()% 2 == 0)
+				{
+					l.setBackground(Color.black);
+					l.add(new Wall(l.getxPos(),l.getY(),
+					l.getOrder()));
+					l.notDestroyable();
+				}
 			
 		}		
 		
@@ -71,7 +89,26 @@ public class Levels
 
 	public void levelOne()
 	{
-		System.out.println("level1");
+		int randomnumber;
+		int enoughDWalls = 0;
+		Tiles p;
+		while(enoughDWalls < 84)
+		{
+			randomnumber = rand.nextInt(169);
+			if (playerSpace.contains(randomnumber))
+			{
+				continue;
+			}
+			
+			p = tiles.get(randomnumber);
+			if (p.isDestroyable())
+			{
+				p.add(new Dwall(p.getxPos(),p.getY(),p.getOrder()));
+				p.setBackground(Color.red);
+				enoughDWalls++;
+			}
+
+		}		
 	}
 	
 	public void levelTwo()

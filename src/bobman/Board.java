@@ -35,7 +35,6 @@ public class Board  extends JFrame implements ActionListener{
 	private TreeMap<Integer,Tiles> tiles;
 	private Levels levels;
 	private Timer timer = new Timer(1000,this);
-	Random rand = new Random();
 	int r;
 	public Board()
 	{ 	
@@ -44,7 +43,6 @@ public class Board  extends JFrame implements ActionListener{
 		bomb = new Bomb(1);
 		tiles = new TreeMap<>();
 		levels = new Levels(this,tiles);
-
 		gameMenu = new GameMenu(this,levels);
 		
 		
@@ -89,27 +87,7 @@ public class Board  extends JFrame implements ActionListener{
 			gameBoard.add(k =new Tiles(i%13,i/13,i));
 			k.setBackground(Color.white);
 			tiles.put(i, k);
-			if (k.getxPos() == 0 || k.getyPos() == 0
-				|| k.getxPos() == 12 || k.getyPos()==12)
-			{
-				k.setBackground(Color.black);
-				k.add(new Wall(k.getxPos(),k.getY(),
-				k.getOrder()));
-				
-			}
-			else if (k.getxPos() % 2 == 0 && k.getyPos()% 2 == 0)
-			{
-				k.setBackground(Color.black);
-				k.add(new Wall(k.getxPos(),k.getY(),
-				k.getOrder()));
-			}
-			
 		}
-		/*skapar en metod till som gör samma sak förutom att den ej får skapa om väggarna,tiles och allt annat
-		 * för det gör så att jag överbelastar i onöden med att lägga en jpanel över en jpanel varje gång jag kör
-		 * en ny spel. La allt i en ny klassmetod Levels så att det ser finare ut och mer orginiserat samt så har
-		 * jag försökt gruppera om till mindre metoder. 
-		 */
 		
 		levels.initBaseLevel();
 		
@@ -146,14 +124,8 @@ public class Board  extends JFrame implements ActionListener{
 		}
 	}
 	private void update() 
-	{
+	{	
 		
-		/* ANVÄNDS FÖR ATT TESTA OM MINA KNAPPAR I STARTMENU FUNGEAR
-		 * TILLS JAG HAR IMPLEMENTERAT SPELET.
-		 */
-		r = rand.nextInt(50) + 30;
-		Tiles k = tiles.get(r);
-		k.setBackground(Color.blue);
 		this.repaint();
 		
 	}

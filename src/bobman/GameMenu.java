@@ -16,12 +16,9 @@ public class GameMenu
 
 	public void newGame()
 	{
-		/*
-		 * SER IDENTISK UT MED RESTART FAST SKA GÖRA FLERA BANOR SOM MAN FÅR VÄLJA
-		 * EFTERÅT NÄR MAN STARTAR SPELET SAMT KARAKTÄRER SÅ DENNA KOMMER UTVECKLAS.....
-		 */
 		levels.chooseLevel();
 		levels.initBaseLevel();
+		levels.sameLevel();
 		board.startTheGame();
 		status = false;
 	}
