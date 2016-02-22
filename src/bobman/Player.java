@@ -16,7 +16,6 @@ public class Player extends JLabel
 	private TreeMap<Integer,Tiles> tiles;
 	private ImageIcon left,right,up,down;
 	private Timer timer1,timer2;
-	private PlayerAttributes attributes;
 	
 	public Player(TreeMap<Integer,Tiles> tiles,Board board,Timer timer1,Timer timer2,int status ,int hp, int xPos, int yPos, Bomb bomb, int speed,int side)
 	{
@@ -88,55 +87,68 @@ public class Player extends JLabel
 	
 	public void throwBomb(int i)
 	{
-		if (!(timer1.isRunning() == true && i ==1)  )
+		if ( i ==1)
 		{
-			id = i;
-			Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
-			if (this.getIcon().equals(right))
+			if(!timer1.isRunning())
 			{
-				throwright(k);
+				id = i;
+				Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
+				if (this.getIcon().equals(right))
+				{
+					throwright(k);
+				}
+				
+				if (this.getIcon().equals(left))
+				{
+					throwleft(k);
+				}
+				
+				if (this.getIcon().equals(up))
+				{
+					throwup(k);
+				}
+				
+				if (this.getIcon().equals(down))
+				{
+					throwdown(k);
+				}
 			}
 			
-			if (this.getIcon().equals(left))
-			{
-				throwleft(k);
-			}
 			
-			if (this.getIcon().equals(up))
-			{
-				throwup(k);
-			}
-			
-			if (this.getIcon().equals(down))
-			{
-				throwdown(k);
-			}
 		
 		}
 		
-		if (!(timer2.isRunning() == true && i ==2)  )
+		if ( i ==2)
 		{
-			id = i;
-			Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
-			if (this.getIcon().equals(right))
+			if(!timer2.isRunning())
 			{
-				throwright(k);
+				id = i;
+				Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
+				if (this.getIcon().equals(right))
+				{
+					throwright(k);
+					id = 0;
+				}
+				
+				if (this.getIcon().equals(left))
+				{
+					throwleft(k);
+					id = 0;
+				}
+				
+				if (this.getIcon().equals(up))
+				{
+					throwup(k);
+					id = 0;
+				}
+				
+				if (this.getIcon().equals(down))
+				{
+					throwdown(k);
+					id = 0;
+				}
 			}
 			
-			if (this.getIcon().equals(left))
-			{
-				throwleft(k);
-			}
-			
-			if (this.getIcon().equals(up))
-			{
-				throwup(k);
-			}
-			
-			if (this.getIcon().equals(down))
-			{
-				throwdown(k);
-			}
 		
 		}
 		
@@ -161,12 +173,12 @@ public class Player extends JLabel
 			this.setIcon(right);
 			bomb.resetAnimation(bomb.getBombicon(status));
 			k.add(bomb);
-			a.notWalkable();
-			board.resetWalkable(a,id);
+			k.notWalkable();
+			board.resetWalkable(k,id);
 			
 		}
 		
-		bomb.repaint();
+		
 	}
 	
 	public void throwleft(Tiles k)

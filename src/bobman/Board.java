@@ -194,7 +194,7 @@ public class Board  extends JFrame implements ActionListener{
 		{
 			resetWalkable1(k);
 		}
-		else
+		else if (id == 2)
 		{
 			resetWalkable2(k);
 		}
