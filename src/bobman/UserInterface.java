@@ -46,7 +46,7 @@ public class UserInterface implements KeyListener
 		
 		if(e.getKeyCode() == KeyEvent.VK_SPACE)
 		{
-			player1.throwBomb();
+			player1.throwBomb(1);
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_LEFT)
@@ -74,7 +74,7 @@ public class UserInterface implements KeyListener
 		
 		if(e.getKeyCode() == KeyEvent.VK_NUMPAD9)
 		{
-			player2.throwBomb();
+			player2.throwBomb(2);
 		}
 		
 	}

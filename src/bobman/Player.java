@@ -5,18 +5,23 @@ import java.util.concurrent.TimeUnit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.Timer;
 
 public class Player extends JLabel
 {
 	private Board board;
-	private int hp,xPos,yPos,speed,status;
+	private int hp,xPos,yPos,speed,status,id;
 	private Bomb bomb;
 	private boolean isPlayerAlive;
 	private TreeMap<Integer,Tiles> tiles;
 	private ImageIcon left,right,up,down;
+	private Timer timer1,timer2;
+	private PlayerAttributes attributes;
 	
-	public Player(TreeMap<Integer,Tiles> tiles,Board board,int status ,int hp, int xPos, int yPos, Bomb bomb, int speed,int side)
+	public Player(TreeMap<Integer,Tiles> tiles,Board board,Timer timer1,Timer timer2,int status ,int hp, int xPos, int yPos, Bomb bomb, int speed,int side)
 	{
+		this.timer1 = timer1;
+		this.timer2 = timer2;
 		this.status = status;
 		this.tiles = tiles;
 		this.board = board;
@@ -81,29 +86,59 @@ public class Player extends JLabel
 
 	
 	
-	public void throwBomb()
+	public void throwBomb(int i)
 	{
-		Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
-		if (this.getIcon().equals(right))
+		if (!(timer1.isRunning() == true && i ==1)  )
 		{
-			throwright(k);
+			id = i;
+			Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
+			if (this.getIcon().equals(right))
+			{
+				throwright(k);
+			}
+			
+			if (this.getIcon().equals(left))
+			{
+				throwleft(k);
+			}
+			
+			if (this.getIcon().equals(up))
+			{
+				throwup(k);
+			}
+			
+			if (this.getIcon().equals(down))
+			{
+				throwdown(k);
+			}
+		
 		}
 		
-		if (this.getIcon().equals(left))
+		if (!(timer2.isRunning() == true && i ==2)  )
 		{
-			throwleft(k);
-		}
+			id = i;
+			Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
+			if (this.getIcon().equals(right))
+			{
+				throwright(k);
+			}
+			
+			if (this.getIcon().equals(left))
+			{
+				throwleft(k);
+			}
+			
+			if (this.getIcon().equals(up))
+			{
+				throwup(k);
+			}
+			
+			if (this.getIcon().equals(down))
+			{
+				throwdown(k);
+			}
 		
-		if (this.getIcon().equals(up))
-		{
-			throwup(k);
 		}
-		
-		if (this.getIcon().equals(down))
-		{
-			throwdown(k);
-		}
-		
 		
 
 
@@ -116,6 +151,8 @@ public class Player extends JLabel
 		{
 			bomb.resetAnimation(bomb.getBombicon(status));
 			a.add(bomb);
+			a.notWalkable();
+			board.resetWalkable(a,id);
 			
 		}
 		else
@@ -124,6 +161,8 @@ public class Player extends JLabel
 			this.setIcon(right);
 			bomb.resetAnimation(bomb.getBombicon(status));
 			k.add(bomb);
+			a.notWalkable();
+			board.resetWalkable(a,id);
 			
 		}
 		
@@ -137,6 +176,8 @@ public class Player extends JLabel
 		{
 			bomb.resetAnimation(bomb.getBombicon(status));
 			a.add(bomb);
+			a.notWalkable();
+			board.resetWalkable(a,id);
 		}
 		else
 		{
@@ -144,6 +185,8 @@ public class Player extends JLabel
 			this.setIcon(left);
 			bomb.resetAnimation(bomb.getBombicon(status));
 			k.add(bomb);
+			k.notWalkable();
+			board.resetWalkable(k,id);
 			
 		}
 	}
@@ -155,6 +198,8 @@ public class Player extends JLabel
 		{
 			bomb.resetAnimation(bomb.getBombicon(status));
 			a.add(bomb);
+			a.notWalkable();
+			board.resetWalkable(a,id);
 		}
 		else
 		{
@@ -162,7 +207,8 @@ public class Player extends JLabel
 			this.setIcon(up);
 			bomb.resetAnimation(bomb.getBombicon(status));
 			k.add(bomb);
-			
+			k.notWalkable();
+			board.resetWalkable(k,id);
 		}
 	}
 	
@@ -173,6 +219,8 @@ public class Player extends JLabel
 		{
 			bomb.resetAnimation(bomb.getBombicon(status));
 			a.add(bomb);
+			a.notWalkable();
+			board.resetWalkable(a,id);
 		}
 		else
 		{
@@ -180,6 +228,8 @@ public class Player extends JLabel
 			this.setIcon(down);
 			bomb.resetAnimation(bomb.getBombicon(status));
 			k.add(bomb);
+			k.notWalkable();
+			board.resetWalkable(k,id);
 			
 		}
 	}

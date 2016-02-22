@@ -35,7 +35,11 @@ public class Board  extends JFrame implements ActionListener{
 	private JButton button1,button2,button3,button4;
 	private TreeMap<Integer,Tiles> tiles;
 	private Levels levels;
-	private Timer timer = new Timer(20,this);
+	private Timer timer1,timer2,timer3;
+	private float wastetime1,wastetime2;
+	private Tiles resetTile1,resetTile2;
+	
+
 	Random rand = new Random();	
 	public Board() throws IOException
 	{ 	
@@ -44,6 +48,9 @@ public class Board  extends JFrame implements ActionListener{
 		tiles = new TreeMap<>();
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
+		timer1= new Timer(20,this);
+		timer2 = new Timer(1000,this);
+		timer3 = new Timer(1000,this); 
 		
 		
 		initStartmenu();
@@ -54,7 +61,7 @@ public class Board  extends JFrame implements ActionListener{
 		this.getContentPane().add(split);
 		this.pack();
 		this.setVisible(true);
-		timer.start();
+		timer1.start();
 		
 		
 		
@@ -98,7 +105,27 @@ public class Board  extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) 
 	{
 		update();
-		//test();
+		
+		if(timer2.isRunning())
+		{
+			wastetime1 = wastetime1 +0.2f;
+			if (wastetime1 >= 21.0f)
+			{
+				resetWalkable3();
+				timer2.stop();
+			}
+		}
+		
+		if(timer3.isRunning())
+		{
+			wastetime2 = wastetime2 +0.2f;
+			if (wastetime2 >= 21.0f)
+			{
+				resetWalkable4();
+				timer3.stop();
+			}
+		}
+		
 		if (e.getSource() == button1)
 			
 		{
@@ -134,6 +161,77 @@ public class Board  extends JFrame implements ActionListener{
 			
 		}
 	}
+	
+
+	public Timer getTimer2() 
+	{
+		return timer2;
+	}
+
+
+
+	public void setTimer2(Timer timer2) 
+	{
+		this.timer2 = timer2;
+	}
+
+	public Timer getTimer3() 
+	{
+		return timer3;
+	}
+
+
+
+	public void setTimer3(Timer timer3) 
+	{
+		this.timer3 = timer3;
+	}
+
+	public void resetWalkable(Tiles k, int id)
+	
+	{
+		if (id == 1)
+		{
+			resetWalkable1(k);
+		}
+		else
+		{
+			resetWalkable2(k);
+		}
+	}
+
+	public void resetWalkable1(Tiles k) 
+	{
+		timer2.start();
+		resetTile1 = k; 
+		wastetime1 = 0f;
+		
+	}
+	
+	public void resetWalkable2(Tiles k) 
+	{
+		timer3.start();
+		resetTile2 = k; 
+		wastetime2 = 0f;
+		
+	}
+	
+	private void resetWalkable3() 
+	{
+		resetTile1.makeWalkable();
+		resetTile1.removeAll();
+		
+	}
+	
+	private void resetWalkable4() 
+	{
+		resetTile2.makeWalkable();
+		resetTile2.removeAll();
+		
+	}
+
+
+
 	private void update() 
 	{	
 		
@@ -151,7 +249,7 @@ public class Board  extends JFrame implements ActionListener{
 	
 	public void pauseTheGame()
 	{
-		timer.stop();
+		timer1.stop();
 		JOptionPane.showMessageDialog(null, "you have paused the game");
 		button4.setText("resume");
 		//try {
@@ -165,7 +263,7 @@ public class Board  extends JFrame implements ActionListener{
 
 	public void startTheGame() 
 	{
-		timer.start();
+		timer1.start();
 		button4.setText("Pause");
 		
 	}

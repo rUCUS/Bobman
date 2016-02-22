@@ -95,8 +95,8 @@ public class Levels
 
 	public void levelOne() throws IOException
 	{
-		player1 = new Player(tiles,board, 1 ,1, 1, 1, new Bomb(1,1), 1, 0);
-		player2 = new Player(tiles,board, 2 ,1, 11, 11, new Bomb(1,2), 1, 1);
+		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,1, 1, 1, new Bomb(1,1), 1, 0);
+		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,1, 11, 11, new Bomb(1,2), 1, 1);
 		this.Ui = new UserInterface(player1,player2);
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
@@ -146,7 +146,21 @@ public class Levels
 	
 	public void levelThree()
 	{
-		System.out.println("level3");
+		Tiles p;
+		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,1, 1, 1, new Bomb(1,1), 1, 0);
+		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,1, 11, 11, new Bomb(1,2), 1, 1);
+		this.Ui = new UserInterface(player1,player2);
+		this.board.addKeyListener(Ui);
+		this.board.setFocusable(true);
+		this.board.requestFocus();
+		
+		p = tiles.get(14);
+		p.add(player1);
+		p = tiles.get(154);
+		p.add(player2);
+		
+		board.repaint();
+		board.setVisible(true);
 		/*
 		 * tom map spelare ska ha full kraft oavsett karaktär
 		 */
