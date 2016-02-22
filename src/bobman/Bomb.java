@@ -1,5 +1,6 @@
 package bobman;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class Bomb extends JLabel
@@ -12,6 +13,7 @@ public class Bomb extends JLabel
 	public Bomb(int damage)
 	{
 		this.damage = damage;
+		this.setIcon((new ImageIcon("src/sprite/bomb.gif")));
 	}
 
 	public double getxPos() {

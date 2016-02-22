@@ -6,57 +6,49 @@ import java.util.ArrayList;
 
 public class UserInterface implements KeyListener
 {
-	private ArrayList<Integer> keysDown;
-	private Board board;
 	private Player player;
 	
 	
 	
-	public UserInterface(Player player,Board board)
+	public UserInterface(Player player)
 	{
 		this.player = player;
-		this.board = board;
-		keysDown = new ArrayList<>();
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) 
 	{
-		if(!(keysDown.contains(e.getKeyCode()))) 
-		{
-			keysDown.add(e.getKeyCode());
-		}
 		
-	/*	if(keysDown.contains(KeyEvent.VK_A) )
+		
+		if(e.getKeyCode() == KeyEvent.VK_A)
 		{
-			((Object) e.getSource()).MoveRight();
+			player.moveLeft();
 			
 		}
 		
-		if(keysDown.contains(KeyEvent.VK_S))
+		if(e.getKeyCode() == KeyEvent.VK_S)
 		{
-			((Object) e.getSource()).MoveDown();
+			player.moveDown();
 			
 		}
 		
-		if(keysDown.contains(KeyEvent.VK_W))
+		if(e.getKeyCode() == KeyEvent.VK_W)
 		{
-			((Object) e.getSource()).MoveUp();
+			player.moveUp();
 			
 		}
 		
-		if(keysDown.contains(KeyEvent.VK_D))
+		if(e.getKeyCode() == KeyEvent.VK_D)
 		{
-			((Object) e.getSource()).MoveLeft();
-			
-		}*/
+			player.moveRight();
+		}
 		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) 
 	{
-		keysDown.remove(e.getKeyCode());
+		
 		
 	}
 

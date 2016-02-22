@@ -29,14 +29,15 @@ public class Board  extends JFrame implements ActionListener{
 	private Player player;
 	private GameMenu gameMenu;
 	private Bomb bomb;
+	
 	private Graphics g;
 	private JPanel startMenu,gameBoard;
 	private JSplitPane split;
 	private JButton button1,button2,button3,button4;
 	private TreeMap<Integer,Tiles> tiles;
 	private Levels levels;
-	private Timer timer = new Timer(1000,this);
-	int r;
+	private Timer timer = new Timer(20,this);
+	Random rand = new Random();	
 	public Board() throws IOException
 	{ 	
 		super();
@@ -45,6 +46,8 @@ public class Board  extends JFrame implements ActionListener{
 		tiles = new TreeMap<>();
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
+		
+		
 		initStartmenu();
 		initBoard();
 		
@@ -97,6 +100,7 @@ public class Board  extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) 
 	{
 		update();
+		//test();
 		if (e.getSource() == button1)
 			
 		{
@@ -139,9 +143,13 @@ public class Board  extends JFrame implements ActionListener{
 		
 	}
 	
-	public void skapaSpelare1(){
-		ImageIcon player = new ImageIcon("Desktop/Firefox_wallpaper.png");
-		Image player1 = player.getImage();
+	public void test()
+	{
+		int r = rand.nextInt(169);
+		Tiles k = tiles.get(r);
+		k.removeFloor();
+		k.add(new Bomb(1));
+		this.setVisible(true);
 	}
 	
 	public void pauseTheGame()

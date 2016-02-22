@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 public class Levels 
 {
-	
+	private Player player;
 	private Board board;
 	private TreeMap<Integer,Tiles> tiles;
 	private static final Set<Integer> playerSpace = new HashSet<Integer>(Arrays.asList(14,15,16,27,40,128,141,152,153,154));
@@ -23,7 +23,6 @@ public class Levels
 	{
 		this.board = board;
 		this.tiles = tiles;
-		
 	}
 	
 	public void initBaseLevel() throws IOException 
@@ -33,8 +32,9 @@ public class Levels
 		for( int i=0; i<169; i++)
 		{
 			l = tiles.get(i);
-			l.setBackground(Color.white);
+			l.setBackground(Color.blue);
 			l.removeAll();
+			l.makeWalkable();
 			l.initTiles();
 		}
 		
@@ -48,6 +48,7 @@ public class Levels
 					l.add(new Wall(l.getxPos(),l.getY(),
 					l.getOrder()));
 					l.notDestroyable();
+					l.notWalkable();
 					l.removeFloor();
 					
 				}
@@ -57,6 +58,7 @@ public class Levels
 					l.add(new Wall(l.getxPos(),l.getY(),
 					l.getOrder()));
 					l.notDestroyable();
+					l.notWalkable();
 					l.removeFloor();
 				}
 			
@@ -93,6 +95,7 @@ public class Levels
 
 	public void levelOne() throws IOException
 	{
+		player = new Player(tiles,board, 1, 1, 1, new Bomb(1), 1, 0);
 		Set<Integer> used = new HashSet<Integer>();
 		int randomnumber;
 		int enoughDWalls = 0;
@@ -114,12 +117,15 @@ public class Levels
 					p.removeFloor();
 					p.add(new Dwall(p.getxPos(),p.getY(),p.getOrder()));
 					p.setBackground(Color.black);
+					p.notWalkable();
 					enoughDWalls++;
 				}
 				
 			}
 
 		}	
+		p = tiles.get(14);
+		p.add(player);
 		
 		board.repaint();
 		board.setVisible(true);
