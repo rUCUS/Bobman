@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Random;
 import java.util.TreeMap;
+import java.util.concurrent.TimeUnit;
 
 import javafx.scene.shape.Circle;
 
@@ -28,8 +29,6 @@ public class Board  extends JFrame implements ActionListener{
 	private static final long serialVersionUID = -2926933215387776929L;
 	private Player player;
 	private GameMenu gameMenu;
-	private Bomb bomb;
-	
 	private Graphics g;
 	private JPanel startMenu,gameBoard;
 	private JSplitPane split;
@@ -42,7 +41,6 @@ public class Board  extends JFrame implements ActionListener{
 	{ 	
 		super();
 		this.setDefaultCloseOperation(Board.EXIT_ON_CLOSE);
-		bomb = new Bomb(1);
 		tiles = new TreeMap<>();
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
@@ -85,7 +83,7 @@ public class Board  extends JFrame implements ActionListener{
 	public void initBoard() throws IOException 
 	{
 		gameBoard = new JPanel();
-		gameBoard.setLayout(new GridLayout(13,13,1,1));
+		gameBoard.setLayout(new GridLayout(13,13));
 		Tiles k;
 		for( int i=0; i<169; i++)
 		{
@@ -148,7 +146,6 @@ public class Board  extends JFrame implements ActionListener{
 		int r = rand.nextInt(169);
 		Tiles k = tiles.get(r);
 		k.removeFloor();
-		k.add(new Bomb(1));
 		this.setVisible(true);
 	}
 	
@@ -157,6 +154,12 @@ public class Board  extends JFrame implements ActionListener{
 		timer.stop();
 		JOptionPane.showMessageDialog(null, "you have paused the game");
 		button4.setText("resume");
+		//try {
+			//TimeUnit.SECONDS.sleep(1);
+		//} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+	//		e.printStackTrace();
+		//}
 		
 	}
 

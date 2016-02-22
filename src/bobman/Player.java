@@ -1,6 +1,7 @@
 package bobman;
 
 import java.util.TreeMap;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -8,14 +9,15 @@ import javax.swing.JLabel;
 public class Player extends JLabel
 {
 	private Board board;
-	private int hp,xPos,yPos,speed;
+	private int hp,xPos,yPos,speed,status;
 	private Bomb bomb;
 	private boolean isPlayerAlive;
 	private TreeMap<Integer,Tiles> tiles;
 	private ImageIcon left,right,up,down;
 	
-	public Player(TreeMap<Integer,Tiles> tiles,Board board,int hp, int xPos, int yPos, Bomb bomb, int speed,int side)
+	public Player(TreeMap<Integer,Tiles> tiles,Board board,int status ,int hp, int xPos, int yPos, Bomb bomb, int speed,int side)
 	{
+		this.status = status;
 		this.tiles = tiles;
 		this.board = board;
 		this.hp = hp;
@@ -112,15 +114,20 @@ public class Player extends JLabel
 		Tiles a = tiles.get(k.getOrder()+1);
 		if(a.isWalkable())
 		{
+			bomb.resetAnimation(bomb.getBombicon(status));
 			a.add(bomb);
+			
 		}
 		else
 		{
 			moveLeft();
 			this.setIcon(right);
+			bomb.resetAnimation(bomb.getBombicon(status));
 			k.add(bomb);
 			
 		}
+		
+		bomb.repaint();
 	}
 	
 	public void throwleft(Tiles k)
@@ -128,12 +135,14 @@ public class Player extends JLabel
 		Tiles a = tiles.get(k.getOrder()-1);
 		if(a.isWalkable())
 		{
+			bomb.resetAnimation(bomb.getBombicon(status));
 			a.add(bomb);
 		}
 		else
 		{
 			moveRight();
 			this.setIcon(left);
+			bomb.resetAnimation(bomb.getBombicon(status));
 			k.add(bomb);
 			
 		}
@@ -144,12 +153,14 @@ public class Player extends JLabel
 		Tiles a = tiles.get(k.getOrder()-13);
 		if(a.isWalkable())
 		{
+			bomb.resetAnimation(bomb.getBombicon(status));
 			a.add(bomb);
 		}
 		else
 		{
 			moveDown();
 			this.setIcon(up);
+			bomb.resetAnimation(bomb.getBombicon(status));
 			k.add(bomb);
 			
 		}
@@ -160,12 +171,14 @@ public class Player extends JLabel
 		Tiles a = tiles.get(k.getOrder()+13);
 		if(a.isWalkable())
 		{
+			bomb.resetAnimation(bomb.getBombicon(status));
 			a.add(bomb);
 		}
 		else
 		{
 			moveUp();
 			this.setIcon(down);
+			bomb.resetAnimation(bomb.getBombicon(status));
 			k.add(bomb);
 			
 		}
@@ -276,6 +289,7 @@ public class Player extends JLabel
 		}
 		
 	}
+
 	
 	
 
