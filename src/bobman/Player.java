@@ -10,14 +10,12 @@ public class Player extends JLabel
 	private Board board;
 	private int hp,xPos,yPos,speed;
 	private Bomb bomb;
-	private UserInterface Ui;
 	private boolean isPlayerAlive;
 	private TreeMap<Integer,Tiles> tiles;
 	private ImageIcon left,right,up,down;
 	
 	public Player(TreeMap<Integer,Tiles> tiles,Board board,int hp, int xPos, int yPos, Bomb bomb, int speed,int side)
 	{
-		this.Ui = new UserInterface(this);
 		this.tiles = tiles;
 		this.board = board;
 		this.hp = hp;
@@ -26,9 +24,6 @@ public class Player extends JLabel
 		this.yPos = yPos;
 		this.speed = speed;
 		isPlayerAlive = true;
-		this.board.addKeyListener(Ui);
-		this.board.setFocusable(true);
-		this.board.requestFocus();
 		initPos();
 		startPos(side);
 		initBomb();

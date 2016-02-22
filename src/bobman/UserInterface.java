@@ -6,13 +6,14 @@ import java.util.ArrayList;
 
 public class UserInterface implements KeyListener
 {
-	private Player player;
+	private Player player1,player2;
 	
 	
 	
-	public UserInterface(Player player)
+	public UserInterface(Player player1, Player player2)
 	{
-		this.player = player;
+		this.player1 = player1;
+		this.player2 = player2;
 	}
 
 	@Override
@@ -22,26 +23,50 @@ public class UserInterface implements KeyListener
 		
 		if(e.getKeyCode() == KeyEvent.VK_A)
 		{
-			player.moveLeft();
+			player1.moveLeft();
 			
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_S)
 		{
-			player.moveDown();
+			player1.moveDown();
 			
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_W)
 		{
-			player.moveUp();
+			player1.moveUp();
 			
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_D)
 		{
-			player.moveRight();
+			player1.moveRight();
 		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_LEFT)
+		{
+			player2.moveLeft();
+			
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_DOWN)
+		{
+			player2.moveDown();
+			
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_UP)
+		{
+			player2.moveUp();
+			
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT)
+		{
+			player2.moveRight();
+		}
+		
 		
 	}
 

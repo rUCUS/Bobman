@@ -12,8 +12,9 @@ import javax.swing.JOptionPane;
 
 public class Levels 
 {
-	private Player player;
+	private Player player1,player2;
 	private Board board;
+	private UserInterface Ui;
 	private TreeMap<Integer,Tiles> tiles;
 	private static final Set<Integer> playerSpace = new HashSet<Integer>(Arrays.asList(14,15,16,27,40,128,141,152,153,154));
 	private int currentLevel;
@@ -95,7 +96,12 @@ public class Levels
 
 	public void levelOne() throws IOException
 	{
-		player = new Player(tiles,board, 1, 1, 1, new Bomb(1), 1, 0);
+		player1 = new Player(tiles,board, 1, 1, 1, new Bomb(1), 1, 0);
+		player2 = new Player(tiles,board, 1, 11, 11, new Bomb(1), 1, 1);
+		this.Ui = new UserInterface(player1,player2);
+		this.board.addKeyListener(Ui);
+		this.board.setFocusable(true);
+		this.board.requestFocus();
 		Set<Integer> used = new HashSet<Integer>();
 		int randomnumber;
 		int enoughDWalls = 0;
@@ -125,7 +131,9 @@ public class Levels
 
 		}	
 		p = tiles.get(14);
-		p.add(player);
+		p.add(player1);
+		p = tiles.get(154);
+		p.add(player2);
 		
 		board.repaint();
 		board.setVisible(true);
