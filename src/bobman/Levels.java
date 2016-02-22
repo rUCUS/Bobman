@@ -36,7 +36,6 @@ public class Levels
 			l.setBackground(Color.blue);
 			l.removeAll();
 			l.makeWalkable();
-			l.initTiles();
 		}
 		
 		for( int i=0; i<169; i++)

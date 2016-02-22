@@ -140,7 +140,7 @@ public class Board  extends JFrame implements ActionListener{
 	{	
 		
 		this.repaint();
-		
+		this.setVisible(true);
 	}
 	
 	public void test()

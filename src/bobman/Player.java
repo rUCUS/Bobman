@@ -81,7 +81,94 @@ public class Player extends JLabel
 	
 	public void throwBomb()
 	{
+		Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
+		if (this.getIcon().equals(right))
+		{
+			throwright(k);
+		}
 		
+		if (this.getIcon().equals(left))
+		{
+			throwleft(k);
+		}
+		
+		if (this.getIcon().equals(up))
+		{
+			throwup(k);
+		}
+		
+		if (this.getIcon().equals(down))
+		{
+			throwdown(k);
+		}
+		
+		
+
+
+	}
+	
+	public void throwright(Tiles k)
+	{
+		Tiles a = tiles.get(k.getOrder()+1);
+		if(a.isWalkable())
+		{
+			a.add(bomb);
+		}
+		else
+		{
+			moveLeft();
+			this.setIcon(right);
+			k.add(bomb);
+			
+		}
+	}
+	
+	public void throwleft(Tiles k)
+	{
+		Tiles a = tiles.get(k.getOrder()-1);
+		if(a.isWalkable())
+		{
+			a.add(bomb);
+		}
+		else
+		{
+			moveRight();
+			this.setIcon(left);
+			k.add(bomb);
+			
+		}
+	}
+	
+	public void throwup(Tiles k)
+	{
+		Tiles a = tiles.get(k.getOrder()-13);
+		if(a.isWalkable())
+		{
+			a.add(bomb);
+		}
+		else
+		{
+			moveDown();
+			this.setIcon(up);
+			k.add(bomb);
+			
+		}
+	}
+	
+	public void throwdown(Tiles k)
+	{
+		Tiles a = tiles.get(k.getOrder()+13);
+		if(a.isWalkable())
+		{
+			a.add(bomb);
+		}
+		else
+		{
+			moveUp();
+			this.setIcon(down);
+			k.add(bomb);
+			
+		}
 	}
 	
 	public void hit(int bXPos, int bYPos, int pXPos, int pYPos)

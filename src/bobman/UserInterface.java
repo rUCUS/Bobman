@@ -44,6 +44,11 @@ public class UserInterface implements KeyListener
 			player1.moveRight();
 		}
 		
+		if(e.getKeyCode() == KeyEvent.VK_SPACE)
+		{
+			player1.throwBomb();
+		}
+		
 		if(e.getKeyCode() == KeyEvent.VK_LEFT)
 		{
 			player2.moveLeft();
@@ -67,6 +72,10 @@ public class UserInterface implements KeyListener
 			player2.moveRight();
 		}
 		
+		if(e.getKeyCode() == KeyEvent.VK_NUMPAD9)
+		{
+			player2.throwBomb();
+		}
 		
 	}
 
