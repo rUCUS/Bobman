@@ -126,6 +126,7 @@ public class Board  extends JFrame implements ActionListener{
 			{
 				resetWalkable4();
 				timer3.stop();
+				wastetime2 = 0;
 			}
 		}
 		

@@ -32,7 +32,7 @@ public class Fire extends JLabel
 
 		if(player == 2)
 		{
-			fireIcon = new ImageIcon("src/sprite/exploding.gif");
+			fireIcon = new ImageIcon("src/sprite/exploding2.gif");
 			resetAnimationfire();
 			this.setIcon(fireIcon);
 		}
