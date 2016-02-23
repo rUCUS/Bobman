@@ -50,7 +50,7 @@ public class Bomb extends JLabel
 	}
 
 	public void setyPos(int yPos) 
-	{
+	{ 
 		this.yPos = yPos;
 	}
 	

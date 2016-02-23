@@ -17,7 +17,9 @@ public class Player extends JLabel
 	private ImageIcon left,right,up,down;
 	private Timer timer1,timer2;
 	
-	public Player(TreeMap<Integer,Tiles> tiles,Board board,Timer timer1,Timer timer2,int status ,int hp, int xPos, int yPos, Bomb bomb, int speed,int side)
+	public Player(TreeMap<Integer,Tiles> tiles,Board board,Timer timer1,Timer timer2,
+			int status ,int hp, int xPos, int yPos, Bomb bomb, int speed,int side)
+	
 	{
 		this.timer1 = timer1;
 		this.timer2 = timer2;

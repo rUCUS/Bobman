@@ -35,9 +35,10 @@ public class Board  extends JFrame implements ActionListener{
 	private JButton button1,button2,button3,button4;
 	private TreeMap<Integer,Tiles> tiles;
 	private Levels levels;
-	private Timer timer1,timer2,timer3;
-	private float wastetime1,wastetime2;
+	private Timer timer1,timer2,timer3,timer4;
+	private float wastetime1,wastetime2,wastetime3;
 	private Tiles resetTile1,resetTile2;
+	private BombExplode bombExplode;
 	
 
 	Random rand = new Random();	
@@ -45,12 +46,14 @@ public class Board  extends JFrame implements ActionListener{
 	{ 	
 		super();
 		this.setDefaultCloseOperation(Board.EXIT_ON_CLOSE);
-		tiles = new TreeMap<>();
-		levels = new Levels(this,tiles);
-		gameMenu = new GameMenu(this,levels);
 		timer1= new Timer(20,this);
 		timer2 = new Timer(1000,this);
 		timer3 = new Timer(1000,this); 
+		timer4 = new Timer(1000,this);
+		tiles = new TreeMap<>();
+		levels = new Levels(this,tiles);
+		gameMenu = new GameMenu(this,levels);
+		bombExplode = new BombExplode(tiles,this,timer4);
 		
 		
 		initStartmenu();
@@ -125,6 +128,19 @@ public class Board  extends JFrame implements ActionListener{
 				timer3.stop();
 			}
 		}
+		
+		if(timer4.isRunning())
+		{
+			wastetime3 = wastetime3 +0.2f;
+			if (wastetime3 >= 21.0f)
+			{
+				bombExplode.resetfire();
+				timer4.stop();
+				wastetime3 = 0;
+			}
+		}
+		
+		
 		
 		if (e.getSource() == button1)
 			
@@ -220,6 +236,7 @@ public class Board  extends JFrame implements ActionListener{
 	{
 		resetTile1.makeWalkable();
 		resetTile1.removeAll();
+		bombExplode.BombExploded(resetTile1);
 		
 	}
 	
@@ -227,6 +244,7 @@ public class Board  extends JFrame implements ActionListener{
 	{
 		resetTile2.makeWalkable();
 		resetTile2.removeAll();
+		bombExplode.BombExploded(resetTile2);
 		
 	}
 
