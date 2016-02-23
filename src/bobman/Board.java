@@ -35,13 +35,14 @@ public class Board  extends JFrame implements ActionListener{
 	private JButton button1,button2,button3,button4;
 	private TreeMap<Integer,Tiles> tiles;
 	private Levels levels;
-	private Timer timer1,timer2,timer3,timer4;
+	private Timer timer1,timer2,timer3,timer4,timer5;
 	private float wastetime1,wastetime2,wastetime3;
 	private Tiles resetTile1,resetTile2;
 	private BombExplode bombExplode;
 	
 
-	Random rand = new Random();	
+	Random rand = new Random();
+	private float wastetime4;	
 	public Board() throws IOException
 	{ 	
 		super();
@@ -50,10 +51,11 @@ public class Board  extends JFrame implements ActionListener{
 		timer2 = new Timer(1000,this);
 		timer3 = new Timer(1000,this); 
 		timer4 = new Timer(1000,this);
+		timer5 = new Timer(1000,this);
 		tiles = new TreeMap<>();
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
-		bombExplode = new BombExplode(tiles,this,timer4);
+		bombExplode = new BombExplode(tiles,this);
 		
 		
 		initStartmenu();
@@ -69,6 +71,10 @@ public class Board  extends JFrame implements ActionListener{
 		setResizable(false);
 		
 	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
+	//////// Init
 	
 	public void initStartmenu() 
 	{
@@ -109,7 +115,151 @@ public class Board  extends JFrame implements ActionListener{
 		
 	}
 
+	///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
+	//////// Avsluta bomb samt elden
+	
+	
+	
+	private void resetWalkable3() 
+	{
+		resetTile1.makeWalkable();
+		resetTile1.removeAll();
+		bombExplode.BombExploded(resetTile1,1);
+		
+	}
+	
+	private void resetWalkable4() 
+	{
+		resetTile2.makeWalkable();
+		resetTile2.removeAll();
+		bombExplode.BombExploded(resetTile2,2);
+		
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
+	////////Setters and getters
+	
+	public Timer getTimer2() 
+	{
+		return timer2;
+	}
 
+
+
+	public void setTimer2(Timer timer2) 
+	{
+		this.timer2 = timer2;
+	}
+
+	public Timer getTimer3() 
+	{
+		return timer3;
+	}
+
+
+
+	public void setTimer3(Timer timer3) 
+	{
+		this.timer3 = timer3;
+	}
+	
+	public float getWastetime1() {
+		return wastetime1;
+	}
+
+	public void setWastetime1(float wastetime1) {
+		this.wastetime1 = wastetime1;
+	}
+
+	public float getWastetime2() {
+		return wastetime2;
+	}
+
+	public void setWastetime2(float wastetime2) {
+		this.wastetime2 = wastetime2;
+	}
+
+	public float getWastetime3() {
+		return wastetime3;
+	}
+
+	public void setWastetime3(float wastetime3) {
+		this.wastetime3 = wastetime3;
+	}
+
+	public Tiles getResetTile1() {
+		return resetTile1;
+	}
+
+	public void setResetTile1(Tiles resetTile1) {
+		this.resetTile1 = resetTile1;
+	}
+
+	public Tiles getResetTile2() {
+		return resetTile2;
+	}
+
+	public void setResetTile2(Tiles resetTile2) {
+		this.resetTile2 = resetTile2;
+	}
+
+	public float getWastetime4() {
+		return wastetime4;
+	}
+
+	public void setWastetime4(float wastetime4) {
+		this.wastetime4 = wastetime4;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	/////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////
+	/////// Start and Pause the Game
+	
+	public void pauseTheGame()
+	{
+		timer1.stop();
+		JOptionPane.showMessageDialog(null, "you have paused the game");
+		button4.setText("resume");
+		//try {
+			//TimeUnit.SECONDS.sleep(1);
+		//} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+	//		e.printStackTrace();
+		//}
+		
+	}
+
+	public void startTheGame() 
+	{
+		timer1.start();
+		button4.setText("Pause");
+		
+	}
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////
+	//////// ActionListener
+	
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
@@ -117,36 +267,26 @@ public class Board  extends JFrame implements ActionListener{
 		
 		if(timer2.isRunning())
 		{
-			wastetime1 = wastetime1 +0.2f;
-			if (wastetime1 >= 21.0f)
+			wastetime1= wastetime1 +0.2f;
+			if (wastetime1 >= 15.0f)
 			{
 				resetWalkable3();
 				timer2.stop();
+				wastetime1 =0f;
 			}
 		}
 		
 		if(timer3.isRunning())
 		{
-			wastetime2 = wastetime2 +0.2f;
-			if (wastetime2 >= 21.0f)
+			wastetime2= wastetime2 +0.2f;
+			if (wastetime2 >= 15.0f)
 			{
+				
 				resetWalkable4();
 				timer3.stop();
-				wastetime2 = 0;
+				wastetime2 =0f;
 			}
 		}
-		
-		if(timer4.isRunning())
-		{
-			wastetime3 = wastetime3 +0.2f;
-			if (wastetime3 >= 21.0f)
-			{
-				bombExplode.resetfire();
-				timer4.stop();
-				wastetime3 = 0;
-			}
-		}
-		
 		
 		
 		if (e.getSource() == button1)
@@ -184,112 +324,16 @@ public class Board  extends JFrame implements ActionListener{
 		}
 	}
 	
-
-	public Timer getTimer2() 
-	{
-		return timer2;
-	}
-
-
-
-	public void setTimer2(Timer timer2) 
-	{
-		this.timer2 = timer2;
-	}
-
-	public Timer getTimer3() 
-	{
-		return timer3;
-	}
-
-
-
-	public void setTimer3(Timer timer3) 
-	{
-		this.timer3 = timer3;
-	}
-
-	public void resetWalkable(Tiles k, int id)
 	
-	{
-		if (id == 1)
-		{
-			resetWalkable1(k);
-		}
-		else if (id == 2)
-		{
-			resetWalkable2(k);
-		}
-	}
-
-	public void resetWalkable1(Tiles k) 
-	{
-		timer2.start();
-		resetTile1 = k; 
-		wastetime1 = 0f;
-		
-	}
-	
-	public void resetWalkable2(Tiles k) 
-	{
-		timer3.start();
-		resetTile2 = k; 
-		wastetime2 = 0f;
-		
-	}
-	
-	private void resetWalkable3() 
-	{
-		resetTile1.makeWalkable();
-		resetTile1.removeAll();
-		bombExplode.BombExploded(resetTile1);
-		
-	}
-	
-	private void resetWalkable4() 
-	{
-		resetTile2.makeWalkable();
-		resetTile2.removeAll();
-		bombExplode.BombExploded(resetTile2);
-		
-	}
-
-
 
 	private void update() 
 	{	
-		
 		this.repaint();
 		this.setVisible(true);
 	}
-	
-	public void test()
-	{
-		int r = rand.nextInt(169);
-		Tiles k = tiles.get(r);
-		k.removeFloor();
-		this.setVisible(true);
-	}
-	
-	public void pauseTheGame()
-	{
-		timer1.stop();
-		JOptionPane.showMessageDialog(null, "you have paused the game");
-		button4.setText("resume");
-		//try {
-			//TimeUnit.SECONDS.sleep(1);
-		//} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-	//		e.printStackTrace();
-		//}
-		
-	}
 
-	public void startTheGame() 
-	{
-		timer1.start();
-		button4.setText("Pause");
-		
-	}
+	//////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////
+	
 
 }

@@ -10,7 +10,7 @@ import javax.swing.Timer;
 public class Player extends JLabel
 {
 	private Board board;
-	private int hp,xPos,yPos,speed,status,id;
+	private int hp,xPos,yPos,speed,status,id,damage;
 	private Bomb bomb;
 	private boolean isPlayerAlive;
 	private TreeMap<Integer,Tiles> tiles;
@@ -18,16 +18,16 @@ public class Player extends JLabel
 	private Timer timer1,timer2;
 	
 	public Player(TreeMap<Integer,Tiles> tiles,Board board,Timer timer1,Timer timer2,
-			int status ,int hp, int xPos, int yPos, Bomb bomb, int speed,int side)
+			int status ,int hp, int xPos, int yPos, int speed,int side)
 	
 	{
+		this.damage = 1;
 		this.timer1 = timer1;
 		this.timer2 = timer2;
 		this.status = status;
 		this.tiles = tiles;
 		this.board = board;
 		this.hp = hp;
-		this.bomb = bomb;
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.speed = speed;
@@ -114,6 +114,7 @@ public class Player extends JLabel
 				{
 					throwdown(k);
 				}
+				this.initBomb();
 			}
 			
 			
@@ -150,7 +151,7 @@ public class Player extends JLabel
 					id = 0;
 				}
 			}
-			
+			this.initBomb();
 		
 		}
 		
@@ -164,9 +165,11 @@ public class Player extends JLabel
 		if(a.isWalkable())
 		{
 			bomb.resetAnimation(bomb.getBombicon(status));
+			bomb.setxPos(a.getxPos());
+			bomb.setyPos(a.getyPos());
 			a.add(bomb);
 			a.notWalkable();
-			board.resetWalkable(a,id);
+			resetWalkable(a,id);
 			
 		}
 		else
@@ -174,9 +177,11 @@ public class Player extends JLabel
 			moveLeft();
 			this.setIcon(right);
 			bomb.resetAnimation(bomb.getBombicon(status));
+			bomb.setxPos(k.getxPos());
+			bomb.setyPos(k.getyPos());
 			k.add(bomb);
 			k.notWalkable();
-			board.resetWalkable(k,id);
+			resetWalkable(k,id);
 			
 		}
 		
@@ -189,18 +194,22 @@ public class Player extends JLabel
 		if(a.isWalkable())
 		{
 			bomb.resetAnimation(bomb.getBombicon(status));
+			bomb.setxPos(a.getxPos());
+			bomb.setyPos(a.getyPos());
 			a.add(bomb);
 			a.notWalkable();
-			board.resetWalkable(a,id);
+			resetWalkable(a,id);
 		}
 		else
 		{
 			moveRight();
 			this.setIcon(left);
 			bomb.resetAnimation(bomb.getBombicon(status));
+			bomb.setxPos(k.getxPos());
+			bomb.setyPos(k.getyPos());
 			k.add(bomb);
 			k.notWalkable();
-			board.resetWalkable(k,id);
+			resetWalkable(k,id);
 			
 		}
 	}
@@ -211,18 +220,22 @@ public class Player extends JLabel
 		if(a.isWalkable())
 		{
 			bomb.resetAnimation(bomb.getBombicon(status));
+			bomb.setxPos(a.getxPos());
+			bomb.setyPos(a.getyPos());
 			a.add(bomb);
 			a.notWalkable();
-			board.resetWalkable(a,id);
+			resetWalkable(a,id);
 		}
 		else
 		{
 			moveDown();
 			this.setIcon(up);
 			bomb.resetAnimation(bomb.getBombicon(status));
+			bomb.setxPos(k.getxPos());
+			bomb.setyPos(k.getyPos());
 			k.add(bomb);
 			k.notWalkable();
-			board.resetWalkable(k,id);
+			resetWalkable(k,id);
 		}
 	}
 	
@@ -232,18 +245,22 @@ public class Player extends JLabel
 		if(a.isWalkable())
 		{
 			bomb.resetAnimation(bomb.getBombicon(status));
+			bomb.setxPos(a.getxPos());
+			bomb.setyPos(a.getyPos());
 			a.add(bomb);
 			a.notWalkable();
-			board.resetWalkable(a,id);
+			resetWalkable(a,id);
 		}
 		else
 		{
 			moveUp();
 			this.setIcon(down);
 			bomb.resetAnimation(bomb.getBombicon(status));
+			bomb.setxPos(k.getxPos());
+			bomb.setyPos(k.getyPos());
 			k.add(bomb);
 			k.notWalkable();
-			board.resetWalkable(k,id);
+			resetWalkable(k,id);
 			
 		}
 	}
@@ -331,6 +348,8 @@ public class Player extends JLabel
 	
 	public void initBomb()
 	{
+		bomb = new Bomb(damage,status);
+		
 		bomb.setxPos(this.getxPos());
 		bomb.setyPos(this.getyPos());
 	}
@@ -353,7 +372,35 @@ public class Player extends JLabel
 		}
 		
 	}
+	
+public void resetWalkable(Tiles k, int id)
+	
+	{
+		if (id == 1)
+		{
+			resetWalkable1(k);
+		}
+		else if (id == 2)
+		{
+			resetWalkable2(k);
+		}
+	}
 
+	public void resetWalkable1(Tiles k) 
+	{
+		timer1.start();
+		board.setResetTile1(k); 
+		board.setWastetime1(0f);
+		
+	}
+	
+	public void resetWalkable2(Tiles k) 
+	{
+		timer2.start();
+		board.setResetTile2(k); 
+		board.setWastetime2(0f);
+		
+	}
 	
 	
 

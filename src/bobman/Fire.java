@@ -2,50 +2,81 @@ package bobman;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.Timer;
 
-public class Fire extends JLabel
+public class Fire extends JLabel implements ActionListener
 {
-
-	private int xPos,yPos,player;
+	private Timer fireTimer1,fireTimer2;
+	private int xPos,yPos,player,fireTime;
 	private ImageIcon fireIcon;
-	public Fire(int player)
+	private BombExplode bombExplode;
+	public Fire(int player,BombExplode bombExplode,int xPos, int yPos)
 	{
 		super(); 
-		//Toolkit t = Toolkit.getDefaultToolkit();
-		//fireIcon = t.getImage("src/sprite/exploding.gif");
-	//	this.xPos = xPos;
-	//	this.yPos = yPos;
+		this.xPos = xPos;
+		this.yPos = yPos;
+		this.bombExplode = bombExplode;
 		initFire(player);
 	}
 	public void initFire(int player) 
 	{
 		if(player == 1)
 		{
+			fireTimer1 = new Timer(500,this);
+			fireTimer1.start();
 			fireIcon = new ImageIcon("src/sprite/fire_.png");
-			resetAnimationfire();
 			this.setIcon(fireIcon);
 		}
 
 		if(player == 2)
 		{
-<<<<<<< HEAD
+			fireTimer2 = new Timer(1000,this);
+			fireTimer2.start();
 			fireIcon = new ImageIcon("src/sprite/fire_.png");
-=======
-			fireIcon = new ImageIcon("src/sprite/exploding2.gif");
->>>>>>> origin/master
-			resetAnimationfire();
+
 			this.setIcon(fireIcon);
 		}
 	}
-	
-	public void resetAnimationfire()
+	@Override
+	public void actionPerformed(ActionEvent e) 
 	{
-		fireIcon.getImage().flush();
+		bombExplode.resetfire(player,xPos, yPos,this);
+		
 	}
+	
+	public void turnOffTimer()
+	{
+		if (player == 1)
+		{
+			fireTimer1.stop();
+		}
+		
+		if (player == 2)
+		{
+			fireTimer2.stop();
+		}
+		
+	}
+	
+	public int getxPos() {
+		return xPos;
+	}
+	public void setxPos(int xPos) {
+		this.xPos = xPos;
+	}
+	public int getyPos() {
+		return yPos;
+	}
+	public void setyPos(int yPos) {
+		this.yPos = yPos;
+	}
+	
 	
 	
 	
