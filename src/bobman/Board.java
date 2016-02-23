@@ -66,34 +66,37 @@ public class Board  extends JFrame implements ActionListener{
 		this.setVisible(true);
 		timer1.start();
 		setLocationRelativeTo(null);
-		//setResizable(false);
-		
-		
+		setResizable(false);
 		
 	}
 	
-
-
 	public void initStartmenu() 
 	{
 		startMenu = new JPanel();
+		startMenu.setBackground(Color.black);
 		button1 = new JButton("New Game");
 		button1.addActionListener(this);
 		startMenu.add(button1);
+		button1.setBackground(Color.white);	
 		button2 = new JButton("Restart");
 		button2.addActionListener(this);
 		startMenu.add(button2);
+		button2.setBackground(Color.white);
 		button3 = new JButton("Quit");
 		button3.addActionListener(this);
 		startMenu.add(button3);
+		button3.setBackground(Color.white);
 		button4 = new JButton("Pause");
 		button4.addActionListener(this);
 		startMenu.add(button4);
+		button4.setBackground(Color.white);
+		
 		
 	}
 	
 	public void initBoard() throws IOException 
-	{
+	{	
+		setTitle("Bobman");
 		gameBoard = new JPanel();
 		gameBoard.setLayout(new GridLayout(13,13));
 		Tiles k;
@@ -103,6 +106,7 @@ public class Board  extends JFrame implements ActionListener{
 			tiles.put(i, k);
 		}
 		levels.initBaseLevel();
+		
 	}
 
 
@@ -161,7 +165,6 @@ public class Board  extends JFrame implements ActionListener{
 			try {
 				gameMenu.restart();
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			
