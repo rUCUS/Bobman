@@ -25,14 +25,14 @@ public class Fire extends JLabel
 	{
 		if(player == 1)
 		{
-			fireIcon = new ImageIcon("src/sprite/exploding.gif");
+			fireIcon = new ImageIcon("src/sprite/fire_.png");
 			resetAnimationfire();
 			this.setIcon(fireIcon);
 		}
 
 		if(player == 2)
 		{
-			fireIcon = new ImageIcon("src/sprite/exploding.gif");
+			fireIcon = new ImageIcon("src/sprite/fire_.png");
 			resetAnimationfire();
 			this.setIcon(fireIcon);
 		}
