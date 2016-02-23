@@ -69,7 +69,7 @@ public class Levels
 	public void chooseLevel() throws IOException 
 	{
 		String[] options = new String[] {"Level one", "Level two", "Level three", "Quit"};
-		currentLevel =  JOptionPane.showOptionDialog(null, "To start the game", "choose level",
+		currentLevel =  JOptionPane.showOptionDialog(board, "To start the game", "Please Choose level!",
 		        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
 		        null, options, options[0]);
 		sameLevel();

@@ -22,6 +22,7 @@ public class GameMenu
 		levels.sameLevel();
 		board.startTheGame();
 		status = false;
+		
 	}
 	
 	public void restart() throws IOException

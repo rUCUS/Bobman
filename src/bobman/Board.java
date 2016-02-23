@@ -65,7 +65,8 @@ public class Board  extends JFrame implements ActionListener{
 		this.pack();
 		this.setVisible(true);
 		timer1.start();
-		
+		setLocationRelativeTo(null);
+		//setResizable(false);
 		
 		
 		
@@ -88,6 +89,7 @@ public class Board  extends JFrame implements ActionListener{
 		button4 = new JButton("Pause");
 		button4.addActionListener(this);
 		startMenu.add(button4);
+		
 	}
 	
 	public void initBoard() throws IOException 
@@ -102,7 +104,7 @@ public class Board  extends JFrame implements ActionListener{
 		}
 		levels.initBaseLevel();
 	}
-	
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) 
