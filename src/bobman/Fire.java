@@ -36,7 +36,7 @@ public class Fire extends JLabel implements ActionListener
 
 		if(player == 2)
 		{
-			fireTimer2 = new Timer(1000,this);
+			fireTimer2 = new Timer(500,this);
 			fireTimer2.start();
 			fireIcon = new ImageIcon("src/sprite/fire_.png");
 
