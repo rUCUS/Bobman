@@ -10,12 +10,13 @@ import javax.swing.Timer;
 public class BombExplode
 {
 	private TreeMap<Integer,Tiles> tiles,explodeRatio;
-	private Tiles bombScanner;
+	private Tiles bombScanner,bombScanner1;
 	private Board board;
 	private Bomb bomb;
-	private Fire fire,fire1,fire2;
+	private Fire fire,fire1;
 	private Timer timer1,timer2;
 	private boolean up,down,left,right;
+	private boolean right1,up1,left1,down1;
 	public BombExplode(TreeMap<Integer, Tiles> tiles, Board board) 
 	{
 		super();
@@ -27,13 +28,136 @@ public class BombExplode
 	
 	public void BombExploded(Tiles k,int status)
 	{
-		bombScanner = k;
+		
 		up=down=left=right=false;
-		fireCenter();
-		fireUp();
-		fireDown();
-		fireRight();
-		fireLeft();
+		up1=down1=left1=right1=false;
+		if(status ==1)
+		{
+			bombScanner = k;
+			fireCenter();
+			fireUp();
+			fireDown();
+			fireRight();
+			fireLeft();
+		}
+		if(status ==2)
+		{
+			bombScanner1 = k;
+			fireCenter1();
+			fireUp1();
+			fireDown1();
+			fireRight1();
+			fireUp1();
+			fireLeft1();
+		}
+		
+	}
+
+	public void fireLeft1() 
+	{
+		Tiles a = tiles.get(bombScanner1.getOrder()-1);
+		
+		if(a.isDestroyable())
+		{
+			if(a.isWalkable())
+			{
+				left1 = true;
+				fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
+				a.add(fire1);
+				
+			
+			}
+			else if (!a.isWalkable())
+			{
+				left1 = false;
+				a.removeAll();
+				a.makeWalkable();
+				a.setBackground(Color.white);
+			}
+		}
+			
+	}
+
+	public void fireRight1() 
+	{
+		Tiles a = tiles.get(bombScanner1.getOrder()+1);
+		
+		if(a.isDestroyable())
+		{
+			if(a.isWalkable())
+			{
+				right1 = true;
+				fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
+				a.add(fire1);
+				
+			
+			}
+			else if (!a.isWalkable())
+			{
+				right1 = false;
+				a.removeAll();
+				a.makeWalkable();
+				a.setBackground(Color.white);
+			}
+		}
+		
+	}
+
+	public void fireDown1() 
+	{
+		Tiles a = tiles.get(bombScanner1.getOrder()+13);
+		
+		if(a.isDestroyable())
+		{
+			if(a.isWalkable())
+			{
+				down1 = true;
+				fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
+				a.add(fire1);
+				
+			
+			}
+			else if (!a.isWalkable())
+			{
+				down1 = false;
+				a.removeAll();
+				a.makeWalkable();
+				a.setBackground(Color.white);
+			}
+		}
+		
+	}
+
+	public void fireUp1() 
+	{
+		Tiles a = tiles.get(bombScanner1.getOrder()-13);
+		
+		
+		
+		if(a.isDestroyable())
+		{
+			if(a.isWalkable())
+			{
+				up1 = true;
+				fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
+				a.add(fire1);
+				
+			
+			}
+			else if (!a.isWalkable())
+			{
+				up1 = false;
+				a.removeAll();
+				a.makeWalkable();
+				a.setBackground(Color.white);
+			}
+		}		
+	}
+
+	public void fireCenter1() 
+	{
+		fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
+		bombScanner1.add(fire1);
 		
 	}
 
@@ -145,9 +269,13 @@ public class BombExplode
 			}
 	}
 
-	public void resetfire(int player,int xPos,int yPos,Fire fire)
+	public void resetfire(int xPos,int yPos,Fire fire)
 	{
-			
+		System.out.println(fire.getPlayer());
+
+		if (fire.getPlayer() == 1)
+		{
+			System.out.println("working1");
 			Tiles a;
 			bombScanner = tiles.get(xPos + yPos*13);
 			bombScanner.removeAll();
@@ -183,7 +311,48 @@ public class BombExplode
 				
 			}
 			fire.turnOffTimer();
+		}
 			
+		if (fire.getPlayer() == 2)
+		{
+			System.out.println("working");
+
+			Tiles a;
+			bombScanner1 = tiles.get(xPos + yPos*13);
+			bombScanner1.removeAll();
+			
+			
+			
+			if(right1)
+			{
+				a = tiles.get(xPos + yPos*13 +1);
+				a.removeAll();
+				right = false;
+			}
+			
+			if(left1)
+			{
+				a = tiles.get(xPos + yPos*13 -1);
+				a.removeAll();
+				left = false;
+			}
+			
+			if(up1)
+			{
+				a = tiles.get(xPos + yPos*13 -13);
+				a.removeAll();
+				up = false;
+			}
+			
+			if(down1)
+			{
+				a = tiles.get(xPos + yPos*13 +13);
+				a.removeAll();
+				down = false;
+				
+			}
+			fire.turnOffTimer1();
+		}
 			
 		}
 

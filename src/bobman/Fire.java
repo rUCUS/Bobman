@@ -14,11 +14,12 @@ public class Fire extends JLabel implements ActionListener
 {
 	private Timer fireTimer1,fireTimer2;
 	private int xPos,yPos,player,fireTime;
-	private ImageIcon fireIcon;
+	private ImageIcon fireIcon,fireIcon2;
 	private BombExplode bombExplode;
 	public Fire(int player,BombExplode bombExplode,int xPos, int yPos)
 	{
 		super(); 
+		this.player = player;
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.bombExplode = bombExplode;
@@ -26,44 +27,48 @@ public class Fire extends JLabel implements ActionListener
 	}
 	public void initFire(int player) 
 	{
-		if(player == 1)
+		if (player ==1)
 		{
-			fireTimer1 = new Timer(500,this);
+
+			fireTimer1= new Timer(500,this);
 			fireTimer1.start();
 			fireIcon = new ImageIcon("src/sprite/fire_.png");
 			this.setIcon(fireIcon);
 		}
-
-		if(player == 2)
+		
+		if (player ==2)
 		{
-			fireTimer2 = new Timer(500,this);
+			fireTimer2= new Timer(500,this);
 			fireTimer2.start();
-			fireIcon = new ImageIcon("src/sprite/fire_.png");
-
-			this.setIcon(fireIcon);
+			fireIcon2 = new ImageIcon("src/sprite/fire_.png");
+			this.setIcon(fireIcon2);
 		}
+			
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
-		bombExplode.resetfire(player,xPos, yPos,this);
+
+		bombExplode.resetfire(xPos, yPos,this);
 		
 	}
 	
 	public void turnOffTimer()
 	{
-		if (player == 1)
-		{
-			fireTimer1.stop();
-		}
-		
-		if (player == 2)
-		{
-			fireTimer2.stop();
-		}
-		
+		fireTimer1.stop();
 	}
 	
+	public void turnOffTimer1()
+	{
+		fireTimer2.stop();
+	}
+	
+	public int getPlayer() {
+		return player;
+	}
+	public void setPlayer(int player) {
+		this.player = player;
+	}
 	public int getxPos() {
 		return xPos;
 	}

@@ -19,6 +19,7 @@ public class GameMenu
 	{
 		levels.chooseLevel();
 		levels.initBaseLevel();
+		levels.removeListener();
 		levels.sameLevel();
 		board.startTheGame();
 		status = false;
@@ -29,6 +30,7 @@ public class GameMenu
 	{
 		
 		levels.initBaseLevel();
+		levels.removeListener();
 		levels.sameLevel();
 		board.startTheGame();
 		status = false;	}

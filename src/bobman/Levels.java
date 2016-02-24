@@ -174,4 +174,8 @@ public class Levels
 		this.currentLevel = currentLevel;
 	}
 
+	public void removeListener()
+	{
+		board.removeKeyListener(Ui);
+	}
 }
