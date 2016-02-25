@@ -18,8 +18,25 @@ public class Levels
 	private TreeMap<Integer,Tiles> tiles;
 	private static final Set<Integer> playerSpace = new HashSet<Integer>(Arrays.asList(14,15,16,27,40,128,141,152,153,154));
 	private int currentLevel;
-	Random rand = new Random();	
+	Random rand = new Random();
+	private Collision collision;	
 	
+	public Player getPlayer1() {
+		return player1;
+	}
+
+	public void setPlayer1(Player player1) {
+		this.player1 = player1;
+	}
+
+	public Player getPlayer2() {
+		return player2;
+	}
+
+	public void setPlayer2(Player player2) {
+		this.player2 = player2;
+	}
+
 	public Levels(Board board, TreeMap<Integer,Tiles> tiles)
 	{
 		this.board = board;
@@ -136,11 +153,19 @@ public class Levels
 		p.add(player1);
 		p = tiles.get(154);
 		p.add(player2);
-		
+		collision = new Collision(this);
 		board.repaint();
 		board.setVisible(true);
 	}
 	
+	public Collision getCollision() {
+		return collision;
+	}
+
+	public void setCollision(Collision collision) {
+		this.collision = collision;
+	}
+
 	public void levelTwo()
 	{
 		System.out.println("level2");
@@ -163,7 +188,7 @@ public class Levels
 		p.add(player1);
 		p = tiles.get(154);
 		p.add(player2);
-		
+		collision = new Collision(this);
 		board.repaint();
 		board.setVisible(true);
 		/*

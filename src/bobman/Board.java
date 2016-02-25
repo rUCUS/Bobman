@@ -42,7 +42,16 @@ public class Board  extends JFrame implements ActionListener{
 	private float wastetime1,wastetime2,wastetime3;
 	private Tiles resetTile1,resetTile2;
 	private BombExplode bombExplode;
+<<<<<<< Updated upstream
 	private float wastetime4;
+=======
+	
+
+	
+
+
+
+>>>>>>> Stashed changes
 	Random rand = new Random();
 	
 	private ClockD clock;
@@ -66,7 +75,13 @@ public class Board  extends JFrame implements ActionListener{
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
 		bombExplode = new BombExplode(tiles,this);
+<<<<<<< Updated upstream
 		clock = new ClockD();
+=======
+		
+		
+		
+>>>>>>> Stashed changes
 		initStartmenu();
 		initBoard();
 		
@@ -274,6 +289,7 @@ public class Board  extends JFrame implements ActionListener{
 		this.wastetime4 = wastetime4;
 	}
 	
+<<<<<<< Updated upstream
 	public JLabel getPlayer1() 
 	{
 		return player1;
@@ -291,6 +307,16 @@ public class Board  extends JFrame implements ActionListener{
 		this.player2 = player2;
 	}
 	
+=======
+	public Levels getLevels() {
+		return levels;
+	}
+
+	public void setLevels(Levels levels) {
+		this.levels = levels;
+	}
+
+>>>>>>> Stashed changes
 
 	////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////
@@ -302,7 +328,10 @@ public class Board  extends JFrame implements ActionListener{
 	/////// Start and Pause the Game
 	
 	
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 	public void pauseTheGame()
 	{
 		timer1.stop();

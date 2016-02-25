@@ -13,9 +13,10 @@ import javax.swing.Timer;
 public class Fire extends JLabel implements ActionListener
 {
 	private Timer fireTimer1,fireTimer2;
-	private int xPos,yPos,player,fireTime;
+	private int xPos,yPos,player,fireTime1,fireTime2;
 	private ImageIcon fireIcon,fireIcon2;
 	private BombExplode bombExplode;
+
 	public Fire(int player,BombExplode bombExplode,int xPos, int yPos)
 	{
 		super(); 
@@ -34,6 +35,9 @@ public class Fire extends JLabel implements ActionListener
 			fireTimer1.start();
 			fireIcon = new ImageIcon("src/sprite/fire_.png");
 			this.setIcon(fireIcon);
+			
+			
+			
 		}
 		
 		if (player ==2)
@@ -48,8 +52,16 @@ public class Fire extends JLabel implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
+		if(fireTimer1 != null && fireTimer1.isRunning())
+		{
+			bombExplode.resetfire(xPos, yPos,this);
+		}
+		if(fireTimer2 != null && fireTimer2.isRunning())
+		{
+			bombExplode.resetfire(xPos, yPos,this);
+		}
 
-		bombExplode.resetfire(xPos, yPos,this);
+		
 		
 	}
 	
