@@ -78,6 +78,7 @@ public class Levels
 	
 	public void sameLevel() throws IOException
 	{
+		resetHp();
 		switch(currentLevel)
 		{
 		case 0: levelOne();
@@ -95,12 +96,14 @@ public class Levels
 
 	public void levelOne() throws IOException
 	{
-		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,1, 1, 1,  1, 0);
-		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,1, 11, 11, 1, 1);
+		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,3, 1, 1,  1, 0);
+		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,3, 11, 11, 1, 1);
 		this.Ui = new UserInterface(player1,player2);
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
 		this.board.requestFocus();
+		this.board.getPlayer1().setText(this.board.getPlayer1().getText() + player1.getHp());
+		this.board.getPlayer2().setText(this.board.getPlayer2().getText() + player2.getHp());
 		Set<Integer> used = new HashSet<Integer>();
 		int randomnumber;
 		int enoughDWalls = 0;
@@ -147,12 +150,14 @@ public class Levels
 	public void levelThree()
 	{
 		Tiles p;
-		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,1, 1, 1,1, 0);
-		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,1, 11, 11, 1, 1);
+		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,3, 1, 1,  1, 0);
+		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,3, 11, 11, 1, 1);;
 		this.Ui = new UserInterface(player1,player2);
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
 		this.board.requestFocus();
+		this.board.getPlayer1().setText(this.board.getPlayer1().getText() + player1.getHp());
+		this.board.getPlayer2().setText(this.board.getPlayer2().getText() + player2.getHp());
 		
 		p = tiles.get(14);
 		p.add(player1);
@@ -177,5 +182,11 @@ public class Levels
 	public void removeListener()
 	{
 		board.removeKeyListener(Ui);
+	}
+	
+	public void resetHp ()
+	{
+		this.board.getPlayer1().setText("P1 life: ");
+		this.board.getPlayer2().setText("P2 life: ");
 	}
 }

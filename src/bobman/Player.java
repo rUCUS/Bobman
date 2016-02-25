@@ -63,6 +63,7 @@ public class Player extends JLabel
 
 	public int getHp() {
 		return hp;
+
 	}
 
 	public void setHp(int hp) {

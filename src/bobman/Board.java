@@ -15,6 +15,7 @@ import javafx.scene.shape.Circle;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 import javax.swing.JPanel;
@@ -29,12 +30,12 @@ import javax.swing.border.*;
 public class Board  extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = -2926933215387776929L;
-	private Player player;
 	private GameMenu gameMenu;
 	private Graphics g;
 	private JPanel startMenu,gameBoard;
 	private JSplitPane split;
 	private JButton button1,button2,button3,button4;
+	private JLabel player1, player2;
 	private TreeMap<Integer,Tiles> tiles;
 	private Levels levels;
 	private Timer timer1,timer2,timer3,timer4,timer5;
@@ -86,8 +87,15 @@ public class Board  extends JFrame implements ActionListener{
 	
 	public void initStartmenu() 
 	{
+		
 		startMenu = new JPanel();
 		startMenu.setBackground(Color.black);
+		player1 = new JLabel("P1 life: ",JLabel.LEFT);
+		player1.setForeground(Color.white);
+		startMenu.add(player1);
+		player2 = new JLabel("P2 life: ",JLabel.RIGHT);
+		player2.setForeground(Color.white);
+		startMenu.add(player2);
 		button1 = new JButton("New Game");
 		button1.addActionListener(this);
 		startMenu.add(button1);
@@ -265,6 +273,24 @@ public class Board  extends JFrame implements ActionListener{
 	public void setWastetime4(float wastetime4) {
 		this.wastetime4 = wastetime4;
 	}
+	
+	public JLabel getPlayer1() 
+	{
+		return player1;
+	}
+
+	public void setPlayer1(JLabel player1) {
+		this.player1 = player1;
+	}
+
+	public JLabel getPlayer2() {
+		return player2;
+	}
+
+	public void setPlayer2(JLabel player2) {
+		this.player2 = player2;
+	}
+	
 
 	////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////
@@ -275,6 +301,8 @@ public class Board  extends JFrame implements ActionListener{
 	/////////////////////////////////////////////////////////////////////////////////////////
 	/////// Start and Pause the Game
 	
+	
+
 	public void pauseTheGame()
 	{
 		timer1.stop();
