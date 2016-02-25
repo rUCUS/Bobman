@@ -11,9 +11,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
-
 import javafx.scene.shape.Circle;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,6 +19,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
 
 
 @SuppressWarnings("unused")
@@ -39,10 +41,17 @@ public class Board  extends JFrame implements ActionListener{
 	private float wastetime1,wastetime2,wastetime3;
 	private Tiles resetTile1,resetTile2;
 	private BombExplode bombExplode;
-	
-
+	private float wastetime4;
 	Random rand = new Random();
-	private float wastetime4;	
+	
+	private ClockD clock;
+    private boolean clockRunning = false;
+    private TimerThread timerThread;
+    private JButton buttonTimer;
+	
+	
+	
+	
 	public Board() throws IOException
 	{ 	
 		super();
@@ -56,8 +65,7 @@ public class Board  extends JFrame implements ActionListener{
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
 		bombExplode = new BombExplode(tiles,this);
-		
-		
+		clock = new ClockD();
 		initStartmenu();
 		initBoard();
 		
@@ -96,8 +104,9 @@ public class Board  extends JFrame implements ActionListener{
 		button4.addActionListener(this);
 		startMenu.add(button4);
 		button4.setBackground(Color.white);
-		
-		
+		buttonTimer = new JButton("00:00");
+		startMenu.add(buttonTimer);
+		buttonTimer.setBackground(Color.lightGray);
 	}
 	
 	public void initBoard() throws IOException 
@@ -123,9 +132,43 @@ public class Board  extends JFrame implements ActionListener{
 	///////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////
 	//////// Avsluta bomb samt elden
+	public void clockStarter() {
+		startClock();
+	}
 	
+	public void clockStop() {
+		stopClock();
+	}
 	
+	public void resetClock(){
+		stopClock();
+		clock.reset();
+		buttonTimer.setText("00:00");
+	}
 	
+	//klockmetoder
+	 private void startClock()
+	    {
+	        clockRunning = true;
+	        timerThread = new TimerThread();
+	        timerThread.start();
+	    }
+	 
+	 
+	 private void stopClock()
+	    {
+	        clockRunning = false;
+	    }
+	 
+	 
+	 private void stepClock()
+	    {
+	        clock.timeTick();
+	        buttonTimer.setText(clock.getTime());
+	    }
+	////slut på klockmetoder
+	 
+	 
 	private void resetWalkable3() 
 	{
 		resetTile1.makeWalkable();
@@ -331,6 +374,26 @@ public class Board  extends JFrame implements ActionListener{
 		this.repaint();
 		this.setVisible(true);
 	}
+	
+	class TimerThread extends Thread
+    {
+        public void run()
+        {
+            while (clockRunning) {
+                stepClock();
+                pauseClock();
+            }
+        }
+        
+        private void pauseClock()
+        {
+            try {
+                Thread.sleep(1000);   // pause for 300 milliseconds
+            }
+            catch (InterruptedException exc) {
+            }
+        }
+    }
 
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////
