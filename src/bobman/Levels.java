@@ -53,6 +53,7 @@ public class Levels
 			l.setBackground(Color.white);
 			l.removeAll();
 			l.makeWalkable();
+			l.setHasPlayer(false);
 		}
 		
 		for( int i=0; i<169; i++)
@@ -175,9 +176,14 @@ public class Levels
 	public void levelThree()
 	{
 		Tiles p;
-		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,3, 1, 1,  1, 0);
-		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,3, 11, 11, 1, 1);;
-		this.Ui = new UserInterface(player1,player2);
+		if (player1 == null)
+		{
+			player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,3, 1, 1,  1, 0);
+			player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,3, 11, 11, 1, 1);;
+			this.Ui = new UserInterface(player1,player2);
+		}
+		
+		
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
 		this.board.requestFocus();
@@ -188,7 +194,11 @@ public class Levels
 		p.add(player1);
 		p = tiles.get(154);
 		p.add(player2);
-		collision = new Collision(this);
+		if (collision == null)
+		{
+			collision = new Collision(this);
+		}
+		
 		board.repaint();
 		board.setVisible(true);
 		/*

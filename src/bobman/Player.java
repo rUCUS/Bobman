@@ -551,60 +551,37 @@ public class Player extends JLabel
 		return upDown;
 	}
 
-	public void setUpDown(ImageIcon upDown) 
-	{
-		this.upDown = upDown;
-	}
-
 	public ImageIcon getUpLeft()
 	{
 		return upLeft;
 	}
 
-	public void setUpLeft(ImageIcon upLeft) 
-	{
-		this.upLeft = upLeft;
-	}
 
 	public ImageIcon getUpRight() 
 	{
 		return upRight;
 	}
 
-	public void setUpRight(ImageIcon upRight) 
-	{
-		this.upRight = upRight;
-	}
 
 	public ImageIcon getDownLeft() {
 		return downLeft;
 	}
 
-	public void setDownLeft(ImageIcon downLeft) 
-	{
-		this.downLeft = downLeft;
-	}
+	
 
 	public ImageIcon getDownRight() 
 	{
 		return downRight;
 	}
 
-	public void setDownRight(ImageIcon downRight) 
-	{
-		this.downRight = downRight;
-	}
+	
 
 	public ImageIcon getLeftRight() 
 	{
 		return leftRight;
 	}
 
-	public void setLeftRight(ImageIcon leftRight) 
-	{
-		this.leftRight = leftRight;
-	}
-
+	
 	public TreeMap<Integer, Tiles> getTiles() {
 		return tiles;
 	}

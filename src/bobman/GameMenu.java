@@ -58,6 +58,8 @@ public class GameMenu
 			board.startTheGame();
 			status = false;
 			board.getClock().clockStarter();
+			this.board.setFocusable(true);
+			this.board.requestFocus();
 		}
 	}
 	

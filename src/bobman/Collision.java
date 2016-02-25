@@ -71,36 +71,190 @@ public class Collision
 	
 	public void firstPlayerLooksRight(Player collider,Player collided,int side)
 	{
-		Tiles a;
+		Tiles a = collider.getTiles().get(collider.getxPos() + collider.getyPos()*13);
 		Tiles k = collider.getTiles().get(collided.getxPos() + collided.getyPos()*13);
 		switch(side)
 		{
-		case 0: System.out.println("hey bae");
 		
-		case 1: collider.setxPos(collided.getxPos());
-				a = collider.getTiles().get(k.getOrder());
+		case 0: collider.setxPos(collided.getxPos());
 				a.removeAll();
 				a.setHasPlayer(false);
 				k.add(collider);
 				collider.setIcon(collider.getLeftRight());
+				collided.setIcon(collider.getLeftRight());
 				k.setHasPlayer(true);
+				break;
+		
+		case 1: collider.setxPos(collided.getxPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getLeftRight());
+				collided.setIcon(collider.getLeftRight());
+				k.setHasPlayer(true);
+				break;
+				
+		case 2: collider.setyPos(collided.getyPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getUpRight());
+				collided.setIcon(collider.getUpRight());
+				k.setHasPlayer(true);
+				break;
+		
+		case 3: collider.setyPos(collided.getyPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getDownRight());
+				collided.setIcon(collider.getDownRight());
+				k.setHasPlayer(true);
+				break;
+		
 		}
 		
 	}
 	
-	public void firstPlayerLooksUp(Player collider,Player Collided,int side)
+	public void firstPlayerLooksUp(Player collider,Player collided,int side)
 	{
-		System.out.println("works");
+		Tiles a = collider.getTiles().get(collider.getxPos() + collider.getyPos()*13);
+		Tiles k = collider.getTiles().get(collided.getxPos() + collided.getyPos()*13);
+		switch(side)
+		{
+		
+		case 0: collider.setxPos(collided.getxPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getUpRight());
+				collided.setIcon(collider.getUpRight());
+				k.setHasPlayer(true);
+				break;
+		
+		case 1: collider.setxPos(collided.getxPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getUpLeft());
+				collided.setIcon(collider.getUpLeft());
+				k.setHasPlayer(true);
+				break;
+				
+		case 2: collider.setyPos(collided.getyPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getUp());
+				collided.setIcon(collider.getUp());
+				k.setHasPlayer(true);
+				break;
+		
+		case 3: collider.setyPos(collided.getyPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getUpDown());
+				collided.setIcon(collider.getUpDown());
+				k.setHasPlayer(true);
+				break;
+		
+		}
+		
 	}
 	
-	public void firstPlayerLooksDown(Player collider,Player Collided,int side)
+	public void firstPlayerLooksDown(Player collider,Player collided,int side)
 	{
-		System.out.println("works");
+		Tiles a = collider.getTiles().get(collider.getxPos() + collider.getyPos()*13);
+		Tiles k = collider.getTiles().get(collided.getxPos() + collided.getyPos()*13);
+		switch(side)
+		{
+		
+		case 0: collider.setxPos(collided.getxPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getDownLeft());
+				collided.setIcon(collider.getDownLeft());
+				k.setHasPlayer(true);
+				break;
+		
+		case 1: collider.setxPos(collided.getxPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getDownRight());
+				collided.setIcon(collider.getDownRight());
+				k.setHasPlayer(true);
+				break;
+				
+		case 2: collider.setyPos(collided.getyPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getUpDown());
+				collided.setIcon(collider.getUpDown());
+				k.setHasPlayer(true);
+				break;
+		
+		case 3: collider.setyPos(collided.getyPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getDown());
+				collided.setIcon(collider.getDown());
+				k.setHasPlayer(true);
+				break;
+		
+		}
+		
 	}
 	
-	public void firstPlayerLooksLeft(Player collider,Player Collided,int side)
+	public void firstPlayerLooksLeft(Player collider,Player collided,int side)
 	{
-		System.out.println("works");
+		Tiles a = collider.getTiles().get(collider.getxPos() + collider.getyPos()*13);
+		Tiles k = collider.getTiles().get(collided.getxPos() + collided.getyPos()*13);
+		switch(side)
+		{
+		
+		case 0: collider.setxPos(collided.getxPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getLeft());
+				collided.setIcon(collider.getLeft());
+				k.setHasPlayer(true);
+				break;
+		
+		case 1: collider.setxPos(collided.getxPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getLeftRight());
+				collided.setIcon(collider.getLeftRight());
+				k.setHasPlayer(true);
+				break;
+				
+		case 2: collider.setyPos(collided.getyPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getUpLeft());
+				collided.setIcon(collider.getUpLeft());
+				k.setHasPlayer(true);
+				break;
+		
+		case 3: collider.setyPos(collided.getyPos());
+				a.removeAll();
+				a.setHasPlayer(false);
+				k.add(collider);
+				collider.setIcon(collider.getDownLeft());
+				collided.setIcon(collider.getDownLeft());
+				k.setHasPlayer(true);
+				break;
+		
+		}
+		
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////////////////

@@ -80,6 +80,7 @@ public class ClockD {
 		        timerThread = new TimerThread(this);
 		        timerThread.start();
 		        }
+		        
 		    }
 		 
 		 
