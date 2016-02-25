@@ -103,18 +103,15 @@ public class Player extends JLabel
 		}
 	}
 
-<<<<<<< Updated upstream
-	public int getHp() {
-		return hp;
 
-=======
+
 	public void resetWalkable1(Tiles k) 
 	{
 		timer1.start();
 		board.setResetTile1(k); 
 		board.setWastetime1(0f);
 		
->>>>>>> Stashed changes
+
 	}
 	
 	public void resetWalkable2(Tiles k) 

@@ -34,7 +34,7 @@ public class Board  extends JFrame implements ActionListener{
 	private Graphics g;
 	private JPanel startMenu,gameBoard;
 	private JSplitPane split;
-	private JButton button1,button2,button3,button4;
+	private JButton button1,button2,button3,button4,buttonTimer;
 	private JLabel player1, player2;
 	private TreeMap<Integer,Tiles> tiles;
 	private Levels levels;
@@ -42,24 +42,9 @@ public class Board  extends JFrame implements ActionListener{
 	private float wastetime1,wastetime2,wastetime3;
 	private Tiles resetTile1,resetTile2;
 	private BombExplode bombExplode;
-<<<<<<< Updated upstream
 	private float wastetime4;
-=======
-	
-
-	
-
-
-
->>>>>>> Stashed changes
-	Random rand = new Random();
-	
 	private ClockD clock;
-    private boolean clockRunning = false;
-    private TimerThread timerThread;
-    private JButton buttonTimer;
-	
-	
+    
 	
 	
 	public Board() throws IOException
@@ -75,13 +60,8 @@ public class Board  extends JFrame implements ActionListener{
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
 		bombExplode = new BombExplode(tiles,this);
-<<<<<<< Updated upstream
-		clock = new ClockD();
-=======
-		
-		
-		
->>>>>>> Stashed changes
+		clock = new ClockD(this);
+
 		initStartmenu();
 		initBoard();
 		
@@ -155,41 +135,8 @@ public class Board  extends JFrame implements ActionListener{
 	///////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////
 	//////// Avsluta bomb samt elden
-	public void clockStarter() {
-		startClock();
-	}
 	
-	public void clockStop() {
-		stopClock();
-	}
-	
-	public void resetClock(){
-		stopClock();
-		clock.reset();
-		buttonTimer.setText("00:00");
-	}
-	
-	//klockmetoder
-	 private void startClock()
-	    {
-	        clockRunning = true;
-	        timerThread = new TimerThread();
-	        timerThread.start();
-	    }
-	 
-	 
-	 private void stopClock()
-	    {
-	        clockRunning = false;
-	    }
-	 
-	 
-	 private void stepClock()
-	    {
-	        clock.timeTick();
-	        buttonTimer.setText(clock.getTime());
-	    }
-	////slut på klockmetoder
+	////slut pï¿½ klockmetoder
 	 
 	 
 	private void resetWalkable3() 
@@ -289,7 +236,6 @@ public class Board  extends JFrame implements ActionListener{
 		this.wastetime4 = wastetime4;
 	}
 	
-<<<<<<< Updated upstream
 	public JLabel getPlayer1() 
 	{
 		return player1;
@@ -307,7 +253,7 @@ public class Board  extends JFrame implements ActionListener{
 		this.player2 = player2;
 	}
 	
-=======
+
 	public Levels getLevels() {
 		return levels;
 	}
@@ -315,8 +261,22 @@ public class Board  extends JFrame implements ActionListener{
 	public void setLevels(Levels levels) {
 		this.levels = levels;
 	}
+	
+	public JButton getButtonTimer() {
+		return buttonTimer;
+	}
 
->>>>>>> Stashed changes
+	public void setButtonTimer(JButton buttonTimer) {
+		this.buttonTimer = buttonTimer;
+	}
+	
+	public ClockD getClock() {
+		return clock;
+	}
+
+	public void setClock(ClockD clock) {
+		this.clock = clock;
+	}
 
 	////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////
@@ -328,10 +288,9 @@ public class Board  extends JFrame implements ActionListener{
 	/////// Start and Pause the Game
 	
 	
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
+	
+
 	public void pauseTheGame()
 	{
 		timer1.stop();
@@ -351,7 +310,7 @@ public class Board  extends JFrame implements ActionListener{
 		timer1.start();
 		button4.setText("Pause");
 		
-	}
+	}	
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -432,26 +391,8 @@ public class Board  extends JFrame implements ActionListener{
 		this.setVisible(true);
 	}
 	
-	class TimerThread extends Thread
-    {
-        public void run()
-        {
-            while (clockRunning) {
-                stepClock();
-                pauseClock();
-            }
-        }
-        
-        private void pauseClock()
-        {
-            try {
-                Thread.sleep(1000);   // pause for 300 milliseconds
-            }
-            catch (InterruptedException exc) {
-            }
-        }
-    }
-
+	
+	
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////
 	

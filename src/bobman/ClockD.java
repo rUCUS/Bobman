@@ -1,7 +1,11 @@
 package bobman;
 
-public class ClockD {
 
+public class ClockD {
+		
+		private Board board;
+		private TimerThread timerThread;
+		private boolean clockRunning;
 	    private NumD minutes;
 	    private NumD seconds;
 	    private String displayString;    // simulates the actual display
@@ -10,8 +14,10 @@ public class ClockD {
 	     * Constructor for ClockDisplay objects. This constructor 
 	     * creates a new clock set at 00:00.
 	     */
-	    public ClockD()
+	    public ClockD(Board board)
 	    {
+	    	clockRunning = false;
+	    	this.board = board;
 	        minutes = new NumD(60);
 	        seconds = new NumD(60);
 	        updateDisplay();
@@ -52,4 +58,94 @@ public class ClockD {
 	                        seconds.getDisplayValue();
 	    }
 	    
-	}
+	    public void clockStarter() {
+			startClock();
+		}
+		
+		public void clockStop() {
+			stopClock();
+		}
+		
+		public void resetClock(){
+			this.reset();
+			board.getButtonTimer().setText("00:00");
+		}
+		
+		//klockmetoder
+		 private void startClock()
+		    {
+		        clockRunning = true;
+		        if(timerThread == null)
+		        {
+		        timerThread = new TimerThread(this);
+		        timerThread.start();
+		        }
+		    }
+		 
+		 
+		 private void stopClock()
+		    {
+		        clockRunning = false;
+		    }
+		 
+		 
+		 void stepClock()
+		    {
+		        this.timeTick();
+		        board.getButtonTimer().setText(this.getTime());
+		    }
+
+		public Board getBoard() {
+			return board;
+		}
+
+		public void setBoard(Board board) {
+			this.board = board;
+		}
+
+		public TimerThread getTimerThread() {
+			return timerThread;
+		}
+
+		public void setTimerThread(TimerThread timerThread) {
+			this.timerThread = timerThread;
+		}
+
+		public boolean isClockRunning() {
+			return clockRunning;
+		}
+
+		public void setClockRunning(boolean clockRunning) {
+			this.clockRunning = clockRunning;
+		}
+
+		public NumD getMinutes() {
+			return minutes;
+		}
+
+		public void setMinutes(NumD minutes) {
+			this.minutes = minutes;
+		}
+
+		public NumD getSeconds() {
+			return seconds;
+		}
+
+		public void setSeconds(NumD seconds) {
+			this.seconds = seconds;
+		}
+
+		public String getDisplayString() {
+			return displayString;
+		}
+
+		public void setDisplayString(String displayString) {
+			this.displayString = displayString;
+		}
+		 
+		 
+	    
+}
+
+	
+

@@ -22,7 +22,7 @@ public class GameMenu
 		levels.removeListener();
 		levels.sameLevel();
 		board.startTheGame();
-		board.clockStarter();
+		
 		status = false;
 		
 	}
@@ -34,9 +34,9 @@ public class GameMenu
 		levels.sameLevel();
 		board.startTheGame();
 		status = false;
-		board.clockStop();
-		board.resetClock();
-		board.clockStarter();
+		board.getClock().clockStop();
+		board.getClock().resetClock();
+		board.getClock().clockStarter();
 	}
 	
 	public void Quit()
@@ -46,9 +46,10 @@ public class GameMenu
 	
 	public void Pause()
 	{
-		board.clockStop();
+		
 		if (!status)
 		{
+			board.getClock().clockStop();
 			board.pauseTheGame();
 			status = true;
 		}
@@ -56,7 +57,7 @@ public class GameMenu
 		{
 			board.startTheGame();
 			status = false;
-			board.clockStarter();
+			board.getClock().clockStarter();
 		}
 	}
 	
