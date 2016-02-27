@@ -1,5 +1,5 @@
 /**package bobman;
-
+-----
 public class TimerThread extends Thread
 {
 	private ClockD clock;
