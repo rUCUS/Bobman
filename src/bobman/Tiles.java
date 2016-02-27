@@ -1,24 +1,18 @@
 package bobman;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Tiles extends JPanel 
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4136853509769683971L;
 	private int xPos,yPos,order;
 	private boolean walkable;
 	private boolean destroyable;
-	private BufferedImage myPicture;
-	private JLabel picLabel;
 	private boolean hasFire;
 	private boolean HasPlayer,HasPlayers;
 	

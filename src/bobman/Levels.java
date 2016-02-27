@@ -114,8 +114,8 @@ public class Levels
 
 	public void levelOne() throws IOException
 	{
-		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,3, 1, 1,  1, 0);
-		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,3, 11, 11, 1, 1);
+		player1 = new Player(tiles,board,1 ,3, 1, 1,  1, 0);
+		player2 = new Player(tiles,board,2 ,3, 11, 11, 1, 1);
 		this.Ui = new UserInterface(player1,player2);
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
@@ -178,8 +178,8 @@ public class Levels
 		Tiles p;
 		if (player1 == null)
 		{
-			player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,3, 1, 1,  1, 0);
-			player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,3, 11, 11, 1, 1);;
+			player1 = new Player(tiles,board,1 ,3, 1, 1,  1, 0);
+			player2 = new Player(tiles,board,2 ,3, 11, 11, 1, 1);
 			this.Ui = new UserInterface(player1,player2);
 		}
 		
@@ -268,7 +268,7 @@ public class Levels
 			
 			else 
 			{
-				player1.setHp(player1.getHp()-1);
+				player1.setHp(player1.getHp()-1); // ska bli replaced med bomb.getDamage senare
 				board.getPlayer1().setText("P1 life: ");
 				board.getPlayer1().setText(board.getPlayer1().getText() + player1.getHp());
 			}
@@ -283,11 +283,10 @@ public class Levels
 			}
 			
 			else 
-			{
-				player2.setHp(player2.getHp()-1);
-				board.getPlayer1().setText("P1 life: ");
-				board.getPlayer1().setText(board.getPlayer1().getText() + player1.getHp());
+			
+				player2.setHp(player2.getHp()-1); // ska bli replaced med bomb.getDamage senare
+				board.getPlayer2().setText("P2 life: ");
+				board.getPlayer2().setText(board.getPlayer2().getText() + player2.getHp());
 			}
 		}
-	}
 }

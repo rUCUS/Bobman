@@ -3,13 +3,9 @@ package bobman;
 public class Collision 
 {
 	private Player player1,player2;
-	private BombExplode bombExplode;
-	private Levels levels;
 	
 	public Collision(Levels levels) {
 		super();
-		this.bombExplode = bombExplode;
-		this.levels = levels;
 		this.player1 = levels.getPlayer1();
 		this.player2 = levels.getPlayer2();
 	}
@@ -335,14 +331,13 @@ public class Collision
 		Tiles a;
 		if (victim.getStatus() == 1)
 		{
-			System.out.println("players pos : " + player1.getxPos() + player1.getyPos());
 			a = victim.getTiles().get(14);
 			a.add(player1);
 			player1.setxPos(1);
 			player1.setyPos(1);
 		}
 		
-		if (victim.getStatus() == 1)
+		if (victim.getStatus() == 2)
 		{
 			a = victim.getTiles().get(154);
 			a.add(player2);

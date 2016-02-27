@@ -1,28 +1,19 @@
 package bobman;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.TreeMap;
-
-import javax.swing.Timer;
 
 public class BombExplode
 {
-	private TreeMap<Integer,Tiles> tiles,explodeRatio;
+	private TreeMap<Integer,Tiles> tiles;
 	private Tiles bombScanner,bombScanner1;
-	private Board board;
-	private Bomb bomb;
 	private Fire fire,fire1;
-	private Timer timer1,timer2;
 	private boolean up,down,left,right;
 	private boolean right1,up1,left1,down1;
-	public BombExplode(TreeMap<Integer, Tiles> tiles, Board board) 
+	public BombExplode(TreeMap<Integer, Tiles> tiles) 
 	{
 		super();
 		this.tiles = tiles;
-		this.board = board;
-		explodeRatio = new TreeMap<>();
 		
 	}
 	

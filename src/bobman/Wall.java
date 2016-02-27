@@ -1,7 +1,6 @@
 package bobman;
 
 import java.awt.Color;
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +11,10 @@ import javax.swing.JLabel;
 
 public class Wall extends Tiles
 {
-	private Image img;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3939973631475481853L;
 	private JLabel picLabel;
 
 	public Wall(int xPos, int yPos, int order) throws IOException 

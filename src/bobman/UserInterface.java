@@ -2,7 +2,6 @@ package bobman;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 
 public class UserInterface implements KeyListener
 {

@@ -1,20 +1,23 @@
 package bobman;
 
-import java.awt.Color;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class Bomb extends JLabel
 {
-	private int damage,player, xPos ,yPos;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2578658456631174653L;
+	private int damage, xPos ,yPos;
 	private ImageIcon bombicon1,bombicon2;
 	
 	
 
 	public Bomb(int damage,int player)
 	{
-		this.damage = damage;
+		this.setDamage(damage);
 		this.setSize(48, 48);
 		whoseBomb(player);
 	}
@@ -70,6 +73,14 @@ public class Bomb extends JLabel
 		case 2: return bombicon2;
 		}
 		return bombicon1;
+	}
+
+	public int getDamage() {
+		return damage;
+	}
+
+	public void setDamage(int damage) {
+		this.damage = damage;
 	}
 	
 }
