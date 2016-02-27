@@ -30,6 +30,19 @@ public class ClockD {
 	    	
 	    }
 	    
+	    public void clockStarter() {
+			startClock();
+		}
+		
+		public void clockStop() {
+			stopClock();
+		}
+		
+		public void resetClock(){
+			this.reset();
+			board.getButtonTimer().setText("00:00");
+		}
+	    
 	    /**
 	     * This method should get called once every minute - it makes
 	     * the clock display go one minute forward.
@@ -58,33 +71,19 @@ public class ClockD {
 	                        seconds.getDisplayValue();
 	    }
 	    
-	    public void clockStarter() {
-			startClock();
-		}
-		
-		public void clockStop() {
-			stopClock();
-		}
-		
-		public void resetClock(){
-			this.reset();
-			board.getButtonTimer().setText("00:00");
-		}
-		
-		//klockmetoder
-		 private void startClock()
+		private void startClock()
 		    {
-		        clockRunning = true;
-		        if(timerThread == null)
-		        {
-		        timerThread = new TimerThread(this);
-		        timerThread.start();
-		        }
-		    }
-		 
-		 
+			 clockRunning = true;
+			 if(timerThread == null){
+				 
+				 timerThread = new TimerThread();
+				 timerThread.start();
+			 }
+		 }
+			 
 		 private void stopClock()
 		    {
+			 	timerThread = null;
 		        clockRunning = false;
 		    }
 		 
@@ -142,8 +141,27 @@ public class ClockD {
 		public void setDisplayString(String displayString) {
 			this.displayString = displayString;
 		}
-		 
-		 
+		 		
+			
+		class TimerThread extends Thread {
+
+			public void run()
+		    {
+		        while (isClockRunning()) {
+		            stepClock();
+		            pauseClock();
+		        }
+		    }
+		    
+		    public void pauseClock()
+		    {
+		        try {
+		            Thread.sleep(1000);   // pause for 300 milliseconds
+		        }
+		        catch (InterruptedException exc) {
+		        }
+		    }
+		}
 	    
 }
 

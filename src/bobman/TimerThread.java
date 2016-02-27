@@ -1,4 +1,4 @@
-package bobman;
+/**package bobman;
 
 public class TimerThread extends Thread
 {
@@ -29,3 +29,4 @@ public class TimerThread extends Thread
         }
     }
 }
+*/

@@ -296,6 +296,7 @@ public class Board  extends JFrame implements ActionListener{
 		timer1.stop();
 		JOptionPane.showMessageDialog(null, "you have paused the game");
 		button4.setText("resume");
+		
 		//try {
 			//TimeUnit.SECONDS.sleep(1);
 		//} catch (InterruptedException e) {
@@ -308,6 +309,7 @@ public class Board  extends JFrame implements ActionListener{
 	public void startTheGame() 
 	{
 		timer1.start();
+		this.getClock().clockStarter();
 		button4.setText("Pause");
 		
 	}	

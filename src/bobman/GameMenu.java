@@ -1,6 +1,5 @@
 package bobman;
 
-import java.awt.Color;
 import java.io.IOException;
 
 public class GameMenu
@@ -22,7 +21,8 @@ public class GameMenu
 		levels.removeListener();
 		levels.sameLevel();
 		board.startTheGame();
-		
+		board.getClock().reset();
+		board.getClock().clockStarter();
 		status = false;
 		
 	}
@@ -54,11 +54,14 @@ public class GameMenu
 			status = true;
 		}
 		else
-		{
+		{	
+			
 			board.startTheGame();
-			status = false;
 			board.getClock().clockStarter();
+			status = false;
+			
 		}
+		
 	}
 	
 }
