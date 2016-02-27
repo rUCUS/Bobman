@@ -19,9 +19,8 @@ public class Tiles extends JPanel
 	private boolean destroyable;
 	private BufferedImage myPicture;
 	private JLabel picLabel;
-	private boolean hasPlayer;
 	private boolean hasFire;
-	private boolean HasPlayer;
+	private boolean HasPlayer,HasPlayers;
 	
 	public Tiles(int xPos,int yPos, int order) throws IOException
 	{
@@ -31,13 +30,30 @@ public class Tiles extends JPanel
 		this.order = order;
 		walkable = true;
 		destroyable = true;
-		hasPlayer = false;
+		HasPlayer = false;
 		hasFire = false;
-		hasPlayer = false;
+		HasPlayers = false;
+		
 		this.setBackground(Color.black);
 		initTiles();
 		
 		
+	}
+
+	public boolean isHasFire() {
+		return hasFire;
+	}
+
+	public void setHasFire(boolean hasFire) {
+		this.hasFire = hasFire;
+	}
+
+	public boolean isHasPlayers() {
+		return HasPlayers;
+	}
+
+	public void setHasPlayers(boolean hasPlayers) {
+		HasPlayers = hasPlayers;
 	}
 
 	public boolean isHasPlayer() {

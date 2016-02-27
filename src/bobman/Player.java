@@ -143,8 +143,17 @@ public class Player extends JLabel
 			{
 			this.setxPos(this.getxPos()-1);
 			a = tiles.get(k.getOrder()+1);
+			if(a.isHasPlayers()== false)
+			{
 			a.removeAll();
 			a.setHasPlayer(false);
+			}
+			
+			else
+			{
+				a.removeAll();
+				board.getLevels().getCollision().LeaveCollision(this, 1);
+			}
 			k.add(this);
 			this.setIcon(left);
 			k.setHasPlayer(true);
@@ -176,8 +185,18 @@ public class Player extends JLabel
 			{
 				this.setxPos(this.getxPos()+1);
 				a = tiles.get(k.getOrder()-1);
+				if(a.isHasPlayers()== false)
+				{
 				a.removeAll();
 				a.setHasPlayer(false);
+				}
+				
+				else
+				{
+					a.removeAll();
+					board.getLevels().getCollision().LeaveCollision(this, 0);
+				}
+				
 				k.add(this);
 				this.setIcon(right);
 				k.setHasPlayer(true);
@@ -207,8 +226,17 @@ public class Player extends JLabel
 			{
 				this.setyPos(this.getyPos()-1);
 				a = tiles.get(k.getOrder()+13);
+				if(a.isHasPlayers()== false)
+				{
 				a.removeAll();
 				a.setHasPlayer(false);
+				}
+				
+				else
+				{
+					a.removeAll();
+					board.getLevels().getCollision().LeaveCollision(this, 2);
+				}
 				k.add(this);
 				this.setIcon(up);
 				k.setHasPlayer(true);
@@ -237,8 +265,17 @@ public class Player extends JLabel
 			{
 				this.setyPos(this.getyPos()+1);
 				a = tiles.get(k.getOrder()-13);
+				if(a.isHasPlayers()== false)
+				{
 				a.removeAll();
 				a.setHasPlayer(false);
+				}
+				
+				else
+				{
+					a.removeAll();
+					board.getLevels().getCollision().LeaveCollision(this, 3);
+				}
 				k.add(this);
 				this.setIcon(down);
 				k.setHasPlayer(true);

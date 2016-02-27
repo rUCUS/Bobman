@@ -64,7 +64,7 @@ public class BombExplode
 				left1 = true;
 				fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
 				a.add(fire1);
-				
+				a.setHasFire(true);
 			
 			}
 			else if (!a.isWalkable())
@@ -89,7 +89,7 @@ public class BombExplode
 				right1 = true;
 				fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
 				a.add(fire1);
-				
+				a.setHasFire(true);
 			
 			}
 			else if (!a.isWalkable())
@@ -114,7 +114,7 @@ public class BombExplode
 				down1 = true;
 				fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
 				a.add(fire1);
-				
+				a.setHasFire(true);
 			
 			}
 			else if (!a.isWalkable())
@@ -141,6 +141,7 @@ public class BombExplode
 				up1 = true;
 				fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
 				a.add(fire1);
+				a.setHasFire(true);
 				
 			
 			}
@@ -158,6 +159,7 @@ public class BombExplode
 	{
 		fire1 = new Fire(2,this,bombScanner1.getxPos(),bombScanner1.getyPos());
 		bombScanner1.add(fire1);
+		bombScanner1.setHasFire(true);
 		
 	}
 
@@ -165,6 +167,7 @@ public class BombExplode
 	{
 		fire = new Fire(1,this,bombScanner.getxPos(),bombScanner.getyPos());
 		bombScanner.add(fire);
+		bombScanner.setHasFire(true);
 		
 	}
 
@@ -179,6 +182,7 @@ public class BombExplode
 					left = true;
 					fire = new Fire(1,this,bombScanner.getxPos(),bombScanner.getyPos());
 					a.add(fire);
+					a.setHasFire(true);
 					
 				
 				}
@@ -204,6 +208,7 @@ public class BombExplode
 					right = true;
 					fire = new Fire(1,this,bombScanner.getxPos(),bombScanner.getyPos());
 					a.add(fire);
+					a.setHasFire(true);
 					
 				
 				}
@@ -229,6 +234,7 @@ public class BombExplode
 					down = true;
 					fire = new Fire(1,this,bombScanner.getxPos(),bombScanner.getyPos());
 					a.add(fire);
+					a.setHasFire(true);
 					
 				
 				}
@@ -256,6 +262,7 @@ public class BombExplode
 					up = true;
 					fire = new Fire(1,this,bombScanner.getxPos(),bombScanner.getyPos());
 					a.add(fire);
+					a.setHasFire(true);
 					
 				
 				}
@@ -271,14 +278,15 @@ public class BombExplode
 
 	public void resetfire(int xPos,int yPos,Fire fire)
 	{
-		System.out.println(fire.getPlayer());
+		
 
 		if (fire.getPlayer() == 1)
 		{
-			System.out.println("working1");
+			
 			Tiles a;
 			bombScanner = tiles.get(xPos + yPos*13);
 			bombScanner.removeAll();
+			bombScanner.setHasFire(false);
 			
 			
 			
@@ -286,6 +294,7 @@ public class BombExplode
 			{
 				a = tiles.get(xPos + yPos*13 +1);
 				a.removeAll();
+				a.setHasFire(false);
 				right = false;
 			}
 			
@@ -293,6 +302,7 @@ public class BombExplode
 			{
 				a = tiles.get(xPos + yPos*13 -1);
 				a.removeAll();
+				a.setHasFire(false);
 				left = false;
 			}
 			
@@ -300,6 +310,7 @@ public class BombExplode
 			{
 				a = tiles.get(xPos + yPos*13 -13);
 				a.removeAll();
+				a.setHasFire(false);
 				up = false;
 			}
 			
@@ -307,6 +318,7 @@ public class BombExplode
 			{
 				a = tiles.get(xPos + yPos*13 +13);
 				a.removeAll();
+				a.setHasFire(false);
 				down = false;
 				
 			}
@@ -315,11 +327,12 @@ public class BombExplode
 			
 		if (fire.getPlayer() == 2)
 		{
-			System.out.println("working");
+			
 
 			Tiles a;
 			bombScanner1 = tiles.get(xPos + yPos*13);
 			bombScanner1.removeAll();
+			bombScanner1.setHasFire(false);
 			
 			
 			
@@ -327,6 +340,7 @@ public class BombExplode
 			{
 				a = tiles.get(xPos + yPos*13 +1);
 				a.removeAll();
+				a.setHasFire(false);
 				right = false;
 			}
 			
@@ -334,6 +348,7 @@ public class BombExplode
 			{
 				a = tiles.get(xPos + yPos*13 -1);
 				a.removeAll();
+				a.setHasFire(false);
 				left = false;
 			}
 			
@@ -341,6 +356,7 @@ public class BombExplode
 			{
 				a = tiles.get(xPos + yPos*13 -13);
 				a.removeAll();
+				a.setHasFire(false);
 				up = false;
 			}
 			
@@ -348,6 +364,7 @@ public class BombExplode
 			{
 				a = tiles.get(xPos + yPos*13 +13);
 				a.removeAll();
+				a.setHasFire(false);
 				down = false;
 				
 			}

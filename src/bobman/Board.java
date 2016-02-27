@@ -164,12 +164,22 @@ public class Board  extends JFrame implements ActionListener{
 	///////////////////////////////////////////////////////////////////////////////////////
 	////////Setters and getters
 	
+	
+	
 	public Timer getTimer2() 
 	{
 		return timer2;
 	}
 
 
+
+	public GameMenu getGameMenu() {
+		return gameMenu;
+	}
+
+	public void setGameMenu(GameMenu gameMenu) {
+		this.gameMenu = gameMenu;
+	}
 
 	public void setTimer2(Timer timer2) 
 	{
@@ -322,7 +332,12 @@ public class Board  extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
-		update();
+		try {
+			update();
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		
 		if(timer2.isRunning())
 		{
@@ -385,8 +400,9 @@ public class Board  extends JFrame implements ActionListener{
 	
 	
 
-	private void update() 
+	private void update() throws IOException 
 	{	
+		levels.checkStatus();
 		this.repaint();
 		this.setVisible(true);
 	}

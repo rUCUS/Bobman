@@ -56,10 +56,13 @@ public class GameMenu
 		else
 		{
 			board.startTheGame();
-			status = false;
 			board.getClock().clockStarter();
-			this.board.setFocusable(true);
-			this.board.requestFocus();
+			board.setFocusable(true);
+			board.requestFocus();
+			status = false;
+			
+			
+			
 		}
 	}
 	

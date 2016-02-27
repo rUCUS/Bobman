@@ -210,6 +210,14 @@ public class Levels
 		return currentLevel;
 	}
 
+	public Board getBoard() {
+		return board;
+	}
+
+	public void setBoard(Board board) {
+		this.board = board;
+	}
+
 	public void setCurrentLevel(int currentLevel) {
 		this.currentLevel = currentLevel;
 	}
@@ -223,5 +231,63 @@ public class Levels
 	{
 		this.board.getPlayer1().setText("P1 life: ");
 		this.board.getPlayer2().setText("P2 life: ");
+	}
+
+	public void checkStatus() throws IOException 
+	{
+		if(player1!=null)
+		{
+			Tiles a = tiles.get(player1.getxPos()+player1.getyPos()*13);
+			Tiles b = tiles.get(player2.getxPos()+player2.getyPos()*13);
+			
+			if (a.isHasFire())
+			{
+				collision.FireCollision(player1);
+				LoseHp(1);
+				
+			}
+			
+			if (b.isHasFire())
+			{
+				collision.FireCollision(player2);
+				LoseHp(2);
+			}
+		}
+		
+	}
+	
+	public void LoseHp(int a) throws IOException
+	{
+		if (a == 1)
+		{
+			if(player1.getHp() == 1)
+			{
+				JOptionPane.showMessageDialog(null, "Player 2 has won the game");
+				board.getGameMenu().restart();
+			}
+			
+			else 
+			{
+				player1.setHp(player1.getHp()-1);
+				board.getPlayer1().setText("P1 life: ");
+				board.getPlayer1().setText(board.getPlayer1().getText() + player1.getHp());
+			}
+		}
+		
+		if (a == 2)
+		{
+			if(player2.getHp() == 1)
+			{
+				JOptionPane.showMessageDialog(null, "Player 1 has won the game");
+				board.getGameMenu().restart();
+			}
+			
+			else 
+			{
+				player2.setHp(player2.getHp()-1);
+				board.getPlayer1().setText("P1 life: ");
+				board.getPlayer1().setText(board.getPlayer1().getText() + player1.getHp());
+			}
+		}
 	}
 }
