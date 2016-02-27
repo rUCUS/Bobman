@@ -53,6 +53,7 @@ public class Levels
 			l.setBackground(Color.white);
 			l.removeAll();
 			l.makeWalkable();
+			l.setHasPlayer(false);
 		}
 		
 		for( int i=0; i<169; i++)
@@ -113,8 +114,8 @@ public class Levels
 
 	public void levelOne() throws IOException
 	{
-		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,3, 1, 1,  1, 0);
-		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,3, 11, 11, 1, 1);
+		player1 = new Player(tiles,board,1 ,3, 1, 1,  1, 0);
+		player2 = new Player(tiles,board,2 ,3, 11, 11, 1, 1);
 		this.Ui = new UserInterface(player1,player2);
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
@@ -175,9 +176,14 @@ public class Levels
 	public void levelThree()
 	{
 		Tiles p;
-		player1 = new Player(tiles,board,board.getTimer2(),board.getTimer3(),1 ,3, 1, 1,  1, 0);
-		player2 = new Player(tiles,board,board.getTimer2() ,board.getTimer3(),2 ,3, 11, 11, 1, 1);;
-		this.Ui = new UserInterface(player1,player2);
+		if (player1 == null)
+		{
+			player1 = new Player(tiles,board,1 ,3, 1, 1,  1, 0);
+			player2 = new Player(tiles,board,2 ,3, 11, 11, 1, 1);
+			this.Ui = new UserInterface(player1,player2);
+		}
+		
+		
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
 		this.board.requestFocus();
@@ -188,7 +194,11 @@ public class Levels
 		p.add(player1);
 		p = tiles.get(154);
 		p.add(player2);
-		collision = new Collision(this);
+		if (collision == null)
+		{
+			collision = new Collision(this);
+		}
+		
 		board.repaint();
 		board.setVisible(true);
 		/*
@@ -198,6 +208,14 @@ public class Levels
 	
 	public int getCurrentLevel() {
 		return currentLevel;
+	}
+
+	public Board getBoard() {
+		return board;
+	}
+
+	public void setBoard(Board board) {
+		this.board = board;
 	}
 
 	public void setCurrentLevel(int currentLevel) {
@@ -214,4 +232,61 @@ public class Levels
 		this.board.getPlayer1().setText("P1 life: ");
 		this.board.getPlayer2().setText("P2 life: ");
 	}
+
+	public void checkStatus() throws IOException 
+	{
+		if(player1!=null)
+		{
+			Tiles a = tiles.get(player1.getxPos()+player1.getyPos()*13);
+			Tiles b = tiles.get(player2.getxPos()+player2.getyPos()*13);
+			
+			if (a.isHasFire())
+			{
+				collision.FireCollision(player1);
+				LoseHp(1);
+				
+			}
+			
+			if (b.isHasFire())
+			{
+				collision.FireCollision(player2);
+				LoseHp(2);
+			}
+		}
+		
+	}
+	
+	public void LoseHp(int a) throws IOException
+	{
+		if (a == 1)
+		{
+			if(player1.getHp() == 1)
+			{
+				JOptionPane.showMessageDialog(null, "Player 2 has won the game");
+				board.getGameMenu().restart();
+			}
+			
+			else 
+			{
+				player1.setHp(player1.getHp()-1); // ska bli replaced med bomb.getDamage senare
+				board.getPlayer1().setText("P1 life: ");
+				board.getPlayer1().setText(board.getPlayer1().getText() + player1.getHp());
+			}
+		}
+		
+		if (a == 2)
+		{
+			if(player2.getHp() == 1)
+			{
+				JOptionPane.showMessageDialog(null, "Player 1 has won the game");
+				board.getGameMenu().restart();
+			}
+			
+			else 
+			
+				player2.setHp(player2.getHp()-1); // ska bli replaced med bomb.getDamage senare
+				board.getPlayer2().setText("P2 life: ");
+				board.getPlayer2().setText(board.getPlayer2().getText() + player2.getHp());
+			}
+		}
 }

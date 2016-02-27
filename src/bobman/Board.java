@@ -27,7 +27,8 @@ import javax.swing.border.*;
 
 
 @SuppressWarnings("unused")
-public class Board  extends JFrame implements ActionListener{
+public class Board  extends JFrame implements ActionListener
+{
 
 	private static final long serialVersionUID = -2926933215387776929L;
 	private GameMenu gameMenu;
@@ -38,7 +39,7 @@ public class Board  extends JFrame implements ActionListener{
 	private JLabel player1, player2;
 	private TreeMap<Integer,Tiles> tiles;
 	private Levels levels;
-	private Timer timer1,timer2,timer3,timer4,timer5;
+	private Timer timer;
 	private float wastetime1,wastetime2,wastetime3;
 	private Tiles resetTile1,resetTile2;
 	private BombExplode bombExplode;
@@ -51,15 +52,11 @@ public class Board  extends JFrame implements ActionListener{
 	{ 	
 		super();
 		this.setDefaultCloseOperation(Board.EXIT_ON_CLOSE);
-		timer1= new Timer(20,this);
-		timer2 = new Timer(1000,this);
-		timer3 = new Timer(1000,this); 
-		timer4 = new Timer(1000,this);
-		timer5 = new Timer(1000,this);
+		timer= new Timer(1,this);
 		tiles = new TreeMap<>();
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
-		bombExplode = new BombExplode(tiles,this);
+		bombExplode = new BombExplode(tiles);
 		clock = new ClockD(this);
 
 		initStartmenu();
@@ -70,7 +67,7 @@ public class Board  extends JFrame implements ActionListener{
 		this.getContentPane().add(split);
 		this.pack();
 		this.setVisible(true);
-		timer1.start();
+		timer.start();
 		setLocationRelativeTo(null);
 		setResizable(false);
 		
@@ -164,28 +161,14 @@ public class Board  extends JFrame implements ActionListener{
 	///////////////////////////////////////////////////////////////////////////////////////
 	////////Setters and getters
 	
-	public Timer getTimer2() 
-	{
-		return timer2;
+	
+	
+	public GameMenu getGameMenu() {
+		return gameMenu;
 	}
 
-
-
-	public void setTimer2(Timer timer2) 
-	{
-		this.timer2 = timer2;
-	}
-
-	public Timer getTimer3() 
-	{
-		return timer3;
-	}
-
-
-
-	public void setTimer3(Timer timer3) 
-	{
-		this.timer3 = timer3;
+	public void setGameMenu(GameMenu gameMenu) {
+		this.gameMenu = gameMenu;
 	}
 	
 	public float getWastetime1() {
@@ -293,7 +276,7 @@ public class Board  extends JFrame implements ActionListener{
 
 	public void pauseTheGame()
 	{
-		timer1.stop();
+		timer.stop();
 		JOptionPane.showMessageDialog(null, "you have paused the game");
 		button4.setText("resume");
 		
@@ -308,8 +291,12 @@ public class Board  extends JFrame implements ActionListener{
 
 	public void startTheGame() 
 	{
+/**<<<<<<< HEAD
 		timer1.start();
 		this.getClock().clockStarter();
+		*/
+
+		timer.start();
 		button4.setText("Pause");
 		
 	}	
@@ -324,27 +311,32 @@ public class Board  extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
-		update();
+		try {
+			update();
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		
-		if(timer2.isRunning())
+		if(wastetime1 >=10f)
 		{
 			wastetime1= wastetime1 +0.2f;
-			if (wastetime1 >= 15.0f)
+			if (wastetime1 >= 100.0f)
 			{
 				resetWalkable3();
-				timer2.stop();
+				//timer2.stop();
 				wastetime1 =0f;
 			}
 		}
 		
-		if(timer3.isRunning())
+		if(wastetime2 >=10f)
 		{
 			wastetime2= wastetime2 +0.2f;
-			if (wastetime2 >= 15.0f)
+			if (wastetime2 >= 100.0f)
 			{
 				
 				resetWalkable4();
-				timer3.stop();
+				//timer3.stop();
 				wastetime2 =0f;
 			}
 		}
@@ -387,8 +379,9 @@ public class Board  extends JFrame implements ActionListener{
 	
 	
 
-	private void update() 
+	private void update() throws IOException 
 	{	
+		levels.checkStatus();
 		this.repaint();
 		this.setVisible(true);
 	}

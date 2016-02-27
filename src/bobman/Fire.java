@@ -1,19 +1,18 @@
 package bobman;
-
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
 public class Fire extends JLabel implements ActionListener
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3117597669521741300L;
 	private Timer fireTimer1,fireTimer2;
-	private int xPos,yPos,player,fireTime1,fireTime2;
+	private int xPos,yPos,player;
 	private ImageIcon fireIcon,fireIcon2;
 	private BombExplode bombExplode;
 

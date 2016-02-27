@@ -72,15 +72,15 @@ public class ClockD {
 	    }
 	    
 		private void startClock()
-		    {
+		   {
 			 clockRunning = true;
 			 if(timerThread == null){
 				 
 				 timerThread = new TimerThread();
 				 timerThread.start();
 			 }
-		 }
-			 
+		    }
+
 		 private void stopClock()
 		    {
 			 	timerThread = null;

@@ -1,29 +1,26 @@
 package bobman;
 
 import java.util.TreeMap;
-import java.util.concurrent.TimeUnit;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.Timer;
 
 public class Player extends JLabel
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6017005901425321171L;
 	private Board board;
 	private int hp,xPos,yPos,speed,status,id,damage;
 	private Bomb bomb;
 	private boolean isPlayerAlive;
 	private TreeMap<Integer,Tiles> tiles;
 	private ImageIcon left,right,up,down,upDown,upLeft,upRight,downLeft,downRight,leftRight;
-	private Timer timer1,timer2;
 	
-	public Player(TreeMap<Integer,Tiles> tiles,Board board,Timer timer1,Timer timer2,
-			int status ,int hp, int xPos, int yPos, int speed,int side)
+	public Player(TreeMap<Integer,Tiles> tiles,Board board,int status ,int hp, int xPos, int yPos, int speed,int side)
 	
 	{
 		this.damage = 1;
-		this.timer1 = timer1;
-		this.timer2 = timer2;
 		this.status = status;
 		this.tiles = tiles;
 		this.board = board;
@@ -107,18 +104,16 @@ public class Player extends JLabel
 
 	public void resetWalkable1(Tiles k) 
 	{
-		timer1.start();
 		board.setResetTile1(k); 
-		board.setWastetime1(0f);
+		board.setWastetime1(10f);
 		
 
 	}
 	
 	public void resetWalkable2(Tiles k) 
 	{
-		timer2.start();
 		board.setResetTile2(k); 
-		board.setWastetime2(0f);
+		board.setWastetime2(10f);
 		
 	}
 	
@@ -143,8 +138,17 @@ public class Player extends JLabel
 			{
 			this.setxPos(this.getxPos()-1);
 			a = tiles.get(k.getOrder()+1);
+			if(a.isHasPlayers()== false)
+			{
 			a.removeAll();
 			a.setHasPlayer(false);
+			}
+			
+			else
+			{
+				a.removeAll();
+				board.getLevels().getCollision().LeaveCollision(this, 1);
+			}
 			k.add(this);
 			this.setIcon(left);
 			k.setHasPlayer(true);
@@ -176,8 +180,18 @@ public class Player extends JLabel
 			{
 				this.setxPos(this.getxPos()+1);
 				a = tiles.get(k.getOrder()-1);
+				if(a.isHasPlayers()== false)
+				{
 				a.removeAll();
 				a.setHasPlayer(false);
+				}
+				
+				else
+				{
+					a.removeAll();
+					board.getLevels().getCollision().LeaveCollision(this, 0);
+				}
+				
 				k.add(this);
 				this.setIcon(right);
 				k.setHasPlayer(true);
@@ -207,8 +221,17 @@ public class Player extends JLabel
 			{
 				this.setyPos(this.getyPos()-1);
 				a = tiles.get(k.getOrder()+13);
+				if(a.isHasPlayers()== false)
+				{
 				a.removeAll();
 				a.setHasPlayer(false);
+				}
+				
+				else
+				{
+					a.removeAll();
+					board.getLevels().getCollision().LeaveCollision(this, 2);
+				}
 				k.add(this);
 				this.setIcon(up);
 				k.setHasPlayer(true);
@@ -237,8 +260,17 @@ public class Player extends JLabel
 			{
 				this.setyPos(this.getyPos()+1);
 				a = tiles.get(k.getOrder()-13);
+				if(a.isHasPlayers()== false)
+				{
 				a.removeAll();
 				a.setHasPlayer(false);
+				}
+				
+				else
+				{
+					a.removeAll();
+					board.getLevels().getCollision().LeaveCollision(this, 3);
+				}
 				k.add(this);
 				this.setIcon(down);
 				k.setHasPlayer(true);
@@ -264,7 +296,7 @@ public class Player extends JLabel
 	{
 		if ( i ==1)
 		{
-			if(!timer1.isRunning())
+			if(board.getWastetime1() ==0f)
 			{
 				id = i;
 				Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
@@ -296,7 +328,7 @@ public class Player extends JLabel
 		
 		if ( i ==2)
 		{
-			if(!timer2.isRunning())
+			if(board.getWastetime2() ==0f)
 			{
 				id = i;
 				Tiles k = tiles.get(this.getxPos() + this.getyPos()*13);
@@ -551,60 +583,37 @@ public class Player extends JLabel
 		return upDown;
 	}
 
-	public void setUpDown(ImageIcon upDown) 
-	{
-		this.upDown = upDown;
-	}
-
 	public ImageIcon getUpLeft()
 	{
 		return upLeft;
 	}
 
-	public void setUpLeft(ImageIcon upLeft) 
-	{
-		this.upLeft = upLeft;
-	}
 
 	public ImageIcon getUpRight() 
 	{
 		return upRight;
 	}
 
-	public void setUpRight(ImageIcon upRight) 
-	{
-		this.upRight = upRight;
-	}
 
 	public ImageIcon getDownLeft() {
 		return downLeft;
 	}
 
-	public void setDownLeft(ImageIcon downLeft) 
-	{
-		this.downLeft = downLeft;
-	}
+	
 
 	public ImageIcon getDownRight() 
 	{
 		return downRight;
 	}
 
-	public void setDownRight(ImageIcon downRight) 
-	{
-		this.downRight = downRight;
-	}
+	
 
 	public ImageIcon getLeftRight() 
 	{
 		return leftRight;
 	}
 
-	public void setLeftRight(ImageIcon leftRight) 
-	{
-		this.leftRight = leftRight;
-	}
-
+	
 	public TreeMap<Integer, Tiles> getTiles() {
 		return tiles;
 	}
