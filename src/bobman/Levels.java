@@ -53,6 +53,8 @@ public class Levels
 			l.setBackground(Color.white);
 			l.removeAll();
 			l.makeWalkable();
+			l.setHasPlayers(false);
+			l.setHasFire(false);
 			l.setHasPlayer(false);
 		}
 		
@@ -229,6 +231,11 @@ public class Levels
 	
 	public void resetHp ()
 	{
+		if (player1 != null)
+		{
+			player1.setHp(3);
+			player2.setHp(3);
+		}
 		this.board.getPlayer1().setText("P1 life: ");
 		this.board.getPlayer2().setText("P2 life: ");
 	}
