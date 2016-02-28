@@ -1,6 +1,8 @@
 package bobman;
 
 import java.util.TreeMap;
+
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -15,7 +17,7 @@ public class Player extends JLabel
 	private Bomb bomb;
 	private boolean isPlayerAlive;
 	private TreeMap<Integer,Tiles> tiles;
-	private ImageIcon left,right,up,down,upDown,upLeft,upRight,downLeft,downRight,leftRight;
+	private ImageIcon left,right,up,down,upDown,upLeft,upRight,downLeft,downRight,leftRight,upUp,leftLeft,rightRight,downDown;
 	
 	public Player(TreeMap<Integer,Tiles> tiles,Board board,int status ,int hp, int xPos, int yPos, int speed,int side)
 	
@@ -50,6 +52,10 @@ public class Player extends JLabel
 		downLeft = new ImageIcon("src/sprite/downleft.gif");
 		downRight = new ImageIcon("src/sprite/downRight.gif");
 		leftRight = new ImageIcon("src/sprite/leftRight.gif");
+		upUp = new ImageIcon("src/sprite/upUp.gif");
+		downDown = new ImageIcon("src/sprite/downDown.gif");
+		rightRight = new ImageIcon("src/sprite/rightRight.gif");
+		leftLeft = new ImageIcon("src/sprite/leftLeft.gif");
 	}
 	
 	
@@ -621,6 +627,27 @@ public class Player extends JLabel
 	public void setTiles(TreeMap<Integer, Tiles> tiles) {
 		this.tiles = tiles;
 	}
+
+	public Icon getrightRight() {
+		
+		return rightRight;
+	}
+
+	public Icon getleftLeft() {
+		
+		return leftLeft;
+	}
+
+	public Icon getdownDown() {
+		
+		return downDown;
+	}
+
+	public Icon getupUp() {
+		
+		return upUp;
+	}
+
 	
 	
 

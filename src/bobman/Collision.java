@@ -76,8 +76,8 @@ public class Collision
 				a.removeAll();
 				a.setHasPlayer(false);
 				k.add(collider);
-				collider.setIcon(collider.getLeftRight());
-				collided.setIcon(collider.getLeftRight());
+				collider.setIcon(collider.getrightRight());
+				collided.setIcon(collider.getrightRight());
 				k.setHasPlayer(true);
 				k.setHasPlayers(true);
 				break;
@@ -147,8 +147,8 @@ public class Collision
 				a.removeAll();
 				a.setHasPlayer(false);
 				k.add(collider);
-				collider.setIcon(collider.getUp());
-				collided.setIcon(collider.getUp());
+				collider.setIcon(collider.getupUp());
+				collided.setIcon(collider.getupUp());
 				k.setHasPlayer(true);
 				k.setHasPlayers(true);
 				break;
@@ -208,8 +208,8 @@ public class Collision
 				a.removeAll();
 				a.setHasPlayer(false);
 				k.add(collider);
-				collider.setIcon(collider.getDown());
-				collided.setIcon(collider.getDown());
+				collider.setIcon(collider.getdownDown());
+				collided.setIcon(collider.getdownDown());
 				k.setHasPlayer(true);
 				k.setHasPlayers(true);
 				break;
@@ -229,8 +229,8 @@ public class Collision
 				a.removeAll();
 				a.setHasPlayer(false);
 				k.add(collider);
-				collider.setIcon(collider.getLeft());
-				collided.setIcon(collider.getLeft());
+				collider.setIcon(collider.getLeftRight());
+				collided.setIcon(collider.getLeftRight());
 				k.setHasPlayer(true);
 				k.setHasPlayers(true);
 				break;
@@ -239,8 +239,8 @@ public class Collision
 				a.removeAll();
 				a.setHasPlayer(false);
 				k.add(collider);
-				collider.setIcon(collider.getLeftRight());
-				collided.setIcon(collider.getLeftRight());
+				collider.setIcon(collider.getleftLeft());
+				collided.setIcon(collider.getleftLeft());
 				k.setHasPlayer(true);
 				k.setHasPlayers(true);
 				break;

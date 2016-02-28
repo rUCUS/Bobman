@@ -43,7 +43,7 @@ public class UserInterface implements KeyListener
 			player1.moveRight();
 		}
 		
-		if(e.getKeyCode() == KeyEvent.VK_SPACE)
+		if(e.getKeyCode() == KeyEvent.VK_SHIFT)
 		{
 			player1.throwBomb(1);
 		}
@@ -71,7 +71,7 @@ public class UserInterface implements KeyListener
 			player2.moveRight();
 		}
 		
-		if(e.getKeyCode() == KeyEvent.VK_NUMPAD9)
+		if(e.getKeyCode() == KeyEvent.VK_CONTROL)
 		{
 			player2.throwBomb(2);
 		}
