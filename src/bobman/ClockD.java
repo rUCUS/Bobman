@@ -156,7 +156,7 @@ public class ClockD {
 		    public void pauseClock()
 		    {
 		        try {
-		            Thread.sleep(1000);   // pause for 300 milliseconds
+		            Thread.sleep(1000);   // pause for 1000 milliseconds
 		        }
 		        catch (InterruptedException exc) {
 		        }
