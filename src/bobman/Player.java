@@ -18,6 +18,7 @@ public class Player extends JLabel
 	private boolean isPlayerAlive;
 	private TreeMap<Integer,Tiles> tiles;
 	private ImageIcon left,right,up,down,upDown,upLeft,upRight,downLeft,downRight,leftRight,upUp,leftLeft,rightRight,downDown;
+	private PowerUpHandler handler;
 	
 	public Player(TreeMap<Integer,Tiles> tiles,Board board,int status ,int hp, int xPos, int yPos, int speed,int side)
 	
@@ -34,6 +35,7 @@ public class Player extends JLabel
 		initPos();
 		startPos(side);
 		initBomb();
+		handler = new PowerUpHandler(this);
 	}
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////
@@ -142,6 +144,17 @@ public class Player extends JLabel
 			}
 			else
 			{
+				if (k.isHasPowerUp())
+				{
+					if(k.isHasHp())
+					{
+						handler.giveExtra();
+					}
+					else
+					{
+						handler.setHasLight(true);
+					}
+				}
 			this.setxPos(this.getxPos()-1);
 			a = tiles.get(k.getOrder()+1);
 			if(a.isHasPlayers()== false)
@@ -182,8 +195,21 @@ public class Player extends JLabel
 				board.getLevels().getCollision().playerCollision(this,0);
 			}
 			
+			 
+			
 			else 
 			{
+				if (k.isHasPowerUp())
+				{
+					if(k.isHasHp())
+					{
+						handler.giveExtra();
+					}
+					else
+					{
+						handler.setHasLight(true);
+					}
+				}
 				this.setxPos(this.getxPos()+1);
 				a = tiles.get(k.getOrder()-1);
 				if(a.isHasPlayers()== false)
@@ -225,6 +251,17 @@ public class Player extends JLabel
 			}
 			else
 			{
+				if (k.isHasPowerUp())
+				{
+					if(k.isHasHp())
+					{
+						handler.giveExtra();
+					}
+					else
+					{
+						handler.setHasLight(true);
+					}
+				}
 				this.setyPos(this.getyPos()-1);
 				a = tiles.get(k.getOrder()+13);
 				if(a.isHasPlayers()== false)
@@ -264,6 +301,17 @@ public class Player extends JLabel
 			
 			else
 			{
+				if (k.isHasPowerUp())
+				{
+					if(k.isHasHp())
+					{
+						handler.giveExtra();
+					}
+					else
+					{
+						handler.setHasLight(true);
+					}
+				}
 				this.setyPos(this.getyPos()+1);
 				a = tiles.get(k.getOrder()-13);
 				if(a.isHasPlayers()== false)
@@ -646,6 +694,22 @@ public class Player extends JLabel
 	public Icon getupUp() {
 		
 		return upUp;
+	}
+
+	public PowerUpHandler getHandler() {
+		return handler;
+	}
+
+	public void setHandler(PowerUpHandler handler) {
+		this.handler = handler;
+	}
+
+	public Board getBoard() {
+		return board;
+	}
+
+	public void setBoard(Board board) {
+		this.board = board;
 	}
 
 	

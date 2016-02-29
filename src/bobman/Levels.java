@@ -17,9 +17,9 @@ public class Levels
 	private UserInterface Ui;
 	private TreeMap<Integer,Tiles> tiles;
 	private static final Set<Integer> playerSpace = new HashSet<Integer>(Arrays.asList(14,15,16,27,40,128,141,152,153,154));
-	private int currentLevel;
+	private int currentLevel,powers;
 	Random rand = new Random();
-	private Collision collision;	
+	private Collision collision;
 	
 	public Player getPlayer1() {
 		return player1;
@@ -116,9 +116,12 @@ public class Levels
 
 	public void levelOne() throws IOException
 	{
-		player1 = new Player(tiles,board,1 ,3, 1, 1,  1, 0);
-		player2 = new Player(tiles,board,2 ,3, 11, 11, 1, 1);
-		this.Ui = new UserInterface(player1,player2);
+		if (player1 == null)
+		{
+			player1 = new Player(tiles,board,1 ,3, 1, 1,  1, 0);
+			player2 = new Player(tiles,board,2 ,3, 11, 11, 1, 1);
+			this.Ui = new UserInterface(player1,player2);
+		}
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
 		this.board.requestFocus();
@@ -141,11 +144,24 @@ public class Levels
 			{
 				if(!(used.contains(p.getOrder())))
 				{
+					powers = rand.nextInt(6);
 					used.add(p.getOrder());
 					p.removeFloor();
 					p.add(new Dwall(p.getxPos(),p.getY(),p.getOrder()));
 					p.setBackground(Color.black);
 					p.notWalkable();
+					if (powers<=1)
+					{
+						p.setHasPowerUp(true);
+						if (powers == 0)
+						{
+							p.setHasHp(true);
+						}
+						else
+						{
+							p.setHasLight(true);
+						}
+					}
 					enoughDWalls++;
 				}
 				
