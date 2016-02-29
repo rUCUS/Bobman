@@ -4,7 +4,6 @@ package bobman;
 public class ClockD {
 		
 		private Board board;
-		private TimerThread timerThread;
 		private boolean clockRunning;
 	    private NumD minutes;
 	    private NumD seconds;
@@ -74,16 +73,10 @@ public class ClockD {
 		private void startClock()
 		   {
 			 clockRunning = true;
-			 if(timerThread == null){
-				 
-				 timerThread = new TimerThread();
-				 timerThread.start();
-			 }
 		    }
 
 		 private void stopClock()
 		    {
-			 	timerThread = null;
 		        clockRunning = false;
 		    }
 		 
@@ -100,14 +93,6 @@ public class ClockD {
 
 		public void setBoard(Board board) {
 			this.board = board;
-		}
-
-		public TimerThread getTimerThread() {
-			return timerThread;
-		}
-
-		public void setTimerThread(TimerThread timerThread) {
-			this.timerThread = timerThread;
 		}
 
 		public boolean isClockRunning() {
@@ -143,25 +128,6 @@ public class ClockD {
 		}
 		 		
 			
-		class TimerThread extends Thread {
-
-			public void run()
-		    {
-		        while (isClockRunning()) {
-		            stepClock();
-		            pauseClock();
-		        }
-		    }
-		    
-		    public void pauseClock()
-		    {
-		        try {
-		            Thread.sleep(1000);   // pause for 1000 milliseconds
-		        }
-		        catch (InterruptedException exc) {
-		        }
-		    }
-		}
 	    
 }
 

@@ -45,6 +45,7 @@ public class Board  extends JFrame implements ActionListener
 	private BombExplode bombExplode;
 	private float wastetime4;
 	private ClockD clock;
+	private int timewaster;
     
 	
 	
@@ -380,7 +381,12 @@ public class Board  extends JFrame implements ActionListener
 	
 
 	private void update() throws IOException 
-	{	
+	{	if (this.timewaster == 150)
+	{
+		this.clock.stepClock();
+		timewaster = 0;
+	}
+		timewaster = timewaster + 1;
 		levels.checkStatus();
 		this.repaint();
 		this.setVisible(true);
