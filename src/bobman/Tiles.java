@@ -15,6 +15,9 @@ public class Tiles extends JPanel
 	private boolean destroyable;
 	private boolean hasFire;
 	private boolean HasPlayer,HasPlayers;
+	private boolean hasPowerUp;
+	private boolean hasHp;
+	private boolean hasLight;
 	
 	public Tiles(int xPos,int yPos, int order) throws IOException
 	{
@@ -27,11 +30,38 @@ public class Tiles extends JPanel
 		HasPlayer = false;
 		hasFire = false;
 		HasPlayers = false;
+		hasPowerUp= false;
+		hasHp = false;
+		hasLight = false;
 		
 		this.setBackground(Color.black);
 		initTiles();
 		
 		
+	}
+
+	public boolean isHasHp() {
+		return hasHp;
+	}
+
+	public void setHasHp(boolean hasHp) {
+		this.hasHp = hasHp;
+	}
+
+	public boolean isHasLight() {
+		return hasLight;
+	}
+
+	public void setHasLight(boolean hasLight) {
+		this.hasLight = hasLight;
+	}
+
+	public boolean isHasPowerUp() {
+		return hasPowerUp;
+	}
+
+	public void setHasPowerUp(boolean hasPowerUp) {
+		this.hasPowerUp = hasPowerUp;
 	}
 
 	public boolean isHasFire() {

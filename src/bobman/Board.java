@@ -45,6 +45,8 @@ public class Board  extends JFrame implements ActionListener
 	private BombExplode bombExplode;
 	private float wastetime4;
 	private ClockD clock;
+	private int rucus1;
+	private int rucus;
     
 	
 	
@@ -56,7 +58,7 @@ public class Board  extends JFrame implements ActionListener
 		tiles = new TreeMap<>();
 		levels = new Levels(this,tiles);
 		gameMenu = new GameMenu(this,levels);
-		bombExplode = new BombExplode(tiles);
+		bombExplode = new BombExplode(this,tiles);
 		clock = new ClockD(this);
 
 		initStartmenu();
@@ -165,6 +167,22 @@ public class Board  extends JFrame implements ActionListener
 	
 	public GameMenu getGameMenu() {
 		return gameMenu;
+	}
+
+	public int getRucus() {
+		return rucus;
+	}
+
+	public void setRucus(int rucus) {
+		this.rucus = rucus;
+	}
+
+	public int getRucus1() {
+		return rucus1;
+	}
+
+	public void setRucus1(int rucus1) {
+		this.rucus1 = rucus1;
 	}
 
 	public void setGameMenu(GameMenu gameMenu) {
@@ -291,11 +309,6 @@ public class Board  extends JFrame implements ActionListener
 
 	public void startTheGame() 
 	{
-/**<<<<<<< HEAD
-		timer1.start();
-		this.getClock().clockStarter();
-		*/
-
 		timer.start();
 		button4.setText("Pause");
 		
@@ -341,6 +354,26 @@ public class Board  extends JFrame implements ActionListener
 			}
 		}
 		
+		if (rucus > 0)
+		{
+			rucus++;
+			if (rucus >= 200)
+			{
+				bombExplode.fireReset1();
+				rucus =0;
+			}
+			
+		}
+		
+		if (rucus1 > 0)
+		{
+			rucus1++;
+			if (rucus1 >= 200)
+			{
+				bombExplode.fireReset2();
+				rucus1 = 0;
+			}
+		}
 		
 		if (e.getSource() == button1)
 			
