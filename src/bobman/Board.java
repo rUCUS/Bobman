@@ -1,38 +1,19 @@
 package bobman;
+import java.util.*;
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.Random;
-import java.util.TreeMap;
-import java.util.concurrent.TimeUnit;
-import javafx.scene.shape.Circle;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JSplitPane;
-import javax.swing.JPanel;
-import javax.swing.Timer;
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
+import javax.swing.Timer;
 
 
-@SuppressWarnings("unused")
 public class Board  extends JFrame implements ActionListener
 {
 
 	private static final long serialVersionUID = -2926933215387776929L;
 	private GameMenu gameMenu;
-	private Graphics g;
 	private JPanel startMenu,gameBoard;
 	private JSplitPane split;
 	private JButton button1,button2,button3,button4,buttonTimer;
@@ -366,7 +347,7 @@ public class Board  extends JFrame implements ActionListener
 		if (rucus > 0)
 		{
 			rucus++;
-			if (rucus >= 100)
+			if (rucus >= 50)
 			{
 				bombExplode.fireReset1();
 				rucus =0;

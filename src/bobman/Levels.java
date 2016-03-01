@@ -119,7 +119,7 @@ public class Levels
 		if (player1 == null)
 		{
 			player1 = new Player(tiles,board,1 ,3, 1, 1,  1, 0);
-			player2 = new Player(tiles,board,2 ,3, 11, 11, 1, 1);
+			player2 = new Sonic(tiles,board,2 ,3, 11, 11, 1, 1);
 			this.Ui = new UserInterface(player1,player2);
 		}
 		this.board.addKeyListener(Ui);
