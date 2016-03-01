@@ -48,6 +48,7 @@ public class Board  extends JFrame implements ActionListener
 	private int timeWaster;
 	private int rucus1;
 	private int rucus;
+
     
 	
 	
@@ -166,16 +167,9 @@ public class Board  extends JFrame implements ActionListener
 	
 	
 	
+	
 	public GameMenu getGameMenu() {
 		return gameMenu;
-	}
-
-	public int getRucus() {
-		return rucus;
-	}
-
-	public void setRucus(int rucus) {
-		this.rucus = rucus;
 	}
 
 	public int getRucus1() {
@@ -184,6 +178,14 @@ public class Board  extends JFrame implements ActionListener
 
 	public void setRucus1(int rucus1) {
 		this.rucus1 = rucus1;
+	}
+
+	public int getRucus() {
+		return rucus;
+	}
+
+	public void setRucus(int rucus) {
+		this.rucus = rucus;
 	}
 
 	public void setGameMenu(GameMenu gameMenu) {
@@ -310,6 +312,11 @@ public class Board  extends JFrame implements ActionListener
 
 	public void startTheGame() 
 	{
+/**<<<<<<< HEAD
+		timer1.start();
+		this.getClock().clockStarter();
+		*/
+
 		timer.start();
 		button4.setText("Pause");
 		
@@ -355,6 +362,7 @@ public class Board  extends JFrame implements ActionListener
 			}
 		}
 		
+
 		if (rucus > 0)
 		{
 			rucus++;
@@ -375,6 +383,7 @@ public class Board  extends JFrame implements ActionListener
 				rucus1 = 0;
 			}
 		}
+
 		
 		if (e.getSource() == button1)
 			
@@ -414,6 +423,7 @@ public class Board  extends JFrame implements ActionListener
 	
 
 	private void update() throws IOException 
+
 	{	
 		timeWaster = timeWaster + 1;
 		if (this.timeWaster == 100)
@@ -421,7 +431,6 @@ public class Board  extends JFrame implements ActionListener
 			this.clock.stepClock();
 			timeWaster = 0;
 		}
-			
 
 		levels.checkStatus();
 		this.repaint();

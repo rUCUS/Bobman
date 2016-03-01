@@ -71,14 +71,16 @@ public class ClockD {
 	    }
 	    
 		private void startClock()
+
 	    {
 		   clockRunning = true;
 		}
 
 		 private void stopClock()
-		{
-		   clockRunning = false;
-	    }
+		    {
+		        clockRunning = false;
+		    }
+
 		 
 		 
 		 void stepClock()
@@ -94,7 +96,6 @@ public class ClockD {
 		public void setBoard(Board board) {
 			this.board = board;
 		}
-
 
 		public boolean isClockRunning() {
 			return clockRunning;

@@ -33,10 +33,10 @@ public class GameMenu
 		levels.removeListener();
 		levels.sameLevel();
 		board.startTheGame();
-		status = false;
 		board.getClock().clockStop();
-		board.getClock().resetClock();
+		board.getClock().reset();
 		board.getClock().clockStarter();
+		status = false;
 	}
 	
 	public void Quit()
