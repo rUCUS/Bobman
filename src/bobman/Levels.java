@@ -96,6 +96,7 @@ public class Levels
 		
 	}
 	
+	
 	public void sameLevel() throws IOException
 	{
 		resetHp();
@@ -118,8 +119,8 @@ public class Levels
 	{
 		if (player1 == null)
 		{
-			player1 = new Player(tiles,board,1 ,1, 1, 1,  2, 0);
-			player2 = new Player(tiles,board,2 ,1, 11, 11, 2, 1);
+			player1 = new Player(tiles,board,1 ,2, 1, 1,  2, 0);
+			player2 = new Sonic(tiles,board,2 ,2, 11, 11, 2, 1);
 			this.Ui = new UserInterface(player1,player2);
 		}
 		this.board.addKeyListener(Ui);
@@ -164,6 +165,10 @@ public class Levels
 		player2.setxPos(11);
 		player2.setyPos(11);
 		collision = new Collision(this);
+		player1.setHp(2);
+		player2.setHp(2);
+		player1.setRange(2);
+		player2.setRange(2);
 		this.board.getPlayer1().setText("P1 life: " + player1.getHp() + " |");
 		this.board.getPlayer2().setText("P2 life: " + player2.getHp());
 		board.repaint();
@@ -208,7 +213,7 @@ public class Levels
 			{
 				if(!(used.contains(p.getOrder())))
 				{
-					powers = rand.nextInt(6);
+					powers = rand.nextInt(15);
 					used.add(p.getOrder());
 					p.removeFloor();
 					p.add(new Dwall(p.getxPos(),p.getY(),p.getOrder()));
@@ -240,6 +245,8 @@ public class Levels
 		p.add(player2);
 		player2.setxPos(11);
 		player2.setyPos(11);
+		player1.setRange(1);
+		player2.setRange(1);
 		collision = new Collision(this);
 		this.board.getPlayer1().setText("P1 life: " + player1.getHp() + " |");
 		this.board.getPlayer2().setText("P2 life: " + player2.getHp());

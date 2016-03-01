@@ -21,10 +21,10 @@ public class Sonic extends Player
 	public void initPos() {
 		// TODO Auto-generated method stub
 		super.initPos();
-		setRight(new ImageIcon("src/sprite/leftWalk.gif"));
-		setLeft(new ImageIcon("src/sprite/rightwalk.gif"));
-		setUp(new ImageIcon("src/sprite/downWalk.gif"));
-		setDown(new ImageIcon("src/sprite/upWalk.gif"));
+		setRight(new ImageIcon("src/sprite/elvisRight.gif"));
+		setLeft(new ImageIcon("src/sprite/elvisLeft.gif"));
+		setUp(new ImageIcon("src/sprite/elvisUp.gif"));
+		setDown(new ImageIcon("src/sprite/elvisDown.gif"));
 	}
 	
 

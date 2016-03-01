@@ -1,12 +1,14 @@
 package bobman;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class GameMenu
 {
 	private boolean status = false;
 	private Board board;
 	private Levels levels;
+	Random rand = new Random();
 	
 	public GameMenu(Board board, Levels levels) {
 		super();
@@ -62,6 +64,17 @@ public class GameMenu
 			status = false;
 		}
 		
+	}
+	
+	public void randomGame()
+	{
+		levels.setCurrentLevel(rand.nextInt(3));
+		try {
+			restart();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
 }
