@@ -6,11 +6,10 @@ public class GameEngine
 {
 	@SuppressWarnings("unused")
 	private Board board;
-	@SuppressWarnings("unused")
-	private UserInterface ui;
 	
 	public GameEngine() throws IOException
 	{
+		
 		board = new Board();
 	}
 	

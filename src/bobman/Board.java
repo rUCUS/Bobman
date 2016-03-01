@@ -149,8 +149,17 @@ public class Board  extends JFrame implements ActionListener
 	
 	
 	
+	
 	public GameMenu getGameMenu() {
 		return gameMenu;
+	}
+
+	public BombExplode getBombExplode() {
+		return bombExplode;
+	}
+
+	public void setBombExplode(BombExplode bombExplode) {
+		this.bombExplode = bombExplode;
 	}
 
 	public int getRucus1() {
