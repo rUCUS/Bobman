@@ -56,6 +56,7 @@ public class Levels
 			l.setHasPlayers(false);
 			l.setHasFire(false);
 			l.setHasPlayer(false);
+			l.setHasPowerUp(false);
 		}
 		
 		for( int i=0; i<169; i++)
@@ -118,8 +119,8 @@ public class Levels
 	{
 		if (player1 == null)
 		{
-			player1 = new Player(tiles,board,1 ,3, 1, 1,  1, 0);
-			player2 = new Sonic(tiles,board,2 ,3, 11, 11, 1, 1);
+			player1 = new Player(tiles,board,1 ,1, 1, 1,  1, 0);
+			player2 = new Player(tiles,board,2 ,1, 11, 11, 1, 1);
 			this.Ui = new UserInterface(player1,player2);
 		}
 		this.board.addKeyListener(Ui);
@@ -249,8 +250,8 @@ public class Levels
 	{
 		if (player1 != null)
 		{
-			player1.setHp(3);
-			player2.setHp(3);
+			player1.setHp(1);
+			player2.setHp(1);
 		}
 		this.board.getPlayer1().setText("P1 life: ");
 		this.board.getPlayer2().setText("P2 life: ");
@@ -286,6 +287,8 @@ public class Levels
 			if(player1.getHp() == 1)
 			{
 				JOptionPane.showMessageDialog(null, "Player 2 has won the game");
+				this.initBaseLevel();
+				board.getGameMenu().restart();
 				board.getGameMenu().restart();
 			}
 			

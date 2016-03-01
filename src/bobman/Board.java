@@ -323,7 +323,7 @@ public class Board  extends JFrame implements ActionListener
 		if(wastetime1 >=10f)
 		{
 			wastetime1= wastetime1 +0.2f;
-			if (wastetime1 >= 40.0f)
+			if (wastetime1 >= 100.0f)
 			{
 				resetWalkable3();
 				//timer2.stop();
@@ -334,7 +334,7 @@ public class Board  extends JFrame implements ActionListener
 		if(wastetime2 >=10f)
 		{
 			wastetime2= wastetime2 +0.2f;
-			if (wastetime2 >= 40.0f)
+			if (wastetime2 >= 100.0f)
 			{
 				
 				resetWalkable4();
@@ -347,7 +347,7 @@ public class Board  extends JFrame implements ActionListener
 		if (rucus > 0)
 		{
 			rucus++;
-			if (rucus >= 50)
+			if (rucus >= 100)
 			{
 				bombExplode.fireReset1();
 				rucus =0;
@@ -407,7 +407,7 @@ public class Board  extends JFrame implements ActionListener
 
 	{	
 		timeWaster = timeWaster + 1;
-		if (this.timeWaster == 100)
+		if (this.timeWaster == 300)
 		{
 			this.clock.stepClock();
 			timeWaster = 0;
