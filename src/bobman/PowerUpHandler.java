@@ -1,19 +1,156 @@
 package bobman;
 
+import java.awt.Color;
+import java.util.TreeMap;
+
 public class PowerUpHandler 
 {
+	TreeMap<Integer, Tiles> tiles;
 	private boolean hasLight;
 	private Player player;
-	public PowerUpHandler(Player player)
+	
+	public PowerUpHandler(Player player, TreeMap<Integer, Tiles> tiles)
 	{
 		super();
 		this.player = player;
+		this.tiles = tiles;
 		
 	}
 	
-	public void lighting(Tiles a, int k)
+	public void lighting(Tiles a,int b,TreeMap <Integer,Fire> fires)
 	{
+		Fire fire =fires.get(b);
+		if (b == 9 || b ==22 )
+		{
+			Tiles c = tiles.get(a.getOrder()+2);
+			if(c.isDestroyable())
+			{
+				if(c.isWalkable())
+				{
+					c.add(fire);
+					fire.setLocate(c);
+					c.setHasFire(true);
+				}
+				else if (!c.isWalkable())
+				{
+					
+					c.removeAll();
+					c.makeWalkable();
+					c.setBackground(Color.white);
+					if (c.isHasPowerUp())
+					{
+						if(c.isHasHp())
+						{
+							c.add(new Powerup(1));
+						}
+						else
+						{
+							c.add(new Powerup(2));
+
+						}
+					}
+				}
+			}
+		}
 		
+		if (b == 10 || b ==23 )
+		{
+			Tiles c = tiles.get(a.getOrder()-2);
+			if(c.isDestroyable())
+			{
+				if(c.isWalkable())
+				{
+					c.add(fire);
+					fire.setLocate(c);
+					c.setHasFire(true);
+				}
+				else if (!c.isWalkable())
+				{
+					
+					c.removeAll();
+					c.makeWalkable();
+					c.setBackground(Color.white);
+					if (c.isHasPowerUp())
+					{
+						if(c.isHasHp())
+						{
+							c.add(new Powerup(1));
+						}
+						else
+						{
+							c.add(new Powerup(2));
+
+						}
+					}
+				}
+			}
+		}
+		
+		if (b == 11 || b ==24 )
+		{
+			Tiles c = tiles.get(a.getOrder()-26);
+			if(c.isDestroyable())
+			{
+				if(c.isWalkable())
+				{
+					c.add(fire);
+					fire.setLocate(c);
+					c.setHasFire(true);
+				}
+				else if (!c.isWalkable())
+				{
+					
+					c.removeAll();
+					c.makeWalkable();
+					c.setBackground(Color.white);
+					if (c.isHasPowerUp())
+					{
+						if(c.isHasHp())
+						{
+							c.add(new Powerup(1));
+						}
+						else
+						{
+							c.add(new Powerup(2));
+
+						}
+					}
+				}
+			}
+		}
+		
+		if (b == 12 || b ==25 )
+		{
+			Tiles c = tiles.get(a.getOrder()+26);
+			if(c.isDestroyable())
+			{
+				if(c.isWalkable())
+				{
+					c.add(fire);
+					fire.setLocate(c);
+					c.setHasFire(true);
+				}
+				else if (!c.isWalkable())
+				{
+					
+					c.removeAll();
+					c.makeWalkable();
+					c.setBackground(Color.white);
+					if (c.isHasPowerUp())
+					{
+						if(c.isHasHp())
+						{
+							c.add(new Powerup(1));
+						}
+						else
+						{
+							c.add(new Powerup(2));
+
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	public void giveExtra()

@@ -45,6 +45,7 @@ public class Board  extends JFrame implements ActionListener
 	private BombExplode bombExplode;
 	private float wastetime4;
 	private ClockD clock;
+	private int timeWaster;
 	private int rucus1;
 	private int rucus;
     
@@ -334,7 +335,7 @@ public class Board  extends JFrame implements ActionListener
 		if(wastetime1 >=10f)
 		{
 			wastetime1= wastetime1 +0.2f;
-			if (wastetime1 >= 100.0f)
+			if (wastetime1 >= 40.0f)
 			{
 				resetWalkable3();
 				//timer2.stop();
@@ -345,7 +346,7 @@ public class Board  extends JFrame implements ActionListener
 		if(wastetime2 >=10f)
 		{
 			wastetime2= wastetime2 +0.2f;
-			if (wastetime2 >= 100.0f)
+			if (wastetime2 >= 40.0f)
 			{
 				
 				resetWalkable4();
@@ -357,7 +358,7 @@ public class Board  extends JFrame implements ActionListener
 		if (rucus > 0)
 		{
 			rucus++;
-			if (rucus >= 200)
+			if (rucus >= 100)
 			{
 				bombExplode.fireReset1();
 				rucus =0;
@@ -368,7 +369,7 @@ public class Board  extends JFrame implements ActionListener
 		if (rucus1 > 0)
 		{
 			rucus1++;
-			if (rucus1 >= 200)
+			if (rucus1 >=100)
 			{
 				bombExplode.fireReset2();
 				rucus1 = 0;
@@ -414,6 +415,14 @@ public class Board  extends JFrame implements ActionListener
 
 	private void update() throws IOException 
 	{	
+		timeWaster = timeWaster + 1;
+		if (this.timeWaster == 100)
+		{
+			this.clock.stepClock();
+			timeWaster = 0;
+		}
+			
+
 		levels.checkStatus();
 		this.repaint();
 		this.setVisible(true);

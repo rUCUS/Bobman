@@ -1,7 +1,6 @@
 package bobman;
 
 import java.awt.Color;
-import java.util.Random;
 import java.util.TreeMap;
 
 public class BombExplode
@@ -11,8 +10,6 @@ public class BombExplode
 	private Tiles bombScanner,bombScanner1;
 	private Fire fire,fire1;
 	private Board board;
-	Random rand = new Random();
-	private int whichPower;
 	public BombExplode(Board board,TreeMap<Integer, Tiles> tiles) 
 	{
 		super();
@@ -25,9 +22,9 @@ public class BombExplode
 	public void initFires() 
 	{
 		fires = new TreeMap<>();
-		for (int i = 0; i<18; i++)
+		for (int i = 0; i<26; i++)
 		{
-			if (i<9)
+			if (i<13)
 			{
 				fires.put(i, new Fire(1,this));
 			}
@@ -71,7 +68,6 @@ public class BombExplode
 
 	public void fireLeft1() 
 	{
-		System.out.println("player2left");
 		Tiles a = tiles.get(bombScanner1.getOrder()-1);
 		
 		if(a.isDestroyable())
@@ -79,18 +75,25 @@ public class BombExplode
 			if(a.isWalkable())
 			{
 				
-				fire1 =  fires.get(11);
+				fire1 =  fires.get(15);
 				a.add(fire1);
 				fire1.setLocate(a);
 				a.setHasFire(true);
-				if(tiles.get(a.getOrder()-1).isDestroyable())
+				
+				if(board.getLevels().getPlayer2().getRange() >1)
+				{
+					if(tiles.get(a.getOrder()-1).isDestroyable())
 				{
 					if (tiles.get(a.getOrder()-1).isWalkable())
 					{
-						fire1 =fires.get(15);
+						fire1 =fires.get(19);
 						tiles.get(a.getOrder()-1).add(fire1);
 						fire1.setLocate(tiles.get(a.getOrder()-1));
 						tiles.get(a.getOrder()-1).setHasFire(true);
+						if(board.getLevels().getPlayer2().getHandler().isHasLight())
+						{
+							board.getLevels().getPlayer2().getHandler().lighting(a,23,fires);
+						}
 					}
 					
 					else if (!tiles.get(a.getOrder()-1).isWalkable())
@@ -101,6 +104,9 @@ public class BombExplode
 						tiles.get(a.getOrder()-1).setBackground(Color.white);
 					}
 				}
+				}
+				
+				
 			
 			}
 			else if (!a.isWalkable())
@@ -111,8 +117,15 @@ public class BombExplode
 				a.setBackground(Color.white);
 				if (a.isHasPowerUp())
 				{
-					whichPower = rand.nextInt(2) + 1;
-					a.add(new Powerup(whichPower));
+					if(a.isHasHp())
+					{
+						a.add(new Powerup(1));
+					}
+					else
+					{
+						a.add(new Powerup(2));
+
+					}
 				}
 			}
 		}
@@ -121,7 +134,6 @@ public class BombExplode
 
 	public void fireRight1() 
 	{
-		System.out.println("player2left");
 		Tiles a = tiles.get(bombScanner1.getOrder()+1);
 		
 		if(a.isDestroyable())
@@ -129,18 +141,25 @@ public class BombExplode
 			if(a.isWalkable())
 			{
 				
-				fire1 =  fires.get(10);
+				fire1 =  fires.get(14);
 				a.add(fire1);
 				fire1.setLocate(a);
 				a.setHasFire(true);
-				if(tiles.get(a.getOrder()+1).isDestroyable())
+				if(board.getLevels().getPlayer2().getRange() >1)
+				{
+					if(tiles.get(a.getOrder()+1).isDestroyable())
 				{
 					if (tiles.get(a.getOrder()+1).isWalkable())
 					{
-						fire1 =fires.get(14);
+						fire1 =fires.get(18);
 						tiles.get(a.getOrder()+1).add(fire1);
 						fire1.setLocate(tiles.get(a.getOrder()+1));
 						tiles.get(a.getOrder()+1).setHasFire(true);
+						
+						if(board.getLevels().getPlayer2().getHandler().isHasLight())
+						{
+							board.getLevels().getPlayer2().getHandler().lighting(a,22,fires);
+						}
 					}
 					else if (!tiles.get(a.getOrder()+1).isWalkable())
 					{
@@ -150,6 +169,8 @@ public class BombExplode
 						tiles.get(a.getOrder()+1).setBackground(Color.white);
 					}
 				}
+				}
+				
 			
 			}
 			else if (!a.isWalkable())
@@ -160,8 +181,15 @@ public class BombExplode
 				a.setBackground(Color.white);
 				if (a.isHasPowerUp())
 				{
-					whichPower = rand.nextInt(2) + 1;
-					a.add(new Powerup(whichPower));
+					if(a.isHasHp())
+					{
+						a.add(new Powerup(1));
+					}
+					else
+					{
+						a.add(new Powerup(2));
+
+					}
 				}
 			}
 		}
@@ -170,7 +198,6 @@ public class BombExplode
 
 	public void fireDown1() 
 	{
-		System.out.println("player2left");
 		Tiles a = tiles.get(bombScanner1.getOrder()+13);
 		
 		if(a.isDestroyable())
@@ -178,18 +205,24 @@ public class BombExplode
 			if(a.isWalkable())
 			{
 				
-				fire1 =  fires.get(13);
+				fire1 =  fires.get(17);
 				a.add(fire1);
 				fire1.setLocate(a);
 				a.setHasFire(true);
-				if(tiles.get(a.getOrder()+13).isDestroyable())
+				if(board.getLevels().getPlayer2().getRange() >1)
+				{
+					if(tiles.get(a.getOrder()+13).isDestroyable())
 				{
 					if (tiles.get(a.getOrder()+13).isWalkable())
 					{
-						fire1 =fires.get(17);
+						fire1 =fires.get(21);
 						tiles.get(a.getOrder()+13).add(fire1);
 						fire1.setLocate(tiles.get(a.getOrder()+13));
 						tiles.get(a.getOrder()+13).setHasFire(true);
+						if(board.getLevels().getPlayer2().getHandler().isHasLight())
+						{
+							board.getLevels().getPlayer2().getHandler().lighting(a,25,fires);
+						}
 					}
 					else if (!tiles.get(a.getOrder()+13).isWalkable())
 					{
@@ -199,6 +232,8 @@ public class BombExplode
 						tiles.get(a.getOrder()+13).setBackground(Color.white);
 					}
 				}
+				}
+				
 			
 			}
 			else if (!a.isWalkable())
@@ -209,8 +244,15 @@ public class BombExplode
 				a.setBackground(Color.white);
 				if (a.isHasPowerUp())
 				{
-					whichPower = rand.nextInt(2) + 1;
-					a.add(new Powerup(whichPower));
+					if(a.isHasHp())
+					{
+						a.add(new Powerup(1));
+					}
+					else
+					{
+						a.add(new Powerup(2));
+
+					}
 				}
 			}
 		}
@@ -219,7 +261,6 @@ public class BombExplode
 
 	public void fireUp1() 
 	{
-		System.out.println("player2left");
 		Tiles a = tiles.get(bombScanner1.getOrder()-13);
 		
 		
@@ -228,18 +269,24 @@ public class BombExplode
 		{
 			if(a.isWalkable())
 			{
-				fire1 = fires.get(12);
+				fire1 = fires.get(16);
 				a.add(fire1);
 				fire1.setLocate(a);
 				a.setHasFire(true);
-				if(tiles.get(a.getOrder()-13).isDestroyable())
+				if(board.getLevels().getPlayer2().getRange() >1)
+				{
+					if(tiles.get(a.getOrder()-13).isDestroyable())
 				{
 					if (tiles.get(a.getOrder()-13).isWalkable())
 					{
-						fire1 =fires.get(16);
+						fire1 =fires.get(20);
 						tiles.get(a.getOrder()-13).add(fire1);
 						fire1.setLocate(tiles.get(a.getOrder()-13));
 						tiles.get(a.getOrder()-13).setHasFire(true);
+						if(board.getLevels().getPlayer2().getHandler().isHasLight())
+						{
+							board.getLevels().getPlayer2().getHandler().lighting(a,24,fires);
+						}
 					}
 					else if (!tiles.get(a.getOrder()-13).isWalkable())
 					{
@@ -249,6 +296,8 @@ public class BombExplode
 						tiles.get(a.getOrder()-13).setBackground(Color.white);
 					}
 				}
+				}
+				
 			
 			}
 			else if (!a.isWalkable())
@@ -258,8 +307,15 @@ public class BombExplode
 				a.setBackground(Color.white);
 				if (a.isHasPowerUp())
 				{
-					whichPower = rand.nextInt(2) + 1;
-					a.add(new Powerup(whichPower));
+					if(a.isHasHp())
+					{
+						a.add(new Powerup(1));
+					}
+					else
+					{
+						a.add(new Powerup(2));
+
+					}
 				}
 			}
 		}		
@@ -267,8 +323,7 @@ public class BombExplode
 
 	public void fireCenter1() 
 	{
-		System.out.println("player2left");
-		fire1 = fires.get(9);
+		fire1 = fires.get(13);
 		bombScanner1.add(fire1);
 		fire1.setLocate(bombScanner1);
 		bombScanner1.setHasFire(true);
@@ -277,7 +332,6 @@ public class BombExplode
 
 	public void fireCenter() 
 	{
-		System.out.println("player1left");
 		fire = fires.get(0);
 		bombScanner.add(fire);
 		fire.setLocate(bombScanner);
@@ -287,7 +341,6 @@ public class BombExplode
 
 	private void fireLeft() 
 	{
-		System.out.println("player1left");
 		Tiles a = tiles.get(bombScanner.getOrder()-1);
 		
 			if(a.isDestroyable())
@@ -298,7 +351,9 @@ public class BombExplode
 					a.add(fire);
 					fire.setLocate(a);
 					a.setHasFire(true);
-					if(tiles.get(a.getOrder()-1).isDestroyable())
+					if(board.getLevels().getPlayer1().getRange() >1)
+					{
+						if(tiles.get(a.getOrder()-1).isDestroyable())
 					{
 						if (tiles.get(a.getOrder()-1).isWalkable())
 						{
@@ -306,6 +361,10 @@ public class BombExplode
 							tiles.get(a.getOrder()-1).add(fire);
 							fire.setLocate(tiles.get(a.getOrder()-1));
 							tiles.get(a.getOrder()-1).setHasFire(true);
+							if(board.getLevels().getPlayer1().getHandler().isHasLight())
+							{
+								board.getLevels().getPlayer1().getHandler().lighting(a,10,fires);
+							}
 						}
 						else if (!tiles.get(a.getOrder()-1).isWalkable())
 						{
@@ -315,6 +374,8 @@ public class BombExplode
 							tiles.get(a.getOrder()-1).setBackground(Color.white);
 						}
 					}
+					}
+					
 					
 				
 				}
@@ -325,8 +386,15 @@ public class BombExplode
 					a.setBackground(Color.white);
 					if (a.isHasPowerUp())
 					{
-						whichPower = rand.nextInt(2) + 1;
-						a.add(new Powerup(whichPower));
+						if(a.isHasHp())
+						{
+							a.add(new Powerup(1));
+						}
+						else
+						{
+							a.add(new Powerup(2));
+
+						}
 					}
 				}
 			}
@@ -335,7 +403,6 @@ public class BombExplode
 
 	private void fireRight() 
 	{
-		System.out.println("player1left");
 		Tiles a = tiles.get(bombScanner.getOrder()+1);
 	
 			if(a.isDestroyable())
@@ -346,23 +413,32 @@ public class BombExplode
 					a.add(fire);
 					fire.setLocate(a);
 					a.setHasFire(true);
-					if(tiles.get(a.getOrder()+1).isDestroyable())
+					
+					if(board.getLevels().getPlayer1().getRange() >1)
 					{
-						if (tiles.get(a.getOrder()+1).isWalkable())
+						if(tiles.get(a.getOrder()+1).isDestroyable())
 						{
+						if (tiles.get(a.getOrder()+1).isWalkable())
+							{
 							fire =fires.get(5);
 							tiles.get(a.getOrder()+1).add(fire);
 							fire.setLocate(tiles.get(a.getOrder()+1));
 							tiles.get(a.getOrder()+1).setHasFire(true);
-						}
+							if(board.getLevels().getPlayer1().getHandler().isHasLight())
+							{
+								board.getLevels().getPlayer1().getHandler().lighting(a,9,fires);
+							}
+							}
 						else if (!tiles.get(a.getOrder()+1).isWalkable())
-						{
+							{
 							
 							tiles.get(a.getOrder()+1).removeAll();
 							tiles.get(a.getOrder()+1).makeWalkable();
 							tiles.get(a.getOrder()+1).setBackground(Color.white);
+							}
 						}
 					}
+					
 					
 				
 				}
@@ -373,8 +449,15 @@ public class BombExplode
 					a.setBackground(Color.white);
 					if (a.isHasPowerUp())
 					{
-						whichPower = rand.nextInt(2) + 1;
-						a.add(new Powerup(whichPower));
+						if(a.isHasHp())
+						{
+							a.add(new Powerup(1));
+						}
+						else
+						{
+							a.add(new Powerup(2));
+
+						}
 					}
 				}
 			}
@@ -383,7 +466,6 @@ public class BombExplode
 
 	private void fireDown() 
 	{
-		System.out.println("player1left");
 		Tiles a = tiles.get(bombScanner.getOrder()+13);
 		
 			if(a.isDestroyable())
@@ -394,7 +476,10 @@ public class BombExplode
 					a.add(fire);
 					fire.setLocate(a);
 					a.setHasFire(true);
-					if(tiles.get(a.getOrder()+13).isDestroyable())
+					
+					if(board.getLevels().getPlayer1().getRange() >1)
+					{
+						if(tiles.get(a.getOrder()+13).isDestroyable())
 					{
 						if (tiles.get(a.getOrder()+13).isWalkable())
 						{
@@ -402,6 +487,10 @@ public class BombExplode
 							tiles.get(a.getOrder()+13).add(fire);
 							fire.setLocate(tiles.get(a.getOrder()+13));
 							tiles.get(a.getOrder()+13).setHasFire(true);
+							if(board.getLevels().getPlayer1().getHandler().isHasLight())
+							{
+								board.getLevels().getPlayer1().getHandler().lighting(a,12,fires);
+							}
 						}
 						else if (!tiles.get(a.getOrder()+13).isWalkable())
 						{
@@ -411,6 +500,8 @@ public class BombExplode
 							tiles.get(a.getOrder()+13).setBackground(Color.white);
 						}
 					}
+					}
+					
 					
 				
 				}
@@ -421,8 +512,16 @@ public class BombExplode
 					a.setBackground(Color.white);
 					if (a.isHasPowerUp())
 					{
-						whichPower = rand.nextInt(2) + 1;
-						a.add(new Powerup(whichPower));
+						if(a.isHasHp())
+						{
+							a.add(new Powerup(1));
+						}
+						else
+						{
+							a.add(new Powerup(2));
+
+						}
+						
 					}
 				}
 			}
@@ -431,7 +530,6 @@ public class BombExplode
 
 	private void fireUp() 
 	{
-		System.out.println("player1left");
 		Tiles a = tiles.get(bombScanner.getOrder()-13);
 		
 		
@@ -444,7 +542,9 @@ public class BombExplode
 					a.add(fire);
 					fire.setLocate(a);
 					a.setHasFire(true);
-					if(tiles.get(a.getOrder()-13).isDestroyable())
+					if(board.getLevels().getPlayer1().getRange() >1)
+					{
+						if(tiles.get(a.getOrder()-13).isDestroyable())
 					{
 						if (tiles.get(a.getOrder()-13).isWalkable())
 						{
@@ -452,6 +552,10 @@ public class BombExplode
 							fire.setLocate(tiles.get(a.getOrder()-13));
 							tiles.get(a.getOrder()-13).add(fire);
 							tiles.get(a.getOrder()-13).setHasFire(true);
+							if(board.getLevels().getPlayer1().getHandler().isHasLight())
+							{
+								board.getLevels().getPlayer1().getHandler().lighting(a,11,fires);
+							}
 						}
 						else if (!tiles.get(a.getOrder()-13).isWalkable())
 						{
@@ -461,6 +565,8 @@ public class BombExplode
 							tiles.get(a.getOrder()-13).setBackground(Color.white);
 						}
 					}
+					}
+					
 				
 				}
 				else if (!a.isWalkable())
@@ -471,8 +577,15 @@ public class BombExplode
 					a.setBackground(Color.white);
 					if (a.isHasPowerUp())
 					{
-						whichPower = rand.nextInt(2) + 1;
-						a.add(new Powerup(whichPower));
+						if(a.isHasHp())
+						{
+							a.add(new Powerup(1));
+						}
+						else
+						{
+							a.add(new Powerup(2));
+
+						}
 					}
 				}
 			}
@@ -483,7 +596,7 @@ public class BombExplode
 		Tiles a;
 		if(fires.get(0).isactive())
 		{
-			for (int i= 0; i<9; i++)
+			for (int i= 0; i<13; i++)
 			{
 				Fire k = fires.get(i);
 				if (k.isactive())
@@ -500,9 +613,9 @@ public class BombExplode
 	public void fireReset2()
 	{
 		Tiles a;
-		if(fires.get(9).isactive())
+		if(fires.get(13).isactive())
 		{
-			for (int i= 9; i<18; i++)
+			for (int i= 13; i<26; i++)
 			{
 				Fire k = fires.get(i);
 				if (k.isactive())

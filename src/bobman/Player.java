@@ -13,14 +13,14 @@ public class Player extends JLabel
 	 */
 	private static final long serialVersionUID = 6017005901425321171L;
 	private Board board;
-	private int hp,xPos,yPos,speed,status,id,damage;
+	private int hp,xPos,yPos,range,status,id,damage;
 	private Bomb bomb;
 	private boolean isPlayerAlive;
 	private TreeMap<Integer,Tiles> tiles;
 	private ImageIcon left,right,up,down,upDown,upLeft,upRight,downLeft,downRight,leftRight,upUp,leftLeft,rightRight,downDown;
 	private PowerUpHandler handler;
 	
-	public Player(TreeMap<Integer,Tiles> tiles,Board board,int status ,int hp, int xPos, int yPos, int speed,int side)
+	public Player(TreeMap<Integer,Tiles> tiles,Board board,int status ,int hp, int xPos, int yPos, int range,int side)
 	
 	{
 		this.damage = 1;
@@ -30,12 +30,12 @@ public class Player extends JLabel
 		this.hp = hp;
 		this.xPos = xPos;
 		this.yPos = yPos;
-		this.speed = speed;
+		this.range = range;
 		isPlayerAlive = true;
 		initPos();
 		startPos(side);
 		initBomb();
-		handler = new PowerUpHandler(this);
+		handler = new PowerUpHandler(this,tiles);
 	}
 	//////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////
@@ -149,10 +149,22 @@ public class Player extends JLabel
 					if(k.isHasHp())
 					{
 						handler.giveExtra();
+						k.setHasHp(false);
+						k.setHasPowerUp(false);
 					}
 					else
 					{
-						handler.setHasLight(true);
+						if (this.getRange() == 1)
+						{
+							this.setRange(2);
+							k.setHasPowerUp(false);
+						}
+						else
+						{
+							handler.setHasLight(true);
+							k.setHasPowerUp(false);
+						}
+						
 					}
 				}
 			this.setxPos(this.getxPos()-1);
@@ -204,10 +216,21 @@ public class Player extends JLabel
 					if(k.isHasHp())
 					{
 						handler.giveExtra();
+						k.setHasHp(false);
+						k.setHasPowerUp(false);
 					}
 					else
 					{
-						handler.setHasLight(true);
+						if (this.getRange() == 1)
+						{
+							this.setRange(2);
+							k.setHasPowerUp(false);
+						}
+						else
+						{
+							handler.setHasLight(true);
+							k.setHasPowerUp(false);
+						}
 					}
 				}
 				this.setxPos(this.getxPos()+1);
@@ -256,10 +279,21 @@ public class Player extends JLabel
 					if(k.isHasHp())
 					{
 						handler.giveExtra();
+						k.setHasHp(false);
+						k.setHasPowerUp(false);
 					}
 					else
 					{
-						handler.setHasLight(true);
+						if (this.getRange() == 1)
+						{
+							this.setRange(2);
+							k.setHasPowerUp(false);
+						}
+						else
+						{
+							handler.setHasLight(true);
+							k.setHasPowerUp(false);
+						}
 					}
 				}
 				this.setyPos(this.getyPos()-1);
@@ -306,10 +340,21 @@ public class Player extends JLabel
 					if(k.isHasHp())
 					{
 						handler.giveExtra();
+						k.setHasHp(false);
+						k.setHasPowerUp(false);
 					}
 					else
 					{
-						handler.setHasLight(true);
+						if (this.getRange() == 1)
+						{
+							this.setRange(2);
+							k.setHasPlayer(false);
+						}
+						else
+						{
+							handler.setHasLight(true);
+							k.setHasPowerUp(false);
+						}
 					}
 				}
 				this.setyPos(this.getyPos()+1);
@@ -592,14 +637,14 @@ public class Player extends JLabel
 		this.isPlayerAlive = isPlayerAlive;
 	}
 
-	public double getSpeed() 
+	public double getRange() 
 	{
-		return speed;
+		return range;
 	}
 
-	public void setSpeed(int speed) 
+	public void setRange(int range) 
 	{
-		this.speed = speed;
+		this.range = range;
 	}
 
 	public int getHp() 

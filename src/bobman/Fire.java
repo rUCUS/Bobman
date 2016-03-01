@@ -30,7 +30,7 @@ public class Fire extends JLabel
 		
 		if (player ==2)
 		{
-			fireIcon2 = new ImageIcon("src/sprite/fire1.png");
+			fireIcon2 = new ImageIcon("src/sprite/fire2.png");
 			this.setIcon(fireIcon2);
 			isActive = false;
 		}
