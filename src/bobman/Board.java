@@ -8,6 +8,14 @@ import java.io.IOException;
 import javax.swing.*;
 import javax.swing.Timer;
 
+/*
+ * This class is used to generate our gameboard along with all
+ * of its features such as players, time, gamemenu etc
+ * 
+ * @author Liban Aden, Danny Lam, Hamza Kadric, Mehdi Adelzadeh
+ * @version 2016-03-02
+ */
+
 
 public class Board  extends JFrame implements ActionListener
 {
@@ -21,10 +29,9 @@ public class Board  extends JFrame implements ActionListener
 	private TreeMap<Integer,Tiles> tiles;
 	private Levels levels;
 	private Timer timer;
-	private float wastetime1,wastetime2,wastetime3;
+	private float wastetime1,wastetime2;
 	private Tiles resetTile1,resetTile2;
 	private BombExplode bombExplode;
-	private float wastetime4;
 	private ClockD clock;
 	private int timeWaster;
 	private int rucus1;
@@ -58,9 +65,11 @@ public class Board  extends JFrame implements ActionListener
 		
 	}
 	
-	///////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////
-	//////// Init
+	/*
+	 * 
+	 * initialize our startmenu 
+	 *
+	 */
 	
 	public void initStartmenu() 
 	{
@@ -94,6 +103,11 @@ public class Board  extends JFrame implements ActionListener
 		buttonTimer.setBackground(Color.lightGray);
 	}
 	
+	/*
+	 * intialize our board
+	 * 
+	 */
+	
 	public void initBoard() throws IOException 
 	{	
 		setTitle("Bobman");
@@ -109,16 +123,15 @@ public class Board  extends JFrame implements ActionListener
 		
 	}
 
-	///////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////
+
+
+	/*
+	 * this applies for player 1
+	 * This method clears the bomb and generates fire and makes
+	 * the tile that the bomb appeared on walkable
+	 * 
+	 */
 	
-	
-	
-	///////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////
-	//////// Avsluta bomb samt elden
-	
-	////slut p� klockmetoder
 	 
 	 
 	private void resetWalkable3() 
@@ -129,6 +142,12 @@ public class Board  extends JFrame implements ActionListener
 		
 	}
 	
+	/* this applies for player 2
+	 * This method clears the bomb and generates fire and makes
+	 * the tile that the bomb appeared on walkable
+	 * 
+	 */
+	
 	private void resetWalkable4() 
 	{
 		resetTile2.makeWalkable();
@@ -137,115 +156,190 @@ public class Board  extends JFrame implements ActionListener
 		
 	}
 	
-	///////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////
-	
-	
-	
-	///////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////
-	////////Setters and getters
 	
 	
 	
 	
+	/*
+	 * @returns the games menu.
+	 */
 	
 	public GameMenu getGameMenu() {
 		return gameMenu;
 	}
+	
+	/*
+	 * @returns the class that handles explosions.
+	 */
 
 	public BombExplode getBombExplode() {
 		return bombExplode;
 	}
+	
+	
 
 	public void setBombExplode(BombExplode bombExplode) {
 		this.bombExplode = bombExplode;
 	}
+	
+	/*
+	 * @returns the time variable for player2's bombs
+	 */
 
 	public int getRucus1() {
 		return rucus1;
 	}
 
+	/*
+	 * @ sets a new time variable for player2's bombs
+	 * @param rucus1
+	 */
+	
 	public void setRucus1(int rucus1) {
 		this.rucus1 = rucus1;
 	}
+	
+	/*
+	 * @returns the time variable for player1's bombs
+	 */
 
 	public int getRucus() {
 		return rucus;
 	}
 
+	/*
+	 * sets a new time variable for player1's bombs
+	 * @param rucus
+	 */
+	
 	public void setRucus(int rucus) {
 		this.rucus = rucus;
 	}
 
+	/*
+	 * sets a new game menu
+	 * @param gameMenu
+	 */
+	
 	public void setGameMenu(GameMenu gameMenu) {
 		this.gameMenu = gameMenu;
 	}
 	
+	/*
+	 * time delay for player1's bomb explosion
+	 * @return wastetime1
+	 */
+	
 	public float getWastetime1() {
 		return wastetime1;
 	}
+	
+	/*
+	 * sets a new delay for player1's bomb to explode
+	 * @param wastetime1
+	 */
 
 	public void setWastetime1(float wastetime1) {
 		this.wastetime1 = wastetime1;
 	}
+	
+	/*
+	 * time delay for player2's bomb explosion
+	 * @return wastetime2
+	 */
 
 	public float getWastetime2() {
 		return wastetime2;
 	}
+	
+	/*
+	 * sets a new delay for player2's bomb to explode
+	 * @param wastetime2
+	 */
 
 	public void setWastetime2(float wastetime2) {
 		this.wastetime2 = wastetime2;
 	}
 
-	public float getWastetime3() {
-		return wastetime3;
-	}
-
-	public void setWastetime3(float wastetime3) {
-		this.wastetime3 = wastetime3;
-	}
+	/*
+	 * resets a specific tile where the bomb was laid on for player1
+	 * @returns resetTile1
+	 */
 
 	public Tiles getResetTile1() {
 		return resetTile1;
 	}
 
+	/*
+	 * sets a new tile for the given position for player1
+	 * @param resetTile1
+	 */
+	
 	public void setResetTile1(Tiles resetTile1) {
 		this.resetTile1 = resetTile1;
 	}
+	
+	/*
+	 * resets a specific tile where the bomb was laid on for player2
+	 * @returns resetTile1
+	 */
 
 	public Tiles getResetTile2() {
 		return resetTile2;
 	}
+	
+	/*
+	 * sets a new tile for the given position for player2
+	 * @param resetTile2
+	 */
 
 	public void setResetTile2(Tiles resetTile2) {
 		this.resetTile2 = resetTile2;
 	}
 
-	public float getWastetime4() {
-		return wastetime4;
-	}
 
-	public void setWastetime4(float wastetime4) {
-		this.wastetime4 = wastetime4;
-	}
+	/*
+	 * returns the amount of life for player1
+	 * @returns player1
+	 */
 	
 	public JLabel getPlayer1() 
 	{
 		return player1;
 	}
+	
+	/*
+	 * sets the amount of life for player1
+	 * @param player1
+	 */
 
 	public void setPlayer1(JLabel player1) {
 		this.player1 = player1;
 	}
+	
+	/*
+	 * returns the amount of life for player2
+	 * @returns player2
+	 */
+	
 
 	public JLabel getPlayer2() {
 		return player2;
 	}
 
+	/*
+	 * sets the amount of life for player2
+	 * @param player2
+	 */
+
+	
 	public void setPlayer2(JLabel player2) {
 		this.player2 = player2;
 	}
+	
+	/*
+	 * 
+	 */
 	
 
 	public Levels getLevels() {
@@ -283,7 +377,9 @@ public class Board  extends JFrame implements ActionListener
 	
 	
 
-	
+	/*
+	 * this method pauses the time and the game
+	 */
 
 	public void pauseTheGame()
 	{
@@ -299,6 +395,10 @@ public class Board  extends JFrame implements ActionListener
 		//}
 		
 	}
+	
+	/*
+	 * starts the time and the game
+	 */
 
 	public void startTheGame() 
 	{
@@ -311,15 +411,12 @@ public class Board  extends JFrame implements ActionListener
 		button4.setText("Pause");
 		
 	}	
-	//////////////////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////////////////
+
+	/*
+	 * this method check which of our option is choosen
+	 * and performs a certain operation
+	 */
 	
-	
-	/////////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////////////////////
-	//////// ActionListener
-	
-	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
 		try {
@@ -410,7 +507,10 @@ public class Board  extends JFrame implements ActionListener
 		}
 	}
 	
-	
+	/*
+	 * this method ticks the timer and repaints our board
+	 * it also checks if there is a winner (checkStatus)
+	 */
 
 	private void update() throws IOException 
 
