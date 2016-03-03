@@ -13,11 +13,9 @@ public class Sonic extends Player
 	
 	private static final long serialVersionUID = -8839858857139384364L;
 	public Sonic(TreeMap<Integer,Tiles> tiles,Board board,
-			int status, int hp, int xPos, int yPos, int range, int side) 
+			int status, int xPos, int yPos, int side) 
 	{
-		super(tiles,board,status,hp, xPos, yPos,range,side);
-		this.setRange(2);
-		
+		super(tiles,board,status, xPos, yPos,side);	
 	}
 	
 	/*
@@ -32,6 +30,14 @@ public class Sonic extends Player
 		setLeft(new ImageIcon("src/sprite/leftSonic.gif"));
 		setUp(new ImageIcon("src/sprite/upSonic.gif"));
 		setDown(new ImageIcon("src/sprite/downSonic.gif"));
+	}
+
+	@Override
+	public void initPlayer() 
+	{
+		this.setRange(2);
+		this.setHp(1);
+		this.getHandler().setHasLight(true);
 	}
 	
 

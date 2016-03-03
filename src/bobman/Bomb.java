@@ -18,9 +18,8 @@ public class Bomb extends JLabel
 	private ImageIcon bombicon1,bombicon2;
 	
 
-	public Bomb(int damage,int player)
+	public Bomb(int player)
 	{
-		this.setDamage(damage);
 		this.setSize(48, 48);
 		whoseBomb(player);
 	}
@@ -117,18 +116,5 @@ public class Bomb extends JLabel
 	 * returns the bomb damage
 	 * @return damage
 	 */
-
-	public int getDamage() {
-		return damage;
-	}
-	
-	/*
-	 * sets the bomb damage
-	 * @param damage
-	 */
-
-	public void setDamage(int damage) {
-		this.damage = damage;
-	}
 	
 }

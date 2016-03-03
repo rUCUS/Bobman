@@ -25,6 +25,21 @@ public class Levels
 	Random rand = new Random();
 	private Collision collision;
 	
+	
+	public Levels(Board board, TreeMap<Integer,Tiles> tiles)
+	{
+		this.board = board;
+		this.tiles = tiles;
+	}
+	
+	public Collision getCollision() {
+		return collision;
+	}
+
+	public void setCollision(Collision collision) {
+		this.collision = collision;
+	}
+
 	public Player getPlayer1() {
 		return player1;
 	}
@@ -41,11 +56,7 @@ public class Levels
 		this.player2 = player2;
 	}
 
-	public Levels(Board board, TreeMap<Integer,Tiles> tiles)
-	{
-		this.board = board;
-		this.tiles = tiles;
-	}
+	
 	
 	public void initBaseLevel() throws IOException 
 	{
@@ -118,14 +129,78 @@ public class Levels
 		case 3: System.exit(0);
 		}
 	}
+	
+	public int choosePlayer(int player)
+	{
+		if (player == 1)
+		{
+			String[] options = new String[] {"Rey", "Sonic", "Devilman"};
+		int i =  JOptionPane.showOptionDialog(board, "To start the game", "Please Choose character for Player1!",
+		        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
+		        null, options, options[0]);
+		return i;
+		}
+		
+		if (player == 2)
+		{
+			String[] options = new String[] {"Rey", "Sonic", "Devilman"};
+		int i =  JOptionPane.showOptionDialog(board, "To start the game", "Please Choose character for Player2!",
+		        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
+		        null, options, options[0]);
+		return i;
+		}
+		return 0;
+		
+		
+	}
+	
+	public void choosenPlayer ()
+	{
+			int pick1 = choosePlayer(1);
+			int pick2 = choosePlayer(2);
+			
+			if (pick1 == 0)
+			{
+				player1 = new Player(tiles,board,1 , 1, 1, 0);
+			}
+			
+			if (pick1 == 1)
+			{
+				player1 = new Sonic(tiles,board,1 , 1, 1, 0);
+			}
+			
+			if (pick1 == 2)
+			{
+				player1 = new DevilMan(tiles,board,1 , 1, 1, 0);
+			}
+			
+			if (pick1 == 0)
+			{
+				
+				player2 = new Player(tiles,board,2, 11, 11, 1);
+			}
+			
+			
+			if (pick1 == 1)
+			{
+				player2 = new Sonic(tiles,board,2, 11, 11, 1);
+
+			}
+			
+			if (pick2 == 2)
+			{
+				player2 = new DevilMan(tiles,board,2, 11, 11, 1);
+				
+			}
+			
+			this.Ui = new UserInterface(player1,player2);
+	}
 
 	public void levelOne() throws IOException
 	{
 		if (player1 == null)
 		{
-			player1 = new Player(tiles,board,1 ,2, 1, 1,  2, 0);
-			player2 = new Sonic(tiles,board,2 ,2, 11, 11, 2, 1);
-			this.Ui = new UserInterface(player1,player2);
+			this.choosenPlayer();
 		}
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
@@ -168,32 +243,24 @@ public class Levels
 		p.add(player2);
 		player2.setxPos(11);
 		player2.setyPos(11);
-		collision = new Collision(this);
-		player1.setHp(2);
-		player2.setHp(2);
-		player1.setRange(2);
-		player2.setRange(2);
+		if (collision == null)
+		{
+			collision = new Collision(this);
+		}
+		player1.initPlayer();
+		player2.initPlayer();
 		this.board.getPlayer1().setText("P1 life: " + player1.getHp() + " |");
 		this.board.getPlayer2().setText("P2 life: " + player2.getHp());
 		board.repaint();
 		board.setVisible(true);
 	}
 	
-	public Collision getCollision() {
-		return collision;
-	}
-
-	public void setCollision(Collision collision) {
-		this.collision = collision;
-	}
-
+	
 	public void levelTwo() throws IOException
 	{
 		if (player1 == null)
 		{
-			player1 = new Player(tiles,board,1 ,1, 1, 1,  1, 0);
-			player2 = new Player(tiles,board,2 ,1, 11, 11, 1, 1);
-			this.Ui = new UserInterface(player1,player2);
+			this.choosenPlayer();
 		}
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
@@ -263,11 +330,7 @@ public class Levels
 		Tiles p;
 		if (player1 == null)
 		{
-			player1 = new Player(tiles,board,1 ,3, 1, 1,  2, 0);
-			player2 = new Player(tiles,board,2 ,3, 11, 11, 2, 1);
-			player1.getHandler().setHasLight(true);
-			player2.getHandler().setHasLight(true);
-			this.Ui = new UserInterface(player1,player2);
+			this.choosenPlayer();
 		}
 		
 		
@@ -287,6 +350,10 @@ public class Levels
 		player2.setxPos(11);
 		player2.setyPos(11);
 		player2.setHp(3);
+		player1.setRange(2);
+		player2.setRange(2);
+		player1.getHandler().setHasLight(true);
+		player2.getHandler().setHasLight(true);
 		this.board.getPlayer1().setText("P1 life: " + player1.getHp() + " |");
 		this.board.getPlayer2().setText("P2 life: " + player2.getHp());
 		
