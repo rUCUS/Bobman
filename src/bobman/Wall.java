@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 
 public class Wall extends Tiles
 {
-	/**
+	/*
 	 * 
 	 */
 	private static final long serialVersionUID = -3939973631475481853L;

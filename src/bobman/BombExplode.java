@@ -3,6 +3,10 @@ package bobman;
 import java.awt.Color;
 import java.util.TreeMap;
 
+/*
+ * 
+ */
+
 public class BombExplode
 {
 	private TreeMap <Integer,Fire> fires;
@@ -18,6 +22,11 @@ public class BombExplode
 		initFires();
 		
 	}
+	
+	/*
+	 * this method initialize our fire for player1's and
+	 * player2's bombs
+	 */
 	
 	public void initFires() 
 	{
@@ -37,6 +46,11 @@ public class BombExplode
 		}
 		
 	}
+	
+	/*
+	 * this method is used when the bomb is exploded and it transfers
+	 * the fire to a certain area for both player1's and player2's bombs
+	 */
 
 	public void BombExploded(Tiles k,int status)
 	{
@@ -65,6 +79,11 @@ public class BombExplode
 		}
 		
 	}
+	
+	/*
+	 * this method directs our fire towards the left for 
+	 * player1's bombs
+	 */
 
 	public void fireLeft1() 
 	{
@@ -131,6 +150,12 @@ public class BombExplode
 		}
 			
 	}
+	
+	/*
+	 * this method directs our fire towards the right for 
+	 * player1's bombs
+	 */
+
 
 	public void fireRight1() 
 	{
@@ -195,6 +220,11 @@ public class BombExplode
 		}
 		
 	}
+	
+	/*
+	 * this method direct our fire downwards for 
+	 * player1's bombs
+	 */
 
 	public void fireDown1() 
 	{
@@ -258,6 +288,12 @@ public class BombExplode
 		}
 		
 	}
+	
+	/*
+	 * this method direct our fire upwards for 
+	 * player1's bombs
+	 */
+
 
 	public void fireUp1() 
 	{
@@ -338,6 +374,12 @@ public class BombExplode
 		bombScanner.setHasFire(true);
 		
 	}
+	
+	/*
+	 * this method directs our fire towards the left for 
+	 * player2's bombs
+	 */
+
 
 	private void fireLeft() 
 	{
@@ -400,6 +442,12 @@ public class BombExplode
 			}
 		
 	}
+	
+	/*
+	 * this method directs our fire towards the right for 
+	 * player2's bombs
+	 */
+
 
 	private void fireRight() 
 	{
@@ -463,6 +511,11 @@ public class BombExplode
 			}
 		
 	}
+	
+	/*
+	 * this method direct our fire downwards for 
+	 * player2's bombs
+	 */
 
 	private void fireDown() 
 	{
@@ -527,6 +580,11 @@ public class BombExplode
 			}
 		
 	}
+	
+	/*
+	 * this method direct our fire upwards for 
+	 * player1's bombs
+	 */
 
 	private void fireUp() 
 	{

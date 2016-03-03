@@ -6,9 +6,11 @@ import javax.swing.ImageIcon;
 
 public class Sonic extends Player 
 {
-	/**
-	 * 
+	/*
+	 * this class creates a player
+	 * it also extends Player 
 	 */
+	
 	private static final long serialVersionUID = -8839858857139384364L;
 	public Sonic(TreeMap<Integer,Tiles> tiles,Board board,
 			int status, int hp, int xPos, int yPos, int range, int side) 
@@ -17,6 +19,11 @@ public class Sonic extends Player
 		this.setRange(2);
 		
 	}
+	
+	/*
+	 * initialize our player,Sonic
+	 */
+	
 	@Override
 	public void initPos() {
 		// TODO Auto-generated method stub

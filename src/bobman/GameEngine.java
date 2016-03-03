@@ -2,6 +2,14 @@ package bobman;
 
 import java.io.IOException;
 
+/*
+ * this is where all of the building block for the game is located
+ * this class creates our game
+ * 
+ * @author Liban Aden, Danny Lam, Mehdi Adelzadeh, Hamza Kadric
+ * @version 2016-03-02
+ */
+
 public class GameEngine 
 {
 	
@@ -13,11 +21,18 @@ public class GameEngine
 		//board = new Board();
 	}
 	
+	/*
+	 * 
+	 */
 	@SuppressWarnings("unused")
 	public static void main(String[] args) throws IOException
 	{
 		GameEngine engine = new GameEngine();
 	}
+	
+	/*
+	 *this method is used when startrandomGame is selected from game menu 
+	 */
 	
 	public void startrandomGame()
 	{
@@ -30,6 +45,10 @@ public class GameEngine
 			e.printStackTrace();
 		}
 	}
+	
+	/*
+	 * this method start our game or creates a new game
+	 */
 	
 	public void startTheGame()
 	{

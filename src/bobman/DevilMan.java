@@ -6,7 +6,8 @@ import javax.swing.Timer;
 
 public class DevilMan extends Player
 {
-	/**
+	/*
+	 * this class creates a player and this class also extends Player
 	 * 
 	 */
 	private static final long serialVersionUID = -7314698319741768805L;

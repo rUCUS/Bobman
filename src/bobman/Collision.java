@@ -1,5 +1,10 @@
 package bobman;
 
+/*
+ * this class handles, what happens when player1 
+ * and player2 collide 
+ */
+
 public class Collision 
 {
 	private Player player1,player2;
@@ -10,9 +15,9 @@ public class Collision
 		this.player2 = levels.getPlayer2();
 	}
 	
-	//////////////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////////////
-	//////////Player colliding
+	/*
+	 * this method paints the picture when the players collide
+	 */
 	public void playerCollision(Player collider,int side)
 	{
 		if (collider.getStatus() == 1)
@@ -64,6 +69,10 @@ public class Collision
 		}
 	}
 	
+	/*
+	 * this method tells us what should happen when our first player is looking
+	 * right and collides with the other player from different directions
+	 */
 	
 	public void firstPlayerLooksRight(Player collider,Player collided,int side)
 	{
@@ -116,6 +125,11 @@ public class Collision
 		
 	}
 	
+	/*
+	 * this method tells us what should happen when our first player is looking
+	 * up and collides with the other player from different directions
+	 */
+	
 	public void firstPlayerLooksUp(Player collider,Player collided,int side)
 	{
 		Tiles a = collider.getTiles().get(collider.getxPos() + collider.getyPos()*13);
@@ -166,6 +180,11 @@ public class Collision
 		}
 		
 	}
+	
+	/*
+	 * this method tells us what should happen when our first player is looking
+	 * down and collides with the other player from different directions
+	 */
 	
 	public void firstPlayerLooksDown(Player collider,Player collided,int side)
 	{
@@ -218,6 +237,11 @@ public class Collision
 		
 	}
 	
+	/*
+	 * this method tells us what should happen when our first player is looking
+	 * left and collides with the other player from different directions
+	 */
+	
 	public void firstPlayerLooksLeft(Player collider,Player collided,int side)
 	{
 		Tiles a = collider.getTiles().get(collider.getxPos() + collider.getyPos()*13);
@@ -269,6 +293,8 @@ public class Collision
 		
 	}
 	
+	
+	
 	public void LeaveCollision(Player collider,int side)
 	{
 		Tiles a;
@@ -315,8 +341,12 @@ public class Collision
 		}
 	}
 	
-	//////////////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////////////
+	
+
+	/*
+	 * this method is called upon if the fire and player collide
+	 * @param victim
+	 */
 	
 	public void FireCollision(Player victim)
 	{
@@ -326,6 +356,11 @@ public class Collision
 		respawn(victim);
 	}
 
+	/*
+	 * this method respawns our player to their original position 
+	 * @param victim
+	 */
+	
 	public void respawn(Player victim)
 	{
 		Tiles a;
