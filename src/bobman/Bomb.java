@@ -14,7 +14,7 @@ public class Bomb extends JLabel
 {
 	
 	private static final long serialVersionUID = 2578658456631174653L;
-	private int damage, xPos ,yPos;
+	private int xPos ,yPos;
 	private ImageIcon bombicon1,bombicon2;
 	
 
@@ -111,10 +111,5 @@ public class Bomb extends JLabel
 		}
 		return bombicon1;
 	}
-	
-	/*
-	 * returns the bomb damage
-	 * @return damage
-	 */
 	
 }

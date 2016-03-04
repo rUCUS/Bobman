@@ -6,6 +6,9 @@ import java.awt.event.KeyListener;
 /*
  * this class checks for which keys are used on the keyboard and acts accordingly
  * its also implements Keylistener
+ * 
+ * @author Danny Lam, Mehdi Adelzadeh
+ * @version 2016-03-02
  */
 
 public class UserInterface implements KeyListener

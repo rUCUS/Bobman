@@ -4,7 +4,10 @@ import java.awt.Color;
 import java.util.TreeMap;
 
 /*
+ * this class creates our bomb with fire and its explosion range
  * 
+ * @author Liban Aden, Danny Lam
+ * @version 2016-02-29
  */
 
 public class BombExplode
@@ -356,6 +359,11 @@ public class BombExplode
 			}
 		}		
 	}
+	
+	/*
+	 * this method generates fire on our bombs position
+	 * for player 2
+	 */
 
 	public void fireCenter1() 
 	{
@@ -365,6 +373,11 @@ public class BombExplode
 		bombScanner1.setHasFire(true);
 		
 	}
+	
+	/*
+	 * this method generates fire on our bombs position
+	 * for player 1
+	 */
 
 	public void fireCenter() 
 	{
@@ -649,6 +662,10 @@ public class BombExplode
 			}
 	}
 	
+	/*
+	 * this method removes our fire for player1's bomb
+	 */
+	
 	public void fireReset1()
 	{
 		Tiles a;
@@ -667,6 +684,10 @@ public class BombExplode
 			}
 		}
 	}
+	
+	/*
+	 * this class removes our fire for player2's bomb
+	 */
 	
 	public void fireReset2()
 	{

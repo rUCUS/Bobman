@@ -338,43 +338,59 @@ public class Board  extends JFrame implements ActionListener
 	}
 	
 	/*
-	 * 
+	 * returns the level
+	 * @returns levels
 	 */
 	
 
 	public Levels getLevels() {
 		return levels;
 	}
+	
+	/*
+	 * sets level
+	 * @param levels
+	 */
 
 	public void setLevels(Levels levels) {
 		this.levels = levels;
 	}
 	
+	/*
+	 * returns a button with a time-text
+	 * @returns buttonTimer
+	 */
+	
 	public JButton getButtonTimer() {
 		return buttonTimer;
 	}
+	
+	/*
+	 * sets our button
+	 * @param buttonTimer
+	 */
 
 	public void setButtonTimer(JButton buttonTimer) {
 		this.buttonTimer = buttonTimer;
 	}
 	
+	/*
+	 * returns our clock
+	 * @returns clock
+	 */
+	
 	public ClockD getClock() {
 		return clock;
 	}
+	
+	/*
+	 * sets the clock
+	 * @param clock
+	 */
 
 	public void setClock(ClockD clock) {
 		this.clock = clock;
 	}
-
-	////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////
-	
-	
-	
-	/////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////////////////
-	/////// Start and Pause the Game
-	
 	
 
 	/*
@@ -387,13 +403,6 @@ public class Board  extends JFrame implements ActionListener
 		JOptionPane.showMessageDialog(null, "you have paused the game");
 		button4.setText("resume");
 		
-		//try {
-			//TimeUnit.SECONDS.sleep(1);
-		//} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-	//		e.printStackTrace();
-		//}
-		
 	}
 	
 	/*
@@ -402,11 +411,6 @@ public class Board  extends JFrame implements ActionListener
 
 	public void startTheGame() 
 	{
-/**<<<<<<< HEAD
-		timer1.start();
-		this.getClock().clockStarter();
-		*/
-
 		timer.start();
 		button4.setText("Pause");
 		
@@ -526,11 +530,6 @@ public class Board  extends JFrame implements ActionListener
 		this.repaint();
 		this.setVisible(true);
 	}
-	
-	
-	
-	//////////////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////////////
 	
 
 }

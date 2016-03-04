@@ -6,8 +6,8 @@ import java.util.Random;
 /*
  * this class creates our game menu above the game
  * 
- * @author 
- * @version 
+ * @author Danny Lam
+ * @version 2016-02-29
  */
 
 public class GameMenu

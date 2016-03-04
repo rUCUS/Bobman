@@ -3,8 +3,14 @@ package bobman;
 import java.awt.Color;
 import java.util.TreeMap;
 
-public class PowerUpHandler 
-{
+/*
+ * this class handles the power-ups that exist on the map
+ * 
+ * @author Liban Aden, Mehdi Adelzadeh
+ * @version 2016-03-03
+ */
+
+public class PowerUpHandler {
 	TreeMap<Integer, Tiles> tiles;
 	private boolean hasLight;
 	private Player player;
@@ -16,6 +22,11 @@ public class PowerUpHandler
 		this.tiles = tiles;
 		
 	}
+	
+	/*
+	 * if there is a lighting-icon power-up that a player picks up
+	 * it gets longer range on its bombs
+	 */
 	
 	public void lighting(Tiles a,int b,TreeMap <Integer,Fire> fires)
 	{
@@ -153,6 +164,11 @@ public class PowerUpHandler
 		}
 	}
 	
+	/*
+	 * if the life-icon power-up is picked up
+	 * give extra health to player
+	 */
+	
 	public void giveExtra()
 	{
 		player.setHp(player.getHp()+1);
@@ -168,10 +184,19 @@ public class PowerUpHandler
 		
 	
 	}
+	
+	/*
+	 *  Returns if the tile has the powerup lighting
+	 */
 
 	public boolean isHasLight() {
 		return hasLight;
 	}
+	
+	/*
+	 *  sets so that that the tile will have the powerup lighting or not
+	 *  @param hasLight
+	 */
 
 	public void setHasLight(boolean hasLight) {
 		this.hasLight = hasLight;

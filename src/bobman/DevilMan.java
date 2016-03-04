@@ -3,14 +3,17 @@ package bobman;
 import java.util.TreeMap;
 
 import javax.swing.ImageIcon;
-import javax.swing.Timer;
+
+/*
+ * this class creates a player and this class also extends Player
+ * 
+ * @author Mehdi Adelzadeh
+ * @version 2016-03-01
+ */
 
 public class DevilMan extends Player
 {
-	/*
-	 * this class creates a player and this class also extends Player
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -7314698319741768805L;
 
 	public DevilMan(TreeMap<Integer,Tiles> tiles,Board board,
@@ -20,6 +23,10 @@ public class DevilMan extends Player
 		this.setRange(1);
 		this.setHp(3);
 	}
+	
+	/*
+	 * this method generates our player at a specific position
+	 */
 
 	@Override
 	public void initPos() 
@@ -31,6 +38,10 @@ public class DevilMan extends Player
 		setUp(new ImageIcon("src/sprite/upDemon.gif"));
 		setDown(new ImageIcon("src/sprite/downDemon.gif"));
 	}
+	
+	/*
+	 * this method creates our player with a certain health and bomb-range
+	 */
 	
 	@Override
 	public void initPlayer() 

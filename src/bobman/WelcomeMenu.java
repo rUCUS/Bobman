@@ -6,6 +6,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/*
+ * generate a Game menu when the game starts
+ * with different options
+ * 
+ * @author Mehdi Adelzadeh, Danny Lam
+ * @version 2016-03-01
+ */
+
 public class WelcomeMenu extends JFrame implements ActionListener
 {
 	private static final long serialVersionUID = -8237781397498731775L;
@@ -24,6 +32,10 @@ public class WelcomeMenu extends JFrame implements ActionListener
 		this.setDefaultCloseOperation(Board.EXIT_ON_CLOSE);
 	}
 	
+	/*
+	 * initialize our menu
+	 */
+	
 	
 	public void initMenu() 
 	{
@@ -41,6 +53,10 @@ public class WelcomeMenu extends JFrame implements ActionListener
 		this.setSize(800, 500);
 		this.setVisible(true);
 	}
+	
+	/*
+	 * adds buttons to our menu
+	 */
 
 
 	public void initButtons() 
@@ -58,6 +74,10 @@ public class WelcomeMenu extends JFrame implements ActionListener
 		quit.addActionListener(this);
 		quit.setAlignmentX(CENTER_ALIGNMENT);
 	}
+	
+	/*
+	 * performs different actions depending on which options has been chosen
+	 */
 
 
 	@Override
@@ -78,15 +98,15 @@ public void actionPerformed(ActionEvent e)
 		
 		if (e.getSource() == info)
 		{
-			String s = "Spelare1: A, S, D, W  används för att leda spelaren vänster, ner, höger och uppåt.\n" +
-"Mellanslag-tangent gör att spelaren kasta en bomb\n" +
-"Spelare2: " + "utnyttjar sig av piltangenterna för att röra sig åt respektive håll.\n" +
-"Ctrl-knappen används för att kasta en bomb.\n\n" + 
+			String s = "Spelare1: A, S, D, W  anvï¿½nds fï¿½r att leda spelaren vï¿½nster, ner, hï¿½ger och uppï¿½t.\n" +
+"Shift-tangent gï¿½r att spelaren kasta en bomb\n" +
+"Spelare2: " + "utnyttjar sig av piltangenterna fï¿½r att rï¿½ra sig ï¿½t respektive hï¿½ll.\n" +
+"Ctrl-knappen anvï¿½nds fï¿½r att kasta en bomb.\n\n" + 
 "I spelet finns tre olika banor: \n\n" +
 "Sonic = mest kraft minst liv\n Devilman = minst kraft mest liv \n Rey = lagom kraft och lagom liv \n\n" +
-"level one: detta är en bana där man spelar efter karaktärenas förmågor som till exempel sonic har större bomb längd medans devil har mer liv. \n" +
-"level two: denna banan innehåller power-ups som finns gömda inuti väggarna, spelarna börjar med ett liv och inga powerups. \n" +
-"level three: spelarna börjar med 3 liv, har alla power-ups och det finns inga förstörbara väggar.";
+"level one: detta ï¿½r en bana dï¿½r man spelar efter karaktï¿½renas fï¿½rmï¿½gor som till exempel sonic har stï¿½rre bomb lï¿½ngd medans devil har mer liv. \n" +
+"level two: denna banan innehï¿½ller power-ups som finns gï¿½mda inuti vï¿½ggarna, spelarna bï¿½rjar med ett liv och inga powerups. \n" +
+"level three: spelarna bï¿½rjar med 3 liv, har alla power-ups och det finns inga fï¿½rstï¿½rbara vï¿½ggar.";
 			JOptionPane.showMessageDialog(null, s);
 		}
 		

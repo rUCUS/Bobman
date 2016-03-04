@@ -18,12 +18,12 @@ public class GameEngine
 	public GameEngine() throws IOException
 	{
 		menu = new WelcomeMenu(this);
-		//board = new Board();
 	}
 	
 	/*
-	 * 
+	 * this method generate a new game engine
 	 */
+	
 	@SuppressWarnings("unused")
 	public static void main(String[] args) throws IOException
 	{

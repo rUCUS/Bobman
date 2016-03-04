@@ -4,15 +4,18 @@ import java.awt.Color;
 import java.io.IOException;
 import javax.swing.JPanel;
 
+/*
+ * this class creates our tiles
+ * has information about tile 
+ * is destroyable, walkable
+ * 
+ * @author Liban Aden
+ * @version 2016-03-01
+ */
+
 public class Tiles extends JPanel 
 {
-	/*
-	 * this class creates our tiles
-	 * has information about tile 
-	 * is destroyable, walkable
-	 * @author
-	 * @version 2016-03-01
-	 */
+	
 	
 	private static final long serialVersionUID = -4136853509769683971L;
 	private int xPos,yPos,order;
@@ -45,8 +48,9 @@ public class Tiles extends JPanel
 		
 	}
 	
-	/*???????????????????????????????
-	 * @returns 
+	/*
+	 * returns whether there is life/hp or not
+	 * @returns false
 	 */
 
 	public boolean isHasHp() {
@@ -54,7 +58,8 @@ public class Tiles extends JPanel
 	}
 	
 	/*
-	 * 
+	 * sets the hp
+	 * @param hasHp
 	 */
 
 	public void setHasHp(boolean hasHp) {
@@ -62,12 +67,17 @@ public class Tiles extends JPanel
 	}
 	
 	/*
-	 * ??
+	 *  Returns if the tile has the powerup lighting
 	 */
 
 	public boolean isHasLight() {
 		return hasLight;
 	}
+	
+	/*
+	 *  sets so that that the tile will have the powerup lighting or not
+	 *  @param hasLight
+	 */
 
 	public void setHasLight(boolean hasLight) {
 		this.hasLight = hasLight;
@@ -182,7 +192,8 @@ public class Tiles extends JPanel
 	}
 	
 	/*
-	 * ??????????????
+	 * returns the order of the tile
+	 * @returns order
 	 */
 
 	public int getOrder() {
@@ -190,7 +201,8 @@ public class Tiles extends JPanel
 	}
 	
 	/*
-	 * ????????????
+	 * sets the order of the tile
+	 * @param order
 	 */
 
 	public void setOrder(int order) {

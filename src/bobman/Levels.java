@@ -11,7 +11,11 @@ import java.util.TreeMap;
 import javax.swing.JOptionPane;
 
 /*
+ * this class creates our three levels
+ * each has different attributes to them
  * 
+ * @author Liban Mukthar Aden
+ * @version 2016-02-29
  */
 
 public class Levels 
@@ -32,31 +36,63 @@ public class Levels
 		this.tiles = tiles;
 	}
 	
+	/*
+	 * returns our collision control
+	 * @returns collision
+	 */
+	
 	public Collision getCollision() {
 		return collision;
 	}
+	
+	/*
+	 * sets our collision
+	 * @param collision
+	 */
 
 	public void setCollision(Collision collision) {
 		this.collision = collision;
 	}
+	
+	/*
+	 * returns our player1
+	 * @returns player1
+	 */
 
 	public Player getPlayer1() {
 		return player1;
 	}
+	
+	/*
+	 * sets our player1
+	 * @param player1
+	 */
 
 	public void setPlayer1(Player player1) {
 		this.player1 = player1;
 	}
+	
+	/*
+	 * returns our player2
+	 * @returns player2
+	 */
 
 	public Player getPlayer2() {
 		return player2;
 	}
+	
+	/*
+	 * sets our player2
+	 * @param player2
+	 */
 
 	public void setPlayer2(Player player2) {
 		this.player2 = player2;
 	}
 
-	
+	/*
+	 * the method creates/initialize our basic level 
+	 */
 	
 	public void initBaseLevel() throws IOException 
 	{
@@ -102,6 +138,10 @@ public class Levels
 		
 	}
 	
+	/*
+	 * the method creates 4 options for our players to choose from
+	 */
+	
 	public void chooseLevel() throws IOException 
 	{
 		String[] options = new String[] {"Level one", "Level two", "Level three", "Quit"};
@@ -111,6 +151,10 @@ public class Levels
 		
 	}
 	
+	/*
+	 * this method tells what should happen depending on which option has been chosen
+	 * from the method chooseLevel
+	 */
 	
 	public void sameLevel() throws IOException
 	{
@@ -129,6 +173,11 @@ public class Levels
 		case 3: System.exit(0);
 		}
 	}
+	
+	/*
+	 * which player-character that should be assigned to each player depending
+	 * on chosen option
+	 */
 	
 	public int choosePlayer(int player)
 	{
@@ -154,6 +203,11 @@ public class Levels
 		
 	}
 	
+	/*
+	 * here we pick our player-character
+	 */
+	
+	
 	public void choosenPlayer ()
 	{
 			int pick1 = choosePlayer(1);
@@ -171,17 +225,17 @@ public class Levels
 			
 			if (pick1 == 2)
 			{
-				player1 = new DevilMan(tiles,board,1 , 1, 1, 0);
+				player1 = new DevilMan(tiles,board,1 ,1,1,0);
 			}
 			
-			if (pick1 == 0)
+			if (pick2 == 0)
 			{
 				
 				player2 = new Player(tiles,board,2, 11, 11, 1);
 			}
 			
 			
-			if (pick1 == 1)
+			if (pick2 == 1)
 			{
 				player2 = new Sonic(tiles,board,2, 11, 11, 1);
 
@@ -195,6 +249,10 @@ public class Levels
 			
 			this.Ui = new UserInterface(player1,player2);
 	}
+	
+	/*
+	 * we create our level 1 and here we acknowledge our different player attributes 
+	 */
 
 	public void levelOne() throws IOException
 	{
@@ -205,8 +263,6 @@ public class Levels
 		this.board.addKeyListener(Ui);
 		this.board.setFocusable(true);
 		this.board.requestFocus();
-		this.board.getPlayer1().setText(this.board.getPlayer1().getText() + player1.getHp());
-		this.board.getPlayer2().setText(this.board.getPlayer2().getText() + player2.getHp());
 		Set<Integer> used = new HashSet<Integer>();
 		int randomnumber;
 		int enoughDWalls = 0;
@@ -255,6 +311,9 @@ public class Levels
 		board.setVisible(true);
 	}
 	
+	/*
+	 * we create our level 2 and here we set default value for our players
+	 */
 	
 	public void levelTwo() throws IOException
 	{
@@ -325,6 +384,10 @@ public class Levels
 		board.setVisible(true);
 	}
 	
+	/*
+	 * we create our level 3 and we give our players all the power-ups
+	 */
+	
 	public void levelThree()
 	{
 		Tiles p;
@@ -365,31 +428,54 @@ public class Levels
 		
 		board.repaint();
 		board.setVisible(true);
-		/*
-		 * tom map spelare ska ha full kraft oavsett karaktär
-		 */
 	}
+	
+	/*
+	 * @returns the level we are playing 
+	 */
 	
 	public int getCurrentLevel() {
 		return currentLevel;
 	}
+	
+	/*
+	 * @returns the class board
+	 */
 
 	public Board getBoard() {
 		return board;
 	}
+	
+	/*
+	 * sets our board
+	 * @param board
+	 */
 
 	public void setBoard(Board board) {
 		this.board = board;
 	}
+	
+	/*
+	 * sets the current level
+	 * @param currentLevel
+	 */
 
 	public void setCurrentLevel(int currentLevel) {
 		this.currentLevel = currentLevel;
 	}
+	
+	/*
+	 * removes our key listening
+	 */
 
 	public void removeListener()
 	{
 		board.removeKeyListener(Ui);
 	}
+	
+	/*
+	 * sets our players life to 1
+	 */
 	
 	public void resetHp ()
 	{
@@ -402,6 +488,10 @@ public class Levels
 		this.board.getPlayer2().setText("P2 life: ");
 	}
 
+	/*
+	 * checks if our players get caught be the fire
+	 */
+	
 	public void checkStatus() throws IOException 
 	{
 		if(player1!=null)
@@ -425,6 +515,10 @@ public class Levels
 		
 	}
 	
+	/*
+	 * announces a winner
+	 */
+	
 	public void LoseHp(int a) throws IOException
 	{
 		if (a == 1)
@@ -440,7 +534,7 @@ public class Levels
 			
 			else 
 			{
-				player1.setHp(player1.getHp()-1); // ska bli replaced med bomb.getDamage senare
+				player1.setHp(player1.getHp()-1);
 				board.getPlayer1().setText("P1 life: ");
 				board.getPlayer1().setText(board.getPlayer1().getText() + player1.getHp() + " |");
 			}
@@ -458,7 +552,7 @@ public class Levels
 			
 			else 
 			
-				player2.setHp(player2.getHp()-1); // ska bli replaced med bomb.getDamage senare
+				player2.setHp(player2.getHp()-1);
 				board.getPlayer2().setText("P2 life: ");
 				board.getPlayer2().setText(board.getPlayer2().getText() + player2.getHp());
 			}

@@ -12,8 +12,12 @@ import javax.swing.JLabel;
 public class Wall extends Tiles
 {
 	/*
+	 * this class generates a not destroyable wall
 	 * 
+	 * @author Liban Aden
+	 * @version 2016-03-01
 	 */
+	
 	private static final long serialVersionUID = -3939973631475481853L;
 	private JLabel picLabel;
 
@@ -23,6 +27,9 @@ public class Wall extends Tiles
 		this.setBackground(Color.black);
 	}
 
+	/*
+	 * initialize the not destroyable wall
+	 */
 	
 	public void initTiles() throws IOException
 	{

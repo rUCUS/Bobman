@@ -5,15 +5,15 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+/*
+ * this class produces a destructible wall and extends Tiles 
+ * 
+ * @author Hamza Kadric
+ * @version 2016-02-27
+ */
+
 public class Dwall extends Tiles 
 {
-
-	/*
-	 * this class produces a destructible wall and extends Tiles 
-	 * 
-	 * @author Hamza Kadric
-	 * @version 2016-02-27
-	 */
 	
 	private static final long serialVersionUID = 4198542458020593800L;
 	private JLabel picLabel;

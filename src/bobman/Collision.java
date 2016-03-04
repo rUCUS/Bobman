@@ -3,6 +3,9 @@ package bobman;
 /*
  * this class handles, what happens when player1 
  * and player2 collide 
+ * 
+ * @author Liban Aden
+ * @version 2016-02-29
  */
 
 public class Collision 

@@ -4,12 +4,17 @@ import java.util.TreeMap;
 
 import javax.swing.ImageIcon;
 
+/*
+ * this class creates a player
+ * it also extends Player 
+ * 
+ * @author Danny Lam
+ * @version 2016-03-03
+ */
+
 public class Sonic extends Player 
 {
-	/*
-	 * this class creates a player
-	 * it also extends Player 
-	 */
+	
 	
 	private static final long serialVersionUID = -8839858857139384364L;
 	public Sonic(TreeMap<Integer,Tiles> tiles,Board board,
@@ -33,6 +38,11 @@ public class Sonic extends Player
 	}
 
 	@Override
+	
+	/*
+	 * Initialize our player with certain bomb-range and life
+	 */
+	
 	public void initPlayer() 
 	{
 		this.setRange(2);

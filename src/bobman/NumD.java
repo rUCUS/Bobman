@@ -1,5 +1,13 @@
 package bobman;
 
+/*
+ * The NumberDisplay (NumB) class represents a digital number display that can hold
+ * values from zero to a given limit.
+ * 
+ * @author Mehdi Adelzadeh
+ * @version 2016-03-27
+ */
+
 public class NumD {
 	
 	    private int limit;

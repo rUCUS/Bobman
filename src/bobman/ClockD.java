@@ -1,6 +1,14 @@
 package bobman;
 
 
+/*
+ * this class creates a clock with minutes and seconds
+ * 
+ * @author Danny Lam
+ * @version 2016-02-28
+ */
+
+
 public class ClockD {
 		
 		private Board board;
@@ -108,50 +116,102 @@ public class ClockD {
 		    {
 		        clockRunning = false;
 		    }
-
 		 
+		 /*
+		  * steps our clock
+		  */
 		 
 		 void stepClock()
 		    {
 		        this.timeTick();
 		        board.getButtonTimer().setText(this.getTime());
 		    }
+		 
+		 /*
+		  * returns the class board
+		  * @returns board
+		  */
 
 		 public Board getBoard() {
 			return board;
 		 }
 
+		 /*
+		  * sets our board
+		  * @param board
+		  */
+		 
 		 public void setBoard(Board board) {
 			this.board = board;
 		 }
+		 
+		 /*
+		  * returns the whether the clock is running or not
+		  * @returns false
+		  */
 
 		 public boolean isClockRunning() {
 			return clockRunning;
 		 }
+		 
+		 /*
+		  * sets whether the clock is running or not
+		  * @param clockRunning
+		  */
 
 		 public void setClockRunning(boolean clockRunning) {
 			this.clockRunning = clockRunning;
 		 }
+		 
+		 /*
+		  * return the minute
+		  * @returns minutes
+		  */
 
 		 public NumD getMinutes() {
 			return minutes;
 		 }
+		 
+		 /*
+		  * sets the minutes
+		  * @param minutes
+		  */
 
 		 public void setMinutes(NumD minutes) {
 			this.minutes = minutes;
 		 }
+		 
+		 /*
+		  * returns the seconds
+		  * @returns seconds
+		  */
 
 		 public NumD getSeconds() {
 			return seconds;
 		 }
+		 
+		 /*
+		  * sets the seconds
+		  * @param seconds
+		  */
 
 		 public void setSeconds(NumD seconds) {
 			this.seconds = seconds;
 		 }
 		 
+		 /*
+		  * returns the display time text/string
+		  * @returns displayString
+		  */
+		 
 		 public String getDisplayString() {
 			return displayString;
 		 }
+		 
+		 /*
+		  * sets the display time text/string
+		  * @param displayString
+		  */
 
 		 public void setDisplayString(String displayString) {
 			this.displayString = displayString;

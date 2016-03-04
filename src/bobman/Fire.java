@@ -3,15 +3,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 
+/*
+ * this class creates our fire for a certain position depending on 
+ * which of the player is planting the bomb 
+ * 
+ * @author Hamza Kadric
+ * @version 2016-03-01
+ */
+
 public class Fire extends JLabel
 {
-	/*
-	 * this class creates our fire for a certain position depending on 
-	 * which of the player is planting the bomb 
-	 * 
-	 * @author
-	 * @version 2016-03-01
-	 */
 	
 	private static final long serialVersionUID = 3117597669521741300L;
 	private int xPos,yPos;
