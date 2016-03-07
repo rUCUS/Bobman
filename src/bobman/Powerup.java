@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 
-/*
+/**
  * Handles what picture will spawn when a powerup appears
  * 
  * @author Liban Aden
@@ -14,7 +14,16 @@ import javax.swing.JLabel;
 public class Powerup extends JLabel
 {
 	private static final long serialVersionUID = 6129936604059073855L;
-	private ImageIcon extraHp,lighting;
+	/**
+	 * @uml.property  name="extraHp"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon extraHp;
+	/**
+	 * @uml.property  name="lighting"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon lighting;
 	
 	public Powerup(int k) 
 	{
@@ -23,43 +32,47 @@ public class Powerup extends JLabel
 		pickPowerUps(k);
 	}
 	
-	/*
+	/**
 	 * returns the image icon for extra health
-	 * @return extraHp
+	 * @return  extraHp
+	 * @uml.property  name="extraHp"
 	 */
 	
 	public ImageIcon getExtraHp() {
 		return extraHp;
 	}
 	
-	/*
+	/**
 	 * sets the image icon for extra health
-	 * @param extraHp
+	 * @param  extraHp
+	 * @uml.property  name="extraHp"
 	 */
 
 	public void setExtraHp(ImageIcon extraHp) {
 		this.extraHp = extraHp;
 	}
 	
-	 /*
+	 /**
 	 * returns the image icon for extra range for the bomb
-	 * @return lighting
+	 * @return  lighting
+	 * @uml.property  name="lighting"
 	 */
 
 	public ImageIcon getLighting() {
 		return lighting;
 	}
 	
-	/*
+	/**
 	 * sets the image icon for extra range for the bomb
-	 * @param lighting
+	 * @param  lighting
+	 * @uml.property  name="lighting"
 	 */
 
 	public void setLighting(ImageIcon lighting) {
 		this.lighting = lighting;
 	}
 
-	/*
+	/**
 	 * initialize the power-ups
 	 */
 	
@@ -70,8 +83,9 @@ public class Powerup extends JLabel
 		
 	}
 	
-	/*
+	/**
 	 * which power-up is picked up
+	 * @param k
 	 */
 
 	private void pickPowerUps(int k) 

@@ -3,7 +3,7 @@ package bobman;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-/*
+/**
  * this class checks for which keys are used on the keyboard and acts accordingly
  * its also implements Keylistener
  * 
@@ -13,7 +13,16 @@ import java.awt.event.KeyListener;
 
 public class UserInterface implements KeyListener
 {
-	private Player player1,player2;
+	/**
+	 * @uml.property  name="player1"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private Player player1;
+	/**
+	 * @uml.property  name="player2"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private Player player2;
 	
 	
 	
@@ -23,7 +32,7 @@ public class UserInterface implements KeyListener
 		this.player2 = player2;
 	}
 	
-	/*
+	/**
 	 * checks if the key thats we have assigned have been used or not
 	 * and acts accordingly
 	 */
@@ -91,7 +100,7 @@ public class UserInterface implements KeyListener
 		
 	}
 	
-	/*
+	/**
 	 * checks whether the keys has been released
 	 */
 
@@ -102,7 +111,7 @@ public class UserInterface implements KeyListener
 		
 	}
 
-	/*
+	/**
 	 * if the keys other than those we have assigned has been pressed
 	 * do nothing
 	 */

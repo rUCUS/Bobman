@@ -6,7 +6,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-/*
+/**
  * this class creates our player
  * has information about its position, bomb, hp etc
  * 
@@ -19,11 +19,120 @@ public class Player extends JLabel
 	
 	
 	private static final long serialVersionUID = 6017005901425321171L;
+	/**
+	 * @uml.property  name="board"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	private Board board;
-	private int hp,xPos,yPos,range,status,id;
+	/**
+	 * @uml.property  name="hp"
+	 */
+	private int hp;
+	/**
+	 * @uml.property  name="xPos"
+	 */
+	private int xPos;
+	/**
+	 * @uml.property  name="yPos"
+	 * @uml.associationEnd  qualifier="valueOf:java.lang.Integer bobman.Tiles"
+	 */
+	private int yPos;
+	/**
+	 * @uml.property  name="range"
+	 */
+	private int range;
+	/**
+	 * @uml.property  name="status"
+	 */
+	private int status;
+	/**
+	 * @uml.property  name="id"
+	 */
+	private int id;
+	/**
+	 * @uml.property  name="bomb"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	private Bomb bomb;
+	/**
+	 * @uml.property  name="tiles"
+	 * @uml.associationEnd  qualifier="valueOf:java.lang.Integer bobman.Tiles"
+	 */
 	private TreeMap<Integer,Tiles> tiles;
-	private ImageIcon left,right,up,down,upDown,upLeft,upRight,downLeft,downRight,leftRight,upUp,leftLeft,rightRight,downDown;
+	/**
+	 * @uml.property  name="left"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon left;
+	/**
+	 * @uml.property  name="right"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon right;
+	/**
+	 * @uml.property  name="up"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon up;
+	/**
+	 * @uml.property  name="down"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon down;
+	/**
+	 * @uml.property  name="upDown"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon upDown;
+	/**
+	 * @uml.property  name="upLeft"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon upLeft;
+	/**
+	 * @uml.property  name="upRight"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon upRight;
+	/**
+	 * @uml.property  name="downLeft"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon downLeft;
+	/**
+	 * @uml.property  name="downRight"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon downRight;
+	/**
+	 * @uml.property  name="leftRight"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon leftRight;
+	/**
+	 * @uml.property  name="upUp"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon upUp;
+	/**
+	 * @uml.property  name="leftLeft"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon leftLeft;
+	/**
+	 * @uml.property  name="rightRight"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon rightRight;
+	/**
+	 * @uml.property  name="downDown"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon downDown;
+	/**
+	 * @uml.property  name="handler"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="player:bobman.PowerUpHandler"
+	 */
 	private PowerUpHandler handler;
 	
 	public Player(TreeMap<Integer,Tiles> tiles,Board board,int status , int xPos, int yPos,int side)
@@ -40,7 +149,7 @@ public class Player extends JLabel
 		initBomb();
 	}
 	
-	/*
+	/**
 	 * initialize the player
 	 */
 	
@@ -63,7 +172,7 @@ public class Player extends JLabel
 		initPlayer();
 	}
 	
-	/*
+	/**
 	 * sets the players attributes
 	 */
 	
@@ -74,7 +183,7 @@ public class Player extends JLabel
 		this.setHp(2);
 	}
 	
-	/*
+	/**
 	 * initialize the player bomb with position
 	 */
 	
@@ -86,8 +195,9 @@ public class Player extends JLabel
 		bomb.setyPos(this.getyPos());
 	}
 	
-	/*
+	/**
 	 * which side our players should be facing
+	 * @param side
 	 */
 	
 	public void startPos(int side)
@@ -103,9 +213,11 @@ public class Player extends JLabel
 		
 	}
 	
-	/*
+	/**
 	 * resets our tile that has a bomb on it 
 	 * to a walkable tile
+	 * @param k
+	 * @param id
 	 */
 	
 	public void resetWalkable(Tiles k, int id)
@@ -122,8 +234,9 @@ public class Player extends JLabel
 	}
 
 
-	/*
+	/**
 	 * sets the tile to walkable for player1
+	 * @param k
 	 */
 
 	public void resetWalkable1(Tiles k) 
@@ -134,8 +247,9 @@ public class Player extends JLabel
 
 	}
 	
-	/*
+	/**
 	 * sets the tile to walkable for player2
+	 * @param k
 	 */
 	
 	public void resetWalkable2(Tiles k) 
@@ -145,7 +259,7 @@ public class Player extends JLabel
 		
 	}
 	
-	/*
+	/**
 	 * moves the player towards the left
 	 */
 	
@@ -211,7 +325,7 @@ public class Player extends JLabel
 		
 	}
 	
-	/*
+	/**
 	 * moves the player towards the right
 	 */
 
@@ -280,7 +394,7 @@ public class Player extends JLabel
 		
 	}
 	
-	/*
+	/**
 	 * moves the player upwards
 	 */
 	
@@ -336,7 +450,6 @@ public class Player extends JLabel
 				this.setIcon(up);
 				k.setHasPlayer(true);
 			}
-			;
 		}
 		else
 		{
@@ -345,7 +458,7 @@ public class Player extends JLabel
 		
 	}
 	
-	/*
+	/**
 	 * moves the player downwards
 	 */
 	
@@ -411,8 +524,9 @@ public class Player extends JLabel
 		
 	}
 	
-	/*
+	/**
 	 * throws the bomb in different directions
+	 * @param i
 	 */
 	
 	public void throwBomb(int i)
@@ -487,8 +601,9 @@ public class Player extends JLabel
 
 	}
 	
-	/*
+	/**
 	 * throw the bombs to the right
+	 * @param k
 	 */
 	
 	public void throwright(Tiles k)
@@ -520,8 +635,9 @@ public class Player extends JLabel
 		
 	}
 	
-	/*
+	/**
 	 * throw the bomb to the left
+	 * @param k
 	 */
 	
 	public void throwleft(Tiles k)
@@ -550,8 +666,9 @@ public class Player extends JLabel
 		}
 	}
 	
-	/*
+	/**
 	 * throw the bomb upwards
+	 * @param k
 	 */
 	
 	public void throwup(Tiles k)
@@ -579,8 +696,9 @@ public class Player extends JLabel
 		}
 	}
 	
-	/*
+	/**
 	 * throw the bomb downwards
+	 * @param k
 	 */
 	
 	public void throwdown(Tiles k)
@@ -609,9 +727,10 @@ public class Player extends JLabel
 		}
 	}
 	
-	/*
+	/**
 	 * returns the image icon for left-movement
-	 * @returns left
+	 * @return  left
+	 * @uml.property  name="left"
 	 */
 	
 	public ImageIcon getLeft() 
@@ -619,9 +738,10 @@ public class Player extends JLabel
 		return left;
 	}
 	
-	/*
+	/**
 	 * sets the image icon for left-movement
-	 * @param left
+	 * @param  left
+	 * @uml.property  name="left"
 	 */
 
 	public void setLeft(ImageIcon left) 
@@ -629,9 +749,10 @@ public class Player extends JLabel
 		this.left = left;
 	}
 	
-	/*
+	/**
 	 * returns the image icon for right-movement
-	 * @returns right
+	 * @return  right
+	 * @uml.property  name="right"
 	 */
 
 	public ImageIcon getRight() 
@@ -639,9 +760,10 @@ public class Player extends JLabel
 		return right;
 	}
 	
-	/*
+	/**
 	 * sets the image icon for right-movement
-	 * @param right
+	 * @param  right
+	 * @uml.property  name="right"
 	 */
 
 	public void setRight(ImageIcon right) 
@@ -649,9 +771,10 @@ public class Player extends JLabel
 		this.right = right;
 	}
 	
-	/*
+	/**
 	 * returns the image icon for up-movement
-	 * @returns up
+	 * @return  up
+	 * @uml.property  name="up"
 	 */
 
 	public ImageIcon getUp() 
@@ -659,9 +782,10 @@ public class Player extends JLabel
 		return up;
 	}
 	
-	/*
+	/**
 	 * sets the image icon for up-movement
-	 * @param up
+	 * @param  up
+	 * @uml.property  name="up"
 	 */
 
 	public void setUp(ImageIcon up) 
@@ -669,9 +793,10 @@ public class Player extends JLabel
 		this.up = up;
 	}
 	
-	/*
+	/**
 	 * returns the image icon for down-movement
-	 * @returns down
+	 * @return
+	 * @uml.property  name="down"
 	 */
 
 	public ImageIcon getDown() 
@@ -679,9 +804,10 @@ public class Player extends JLabel
 		return down;
 	}
 	
-	/*
+	/**
 	 * sets the image icon for down-movement
-	 * @param down
+	 * @param  down
+	 * @uml.property  name="down"
 	 */
 
 	public void setDown(ImageIcon down) 
@@ -689,9 +815,10 @@ public class Player extends JLabel
 		this.down = down;
 	}
 	
-	/*
+	/**
 	 * returns which player it is
-	 * @return status
+	 * @return  status
+	 * @uml.property  name="status"
 	 */
 
 	public int getStatus() 
@@ -699,9 +826,10 @@ public class Player extends JLabel
 		return status;
 	}
 	
-	/*
+	/**
 	 * sets which player it is
-	 * @param status
+	 * @param  status
+	 * @uml.property  name="status"
 	 */
 
 	public void setStatus(int status) 
@@ -710,9 +838,9 @@ public class Player extends JLabel
 		
 	}
 	
-	/*
+	/**
 	 * returns the range for the player
-	 * @returns range
+	 * @return range
 	 */
 
 	public double getRange() 
@@ -720,9 +848,10 @@ public class Player extends JLabel
 		return range;
 	}
 	
-	/*
+	/**
 	 * sets the range for player
-	 * @param range
+	 * @param  range
+	 * @uml.property  name="range"
 	 */
 
 	public void setRange(int range) 
@@ -730,9 +859,10 @@ public class Player extends JLabel
 		this.range = range;
 	}
 
-	/*
+	/**
 	 * returns the health for player
-	 * @return hp
+	 * @return  hp
+	 * @uml.property  name="hp"
 	 */
 	
 	public int getHp() 
@@ -740,9 +870,10 @@ public class Player extends JLabel
 		return hp;
 	}
 	
-	/*
+	/**
 	 * sets the health for player
-	 * @param hp
+	 * @param  hp
+	 * @uml.property  name="hp"
 	 */
 
 	public void setHp(int hp) 
@@ -750,9 +881,10 @@ public class Player extends JLabel
 		this.hp = hp;
 	}
 	
-	/*
+	/**
 	 * returns the x-position for the player
-	 * @return xPos
+	 * @return  xPos
+	 * @uml.property  name="xPos"
 	 */
 
 	public int getxPos() 
@@ -760,9 +892,10 @@ public class Player extends JLabel
 		return xPos;
 	}
 	
-	/*
+	/**
 	 * sets the x-position for the player
-	 * @param xPos
+	 * @param  xPos
+	 * @uml.property  name="xPos"
 	 */
 
 	public void setxPos(int xPos) 
@@ -770,9 +903,10 @@ public class Player extends JLabel
 		this.xPos = xPos;
 	}
 	
-	/*
+	/**
 	 * returns the y-position for the player
-	 * @return yPos
+	 * @return  yPos
+	 * @uml.property  name="yPos"
 	 */
 
 	public int getyPos() 
@@ -780,19 +914,21 @@ public class Player extends JLabel
 		return yPos;
 	}
 	
-	/*
+	/**
 	 * sets the y-position for the player
-	 * @param yPos
+	 * @param  yPos
+	 * @uml.property  name="yPos"
 	 */
-
+	
 	public void setyPos(int yPos) 
 	{
 		this.yPos = yPos;
 	}
 	
-	/*
+	/**
 	 * returns the image icon for the players facing up and down
-	 * @returns upDown
+	 * @return  upDown
+	 * @uml.property  name="upDown"
 	 */
 	
 	public ImageIcon getUpDown() 
@@ -800,9 +936,10 @@ public class Player extends JLabel
 		return upDown;
 	}
 	
-	/*
+	/**
 	 * returns the image icon for the players facing up and left
-	 * @returns upLeftt
+	 * @return  upLeft
+	 * @uml.property  name="upLeft"
 	 */
 
 	public ImageIcon getUpLeft()
@@ -810,9 +947,10 @@ public class Player extends JLabel
 		return upLeft;
 	}
 
-	/*
+	/**
 	 * returns the image icon for the players facing up and right
-	 * @returns upRight
+	 * @return  upRight
+	 * @uml.property  name="upRight"
 	 */
 
 	public ImageIcon getUpRight() 
@@ -820,9 +958,10 @@ public class Player extends JLabel
 		return upRight;
 	}
 	
-	/*
+	/**
 	 * returns the image icon for the players facing down and left
-	 * @returns downLeft
+	 * @return  downLeft
+	 * @uml.property  name="downLeft"
 	 */
 
 
@@ -830,9 +969,10 @@ public class Player extends JLabel
 		return downLeft;
 	}
 
-	/*
+	/**
 	 * returns the image icon for the players facing down and right
-	 * @returns downRight
+	 * @return  downRight
+	 * @uml.property  name="downRight"
 	 */
 
 
@@ -841,9 +981,10 @@ public class Player extends JLabel
 		return downRight;
 	}
 
-	/*
+	/**
 	 * returns the image icon for the players facing left and right
-	 * @returns leftRight
+	 * @return
+	 * @uml.property  name="leftRight"
 	 */
 
 	public ImageIcon getLeftRight() 
@@ -851,18 +992,18 @@ public class Player extends JLabel
 		return leftRight;
 	}
 
+	/**
+	 * Returns the Collective map of all the created Tiles
+	 * @return tiles
+	 */
 	
 	public TreeMap<Integer, Tiles> getTiles() {
 		return tiles;
 	}
-
-	public void setTiles(TreeMap<Integer, Tiles> tiles) {
-		this.tiles = tiles;
-	}
 	
-	/*
+	/**
 	 * returns the image icon for both player facing right
-	 * @returns rightRight
+	 * @return rightRight
 	 */
 
 
@@ -871,9 +1012,9 @@ public class Player extends JLabel
 		return rightRight;
 	}
 	
-	/*
+	/**
 	 * returns the image icon for both player facing left
-	 * @returns leftLeft
+	 * @return leftLeft
 	 */
 
 
@@ -882,9 +1023,9 @@ public class Player extends JLabel
 		return leftLeft;
 	}
 	
-	/*
+	/**
 	 * returns the image icon for both player facing down
-	 * @returns downDown
+	 * @return downDown
 	 */
 
 
@@ -893,9 +1034,9 @@ public class Player extends JLabel
 		return downDown;
 	}
 	
-	/*
+	/**
 	 * returns the image icon for both player facing up
-	 * @returns up
+	 * @return upUp
 	 */
 
 	public Icon getupUp() {
@@ -903,32 +1044,40 @@ public class Player extends JLabel
 		return upUp;
 	}
 
-	/*
+	/**
 	 * returns the players power-up-handlers
+	 * @return  handler
+	 * @uml.property  name="handler"
 	 */
 	
 	public PowerUpHandler getHandler() {
 		return handler;
 	}
 	
-	/*
+	/**
 	 * sets the players power-up handler
+	 * @param  handler
+	 * @uml.property  name="handler"
 	 */
 
 	public void setHandler(PowerUpHandler handler) {
 		this.handler = handler;
 	}
 
-	/*
+	/**
 	 * returns the main-board class
+	 * @return  board
+	 * @uml.property  name="board"
 	 */
 	
 	public Board getBoard() {
 		return board;
 	}
 	
-	/*
+	/**
 	 * sets the board
+	 * @param  board
+	 * @uml.property  name="board"
 	 */
 
 	public void setBoard(Board board) {

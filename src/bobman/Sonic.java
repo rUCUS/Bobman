@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 import javax.swing.ImageIcon;
 
-/*
+/**
  * this class creates a player
  * it also extends Player 
  * 
@@ -23,7 +23,7 @@ public class Sonic extends Player
 		super(tiles,board,status, xPos, yPos,side);	
 	}
 	
-	/*
+	/**
 	 * initialize our player,Sonic
 	 */
 	
@@ -37,11 +37,11 @@ public class Sonic extends Player
 		setDown(new ImageIcon("src/sprite/downSonic.gif"));
 	}
 
-	@Override
-	
-	/*
-	 * Initialize our player with certain bomb-range and life
+	/**
+	 * * Initialize our player with certain bomb-range and life
 	 */
+	
+	@Override
 	
 	public void initPlayer() 
 	{

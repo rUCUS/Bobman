@@ -1,7 +1,7 @@
 package bobman;
 
-/*
- * The NumberDisplay (NumB) class represents a digital number display that can hold
+/**
+ * The NumberDisplay (NumD) class represents a digital number display that can hold
  * values from zero to a given limit.
  * 
  * @author Mehdi Adelzadeh
@@ -10,7 +10,13 @@ package bobman;
 
 public class NumD {
 	
+	    /**
+		 * @uml.property  name="limit"
+		 */
 	    private int limit;
+	    /**
+		 * @uml.property  name="value"
+		 */
 	    private int value;
 
 	    
@@ -20,19 +26,23 @@ public class NumD {
 	        value = 0;
 	    }
 
-	    /*
-	     * Return the current value.
-	     */
+	    /**
+		 * returns the current value.
+		 * @return  value
+		 * @uml.property  name="value"
+		 */
+	    
 	    public int getValue()
 	    {
 	        return value;
 	    }
 
-	    /*
+	    /**
 	     * Return the display value (that is, the current value as a two-digit
 	     * String. If the value is less than ten, it will be padded with a leading
 	     * zero).
 	     */
+	    
 	    public String getDisplayValue()
 	    {
 	        if(value < 10) {
@@ -43,10 +53,11 @@ public class NumD {
 	        }
 	    }
 
-	    /*
-	     * Set the value of the display to the new specified value. If the new
-	     * value is less than zero or over the limit, do nothing.
-	     */
+	    /**
+		 * Set the value of the display to the new specified value. If the new value is less than zero or over the limit, do nothing.
+		 * @param  replacementValue
+		 * @uml.property  name="value"
+		 */
 	    
 	    public void setValue(int replacementValue)
 	    {
@@ -55,7 +66,7 @@ public class NumD {
 	        }
 	    }
 
-	    /*
+	    /**
 	     * increments the value until the limit has been reached
 	     */
 	    

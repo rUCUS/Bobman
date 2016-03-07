@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-/*
+/**
  * generate a Game menu when the game starts
  * with different options
  * 
@@ -18,8 +18,38 @@ public class WelcomeMenu extends JFrame implements ActionListener
 {
 	private static final long serialVersionUID = -8237781397498731775L;
 	
+	/**
+	 * @uml.property  name="background"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	private JLabel background;
-	private JButton startRandomGame,chooseGame,info,quit;
+	/**
+	 * @uml.property  name="startRandomGame"
+	 * @uml.associationEnd  
+	 */
+	private JButton startRandomGame;
+
+	/**
+	 * @uml.property  name="chooseGame"
+	 * @uml.associationEnd  
+	 */
+	private JButton chooseGame;
+
+	/**
+	 * @uml.property  name="info"
+	 * @uml.associationEnd  
+	 */
+	private JButton info;
+
+	/**
+	 * @uml.property  name="quit"
+	 * @uml.associationEnd  
+	 */
+	private JButton quit;
+	/**
+	 * @uml.property  name="gameEngine"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="menu:bobman.GameEngine"
+	 */
 	private GameEngine gameEngine;
 	
 	
@@ -32,7 +62,7 @@ public class WelcomeMenu extends JFrame implements ActionListener
 		this.setDefaultCloseOperation(Board.EXIT_ON_CLOSE);
 	}
 	
-	/*
+	/**
 	 * initialize our menu
 	 */
 	
@@ -54,7 +84,7 @@ public class WelcomeMenu extends JFrame implements ActionListener
 		this.setVisible(true);
 	}
 	
-	/*
+	/**
 	 * adds buttons to our menu
 	 */
 
@@ -75,7 +105,7 @@ public class WelcomeMenu extends JFrame implements ActionListener
 		quit.setAlignmentX(CENTER_ALIGNMENT);
 	}
 	
-	/*
+	/**
 	 * performs different actions depending on which options has been chosen
 	 */
 

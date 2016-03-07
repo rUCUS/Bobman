@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="bobman2" size="1531,1283" id="bobman" metadata="uml2-1.0" initialized="true" zoom="0.5" tag="10" key="32303037303533312D313020426F626D616E">
+  <children xsi:type="editmodel:ClassEditModel" name="Board" location="260,788" size="136,229" id="bobman/Board">
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="rucus" id="bobman/Board#rucus"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rucus1" id="bobman/Board#rucus1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="wastetime1" id="bobman/Board#wastetime1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="wastetime2" id="bobman/Board#wastetime2"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,108">
+      <children xsi:type="editmodel:MethodEditModel" name="Board" id="bobman/Board#Board()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="actionPerformed" id="bobman/Board#actionPerformed(Ljava.awt.event.ActionEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initBoard" id="bobman/Board#initBoard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initStartmenu" id="bobman/Board#initStartmenu()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="pauseTheGame" id="bobman/Board#pauseTheGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startTheGame" id="bobman/Board#startTheGame()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Bomb" location="859,788" size="129,157" id="bobman/Bomb">
+    <children xsi:type="editmodel:CompartmentEditModel" size="61,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="xPos" id="bobman/Bomb#xPos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="yPos" id="bobman/Bomb#yPos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Bomb" id="bobman/Bomb#Bomb(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getBombicon" id="bobman/Bomb#getBombicon(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetAnimation" id="bobman/Bomb#resetAnimation(Ljavax.swing.ImageIcon;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="whoseBomb" id="bobman/Bomb#whoseBomb(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="BombExplode" location="988,50" size="140,247" id="bobman/BombExplode">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,198">
+      <children xsi:type="editmodel:MethodEditModel" name="BombExplode" id="bobman/BombExplode#BombExplode(Lbobman.Board;Ljava.util.TreeMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="BombExploded" id="bobman/BombExplode#BombExploded(Lbobman.Tiles;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireCenter" id="bobman/BombExplode#fireCenter()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireCenter1" id="bobman/BombExplode#fireCenter1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireDown1" id="bobman/BombExplode#fireDown1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireLeft1" id="bobman/BombExplode#fireLeft1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireReset1" id="bobman/BombExplode#fireReset1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireReset2" id="bobman/BombExplode#fireReset2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireRight1" id="bobman/BombExplode#fireRight1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireUp1" id="bobman/BombExplode#fireUp1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initFires" id="bobman/BombExplode#initFires()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ClockD" location="784,50" size="154,229" id="bobman/ClockD">
+    <children xsi:type="editmodel:CompartmentEditModel" size="131,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="clockRunning" id="bobman/ClockD#clockRunning"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="displayString" id="bobman/ClockD#displayString"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,144">
+      <children xsi:type="editmodel:MethodEditModel" name="ClockD" id="bobman/ClockD#ClockD(Lbobman.Board;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clockStarter" id="bobman/ClockD#clockStarter()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clockStop" id="bobman/ClockD#clockStop()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTime" id="bobman/ClockD#getTime()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="bobman/ClockD#reset()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetClock" id="bobman/ClockD#resetClock()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="stepClock" id="bobman/ClockD#stepClock()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="timeTick" id="bobman/ClockD#timeTick()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Collision" location="50,788" size="160,211" id="bobman/Collision">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="137,162">
+      <children xsi:type="editmodel:MethodEditModel" name="Collision" id="bobman/Collision#Collision(Lbobman.Levels;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="FireCollision" id="bobman/Collision#FireCollision(Lbobman.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="LeaveCollision" id="bobman/Collision#LeaveCollision(Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="firstPlayerLooksDown" id="bobman/Collision#firstPlayerLooksDown(Lbobman.Player;Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="firstPlayerLooksLeft" id="bobman/Collision#firstPlayerLooksLeft(Lbobman.Player;Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="firstPlayerLooksRight" id="bobman/Collision#firstPlayerLooksRight(Lbobman.Player;Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="firstPlayerLooksUp" id="bobman/Collision#firstPlayerLooksUp(Lbobman.Player;Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="playerCollision" id="bobman/Collision#playerCollision(Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="respawn" id="bobman/Collision#respawn(Lbobman.Player;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Fire" location="50,1067" size="102,175" id="bobman/Fire">
+    <children xsi:type="editmodel:CompartmentEditModel" size="61,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="xPos" id="bobman/Fire#xPos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,108">
+      <children xsi:type="editmodel:MethodEditModel" name="Fire" id="bobman/Fire#Fire(ILbobman.BombExplode;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initFire" id="bobman/Fire#initFire(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isactive" id="bobman/Fire#isactive()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="notActive" id="bobman/Fire#notActive()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setActive" id="bobman/Fire#setActive()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setLocate" id="bobman/Fire#setLocate(Lbobman.Tiles;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GameEngine" location="202,1067" size="144,121" id="bobman/GameEngine">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="121,72">
+      <children xsi:type="editmodel:MethodEditModel" name="GameEngine" id="bobman/GameEngine#GameEngine()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="bobman/GameEngine#main([Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startTheGame" id="bobman/GameEngine#startTheGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startrandomGame" id="bobman/GameEngine#startrandomGame()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GameMenu" location="686,788" size="123,175" id="bobman/GameMenu">
+    <children xsi:type="editmodel:CompartmentEditModel" size="88,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="rand" id="bobman/GameMenu#rand"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,108">
+      <children xsi:type="editmodel:MethodEditModel" name="GameMenu" id="bobman/GameMenu#GameMenu(Lbobman.Board;Lbobman.Levels;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Pause" id="bobman/GameMenu#Pause()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Quit" id="bobman/GameMenu#Quit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="newGame" id="bobman/GameMenu#newGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="randomGame" id="bobman/GameMenu#randomGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="restart" id="bobman/GameMenu#restart()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Levels" location="603,50" size="131,319" id="bobman/Levels">
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="currentLevel" id="bobman/Levels#currentLevel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rand" id="bobman/Levels#rand"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="108,234">
+      <children xsi:type="editmodel:MethodEditModel" name="Levels" id="bobman/Levels#Levels(Lbobman.Board;Ljava.util.TreeMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="LoseHp" id="bobman/Levels#LoseHp(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkStatus" id="bobman/Levels#checkStatus()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="chooseLevel" id="bobman/Levels#chooseLevel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="choosePlayer" id="bobman/Levels#choosePlayer(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="choosenPlayer" id="bobman/Levels#choosenPlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initBaseLevel" id="bobman/Levels#initBaseLevel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="levelOne" id="bobman/Levels#levelOne()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="levelThree" id="bobman/Levels#levelThree()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="levelTwo" id="bobman/Levels#levelTwo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeListener" id="bobman/Levels#removeListener()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetHp" id="bobman/Levels#resetHp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sameLevel" id="bobman/Levels#sameLevel()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="NumD" location="588,1067" size="133,121" id="bobman/NumD">
+    <children xsi:type="editmodel:CompartmentEditModel" size="65,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="value" id="bobman/NumD#value"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,54">
+      <children xsi:type="editmodel:MethodEditModel" name="NumD" id="bobman/NumD#NumD(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDisplayValue" id="bobman/NumD#getDisplayValue()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="increment" id="bobman/NumD#increment()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Powerup" location="771,1067" size="105,67" id="bobman/Powerup">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="72,18">
+      <children xsi:type="editmodel:MethodEditModel" name="Powerup" id="bobman/Powerup#Powerup(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PowerUpHandler" location="446,788" size="190,139" id="bobman/PowerUpHandler">
+    <children xsi:type="editmodel:CompartmentEditModel" size="167,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="hasLight" id="bobman/PowerUpHandler#hasLight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tiles" id="bobman/PowerUpHandler#tiles"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="112,54">
+      <children xsi:type="editmodel:MethodEditModel" name="PowerUpHandler" id="bobman/PowerUpHandler#PowerUpHandler(Lbobman.Player;Ljava.util.TreeMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="giveExtra" id="bobman/PowerUpHandler#giveExtra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="lighting" id="bobman/PowerUpHandler#lighting(Lbobman.Tiles;ILjava.util.TreeMap;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="UserInterface" location="396,1067" size="142,121" id="bobman/UserInterface">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,72">
+      <children xsi:type="editmodel:MethodEditModel" name="UserInterface" id="bobman/UserInterface#UserInterface(Lbobman.Player;Lbobman.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyPressed" id="bobman/UserInterface#keyPressed(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyReleased" id="bobman/UserInterface#keyReleased(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyTyped" id="bobman/UserInterface#keyTyped(Ljava.awt.event.KeyEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="WelcomeMenu" location="1038,788" size="148,121" id="bobman/WelcomeMenu">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,72">
+      <children xsi:type="editmodel:MethodEditModel" name="WelcomeMenu" id="bobman/WelcomeMenu#WelcomeMenu(Lbobman.GameEngine;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="actionPerformed" id="bobman/WelcomeMenu#actionPerformed(Ljava.awt.event.ActionEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initButtons" id="bobman/WelcomeMenu#initButtons()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initMenu" id="bobman/WelcomeMenu#initMenu()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Wall" location="461,419" size="92,85" id="bobman/Wall">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Wall" id="bobman/Wall#Wall(III)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initTiles" id="bobman/Wall#initTiles()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="bobman/Tiles&lt;-bobman/Wall" source="//@children.14" target="//@children.15/@sourceConnections.0" targetEnd="//@children.14/@sourceConnections.0/@children.1" sourceEnd="//@children.14/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="46,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Dwall" location="339,419" size="92,85" id="bobman/Dwall">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Dwall" id="bobman/Dwall#Dwall(III)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initTiles" id="bobman/Dwall#initTiles()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.14/@sourceConnections.0" autoLocated="true" id="bobman/Tiles&lt;-bobman/Dwall" source="//@children.15" target="//@children.16" targetEnd="//@children.15/@sourceConnections.0/@children.1" sourceEnd="//@children.15/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="46,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,319" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.15/@sourceConnections.0" name="Tiles" location="372,50" size="147,319" id="bobman/Tiles">
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,180">
+      <children xsi:type="editmodel:AttributeEditModel" name="destroyable" id="bobman/Tiles#destroyable"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasFire" id="bobman/Tiles#hasFire"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasHp" id="bobman/Tiles#hasHp"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasLight" id="bobman/Tiles#hasLight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasPlayer" id="bobman/Tiles#hasPlayer"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasPlayers" id="bobman/Tiles#hasPlayers"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasPowerUp" id="bobman/Tiles#hasPowerUp"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="walkable" id="bobman/Tiles#walkable"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="xPos" id="bobman/Tiles#xPos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="yPos" id="bobman/Tiles#yPos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Tiles" id="bobman/Tiles#Tiles(III)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initTiles" id="bobman/Tiles#initTiles()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="makeWalkable" id="bobman/Tiles#makeWalkable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="notDestroyable" id="bobman/Tiles#notDestroyable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="notWalkable" id="bobman/Tiles#notWalkable()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="DevilMan" location="50,635" size="109,103" id="bobman/DevilMan">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="77,54">
+      <children xsi:type="editmodel:MethodEditModel" name="DevilMan" id="bobman/DevilMan#DevilMan(Ljava.util.TreeMap;Lbobman.Board;IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPlayer" id="bobman/DevilMan#initPlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPos" id="bobman/DevilMan#initPos()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.18/@sourceConnections.0" autoLocated="true" id="bobman/Player&lt;-bobman/DevilMan" source="//@children.17" target="//@children.19" targetEnd="//@children.17/@sourceConnections.0/@children.1" sourceEnd="//@children.17/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="54,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="64,535" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Sonic" location="189,635" size="100,103" id="bobman/Sonic">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="77,54">
+      <children xsi:type="editmodel:MethodEditModel" name="Sonic" id="bobman/Sonic#Sonic(Ljava.util.TreeMap;Lbobman.Board;IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPlayer" id="bobman/Sonic#initPlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPos" id="bobman/Sonic#initPos()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="bobman/Player&lt;-bobman/Sonic" source="//@children.18" target="//@children.17/@sourceConnections.0" targetEnd="//@children.18/@sourceConnections.0/@children.1" sourceEnd="//@children.18/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="50,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.17/@sourceConnections.0" name="Player" location="107,50" size="129,535" id="bobman/Player">
+    <children xsi:type="editmodel:CompartmentEditModel" size="68,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="hp" id="bobman/Player#hp"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="range" id="bobman/Player#range"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="status" id="bobman/Player#status"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="xPos" id="bobman/Player#xPos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,414">
+      <children xsi:type="editmodel:MethodEditModel" name="Player" id="bobman/Player#Player(Ljava.util.TreeMap;Lbobman.Board;IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRange" id="bobman/Player#getRange()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTiles" id="bobman/Player#getTiles()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdownDown" id="bobman/Player#getdownDown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getleftLeft" id="bobman/Player#getleftLeft()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getrightRight" id="bobman/Player#getrightRight()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getupUp" id="bobman/Player#getupUp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initBomb" id="bobman/Player#initBomb()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPlayer" id="bobman/Player#initPlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPos" id="bobman/Player#initPos()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveDown" id="bobman/Player#moveDown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveLeft" id="bobman/Player#moveLeft()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveRight" id="bobman/Player#moveRight()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveUp" id="bobman/Player#moveUp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetWalkable" id="bobman/Player#resetWalkable(Lbobman.Tiles;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetWalkable1" id="bobman/Player#resetWalkable1(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetWalkable2" id="bobman/Player#resetWalkable2(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startPos" id="bobman/Player#startPos(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwBomb" id="bobman/Player#throwBomb(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwdown" id="bobman/Player#throwdown(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwleft" id="bobman/Player#throwleft(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwright" id="bobman/Player#throwright(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwup" id="bobman/Player#throwup(Lbobman.Tiles;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

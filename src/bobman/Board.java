@@ -8,7 +8,7 @@ import java.io.IOException;
 import javax.swing.*;
 import javax.swing.Timer;
 
-/*
+/**
  * This class is used to generate our gameboard along with all
  * of its features such as players, time, gamemenu etc
  * 
@@ -21,20 +21,115 @@ public class Board  extends JFrame implements ActionListener
 {
 
 	private static final long serialVersionUID = -2926933215387776929L;
+	/**
+	 * @uml.property  name="gameMenu"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="board:bobman.GameMenu"
+	 */
 	private GameMenu gameMenu;
-	private JPanel startMenu,gameBoard;
+	/**
+	 * @uml.property  name="startMenu"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JPanel startMenu;
+	/**
+	 * @uml.property  name="gameBoard"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JPanel gameBoard;
+	/**
+	 * @uml.property  name="split"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	private JSplitPane split;
-	private JButton button1,button2,button3,button4,buttonTimer;
-	private JLabel player1, player2;
+	/**
+	 * @uml.property  name="button1"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JButton button1;
+	/**
+	 * @uml.property  name="button2"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JButton button2;
+	/**
+	 * @uml.property  name="button3"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JButton button3;
+	/**
+	 * @uml.property  name="button4"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JButton button4;
+	/**
+	 * @uml.property  name="buttonTimer"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JButton buttonTimer;
+	/**
+	 * @uml.property  name="player1"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JLabel player1;
+	/**
+	 * @uml.property  name="player2"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JLabel player2;
+	/**
+	 * @uml.property  name="tiles"
+	 * @uml.associationEnd  qualifier="valueOf:java.lang.Integer bobman.Tiles"
+	 */
 	private TreeMap<Integer,Tiles> tiles;
+	/**
+	 * @uml.property  name="levels"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="board:bobman.Levels"
+	 */
 	private Levels levels;
+	/**
+	 * @uml.property  name="timer"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	private Timer timer;
-	private float wastetime1,wastetime2;
-	private Tiles resetTile1,resetTile2;
+	/**
+	 * @uml.property  name="wastetime1"
+	 */
+	private float wastetime1;
+	/**
+	 * @uml.property  name="wastetime2"
+	 */
+	private float wastetime2;
+	/**
+	 * @uml.property  name="resetTile1"
+	 * @uml.associationEnd  
+	 */
+	private Tiles resetTile1;
+	/**
+	 * @uml.property  name="resetTile2"
+	 * @uml.associationEnd  
+	 */
+	private Tiles resetTile2;
+	/**
+	 * @uml.property  name="bombExplode"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="board:bobman.BombExplode"
+	 */
 	private BombExplode bombExplode;
+	/**
+	 * @uml.property  name="clock"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="board:bobman.ClockD"
+	 */
 	private ClockD clock;
+	/**
+	 * @uml.property  name="timeWaster"
+	 */
 	private int timeWaster;
+	/**
+	 * @uml.property  name="rucus1"
+	 */
 	private int rucus1;
+	/**
+	 * @uml.property  name="rucus"
+	 */
 	private int rucus;
 
     
@@ -65,7 +160,7 @@ public class Board  extends JFrame implements ActionListener
 		
 	}
 	
-	/*
+	/**
 	 * 
 	 * initialize our startmenu 
 	 *
@@ -103,7 +198,7 @@ public class Board  extends JFrame implements ActionListener
 		buttonTimer.setBackground(Color.lightGray);
 	}
 	
-	/*
+	/**
 	 * intialize our board
 	 * 
 	 */
@@ -125,7 +220,7 @@ public class Board  extends JFrame implements ActionListener
 
 
 
-	/*
+	/**
 	 * this applies for player 1
 	 * This method clears the bomb and generates fire and makes
 	 * the tile that the bomb appeared on walkable
@@ -142,7 +237,8 @@ public class Board  extends JFrame implements ActionListener
 		
 	}
 	
-	/* this applies for player 2
+	/**
+	 * this applies for player 2
 	 * This method clears the bomb and generates fire and makes
 	 * the tile that the bomb appeared on walkable
 	 * 
@@ -160,137 +256,160 @@ public class Board  extends JFrame implements ActionListener
 	
 	
 	
-	/*
-	 * @returns the games menu.
+	/**
+	 * returns the game menu
+	 * @return  gameMenu.
+	 * @uml.property  name="gameMenu"
 	 */
 	
 	public GameMenu getGameMenu() {
 		return gameMenu;
 	}
 	
-	/*
-	 * @returns the class that handles explosions.
+	/**
+	 * the class that handles explosions.
+	 * @return  bombExplode
+	 * @uml.property  name="bombExplode"
 	 */
 
 	public BombExplode getBombExplode() {
 		return bombExplode;
 	}
 	
-	
+	/**
+	 * sets the class that handles the explosions
+	 * @param  bombExplode
+	 * @uml.property  name="bombExplode"
+	 */
 
 	public void setBombExplode(BombExplode bombExplode) {
 		this.bombExplode = bombExplode;
 	}
 	
-	/*
-	 * @returns the time variable for player2's bombs
+	/**
+	 * the time variable for player2's bombs
+	 * @return  rucus1
+	 * @uml.property  name="rucus1"
 	 */
 
 	public int getRucus1() {
 		return rucus1;
 	}
 
-	/*
-	 * @ sets a new time variable for player2's bombs
-	 * @param rucus1
+	/**
+	 * sets a new time variable for player2's bombs
+	 * @param  rucus1
+	 * @uml.property  name="rucus1"
 	 */
 	
 	public void setRucus1(int rucus1) {
 		this.rucus1 = rucus1;
 	}
 	
-	/*
-	 * @returns the time variable for player1's bombs
+	/**
+	 * the time variable for player1's bombs
+	 * @return  rucus
+	 * @uml.property  name="rucus"
 	 */
 
 	public int getRucus() {
 		return rucus;
 	}
 
-	/*
+	/**
 	 * sets a new time variable for player1's bombs
-	 * @param rucus
+	 * @param  rucus
+	 * @uml.property  name="rucus"
 	 */
 	
 	public void setRucus(int rucus) {
 		this.rucus = rucus;
 	}
 
-	/*
+	/**
 	 * sets a new game menu
-	 * @param gameMenu
+	 * @param  gameMenu
+	 * @uml.property  name="gameMenu"
 	 */
 	
 	public void setGameMenu(GameMenu gameMenu) {
 		this.gameMenu = gameMenu;
 	}
 	
-	/*
+	/**
 	 * time delay for player1's bomb explosion
-	 * @return wastetime1
+	 * @return  wastetime1
+	 * @uml.property  name="wastetime1"
 	 */
 	
 	public float getWastetime1() {
 		return wastetime1;
 	}
 	
-	/*
+	/**
 	 * sets a new delay for player1's bomb to explode
-	 * @param wastetime1
+	 * @param  wastetime1
+	 * @uml.property  name="wastetime1"
 	 */
 
 	public void setWastetime1(float wastetime1) {
 		this.wastetime1 = wastetime1;
 	}
 	
-	/*
+	/**
 	 * time delay for player2's bomb explosion
-	 * @return wastetime2
+	 * @return  wastetime2
+	 * @uml.property  name="wastetime2"
 	 */
 
 	public float getWastetime2() {
 		return wastetime2;
 	}
 	
-	/*
+	/**
 	 * sets a new delay for player2's bomb to explode
-	 * @param wastetime2
+	 * @param  wastetime2
+	 * @uml.property  name="wastetime2"
 	 */
 
 	public void setWastetime2(float wastetime2) {
 		this.wastetime2 = wastetime2;
 	}
 
-	/*
+	/**
 	 * resets a specific tile where the bomb was laid on for player1
-	 * @returns resetTile1
+	 * @return  resetTile1
+	 * @uml.property  name="resetTile1"
 	 */
 
 	public Tiles getResetTile1() {
 		return resetTile1;
 	}
 
-	/*
+	/**
 	 * sets a new tile for the given position for player1
-	 * @param resetTile1
+	 * @param  resetTile1
+	 * @uml.property  name="resetTile1"
 	 */
 	
 	public void setResetTile1(Tiles resetTile1) {
 		this.resetTile1 = resetTile1;
 	}
 	
-	/*
+	/**
 	 * resets a specific tile where the bomb was laid on for player2
-	 * @returns resetTile1
+	 * @return  resetTile1
+	 * @uml.property  name="resetTile2"
 	 */
 
 	public Tiles getResetTile2() {
 		return resetTile2;
 	}
 	
-	/*
+	/**
 	 * sets a new tile for the given position for player2
-	 * @param resetTile2
+	 * @param  resetTile2
+	 * @uml.property  name="resetTile2"
 	 */
 
 	public void setResetTile2(Tiles resetTile2) {
@@ -298,9 +417,10 @@ public class Board  extends JFrame implements ActionListener
 	}
 
 
-	/*
+	/**
 	 * returns the amount of life for player1
-	 * @returns player1
+	 * @return  player1
+	 * @uml.property  name="player1"
 	 */
 	
 	public JLabel getPlayer1() 
@@ -308,18 +428,20 @@ public class Board  extends JFrame implements ActionListener
 		return player1;
 	}
 	
-	/*
+	/**
 	 * sets the amount of life for player1
-	 * @param player1
+	 * @param  player1
+	 * @uml.property  name="player1"
 	 */
 
 	public void setPlayer1(JLabel player1) {
 		this.player1 = player1;
 	}
 	
-	/*
+	/**
 	 * returns the amount of life for player2
-	 * @returns player2
+	 * @return  player2
+	 * @uml.property  name="player2"
 	 */
 	
 
@@ -327,9 +449,10 @@ public class Board  extends JFrame implements ActionListener
 		return player2;
 	}
 
-	/*
+	/**
 	 * sets the amount of life for player2
-	 * @param player2
+	 * @param  player2
+	 * @uml.property  name="player2"
 	 */
 
 	
@@ -337,9 +460,10 @@ public class Board  extends JFrame implements ActionListener
 		this.player2 = player2;
 	}
 	
-	/*
+	/**
 	 * returns the level
-	 * @returns levels
+	 * @return  levels
+	 * @uml.property  name="levels"
 	 */
 	
 
@@ -347,45 +471,50 @@ public class Board  extends JFrame implements ActionListener
 		return levels;
 	}
 	
-	/*
+	/**
 	 * sets level
-	 * @param levels
+	 * @param  levels
+	 * @uml.property  name="levels"
 	 */
 
 	public void setLevels(Levels levels) {
 		this.levels = levels;
 	}
 	
-	/*
+	/**
 	 * returns a button with a time-text
-	 * @returns buttonTimer
+	 * @return  buttonTimer
+	 * @uml.property  name="buttonTimer"
 	 */
 	
 	public JButton getButtonTimer() {
 		return buttonTimer;
 	}
 	
-	/*
+	/**
 	 * sets our button
-	 * @param buttonTimer
+	 * @param  buttonTimer
+	 * @uml.property  name="buttonTimer"
 	 */
 
 	public void setButtonTimer(JButton buttonTimer) {
 		this.buttonTimer = buttonTimer;
 	}
 	
-	/*
+	/**
 	 * returns our clock
-	 * @returns clock
+	 * @return  clock
+	 * @uml.property  name="clock"
 	 */
 	
 	public ClockD getClock() {
 		return clock;
 	}
 	
-	/*
+	/**
 	 * sets the clock
-	 * @param clock
+	 * @param  clock
+	 * @uml.property  name="clock"
 	 */
 
 	public void setClock(ClockD clock) {
@@ -393,7 +522,7 @@ public class Board  extends JFrame implements ActionListener
 	}
 	
 
-	/*
+	/**
 	 * this method pauses the time and the game
 	 */
 
@@ -405,7 +534,7 @@ public class Board  extends JFrame implements ActionListener
 		
 	}
 	
-	/*
+	/**
 	 * starts the time and the game
 	 */
 
@@ -416,7 +545,7 @@ public class Board  extends JFrame implements ActionListener
 		
 	}	
 
-	/*
+	/**
 	 * this method check which of our option is choosen
 	 * and performs a certain operation
 	 */
@@ -511,7 +640,7 @@ public class Board  extends JFrame implements ActionListener
 		}
 	}
 	
-	/*
+	/**
 	 * this method ticks the timer and repaints our board
 	 * it also checks if there is a winner (checkStatus)
 	 */

@@ -3,7 +3,7 @@ package bobman;
 import java.io.IOException;
 import java.util.Random;
 
-/*
+/**
  * this class creates our game menu above the game
  * 
  * @author Danny Lam
@@ -12,9 +12,23 @@ import java.util.Random;
 
 public class GameMenu
 {
+	/**
+	 * @uml.property  name="status"
+	 */
 	private boolean status = false;
+	/**
+	 * @uml.property  name="board"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="gameMenu:bobman.Board"
+	 */
 	private Board board;
+	/**
+	 * @uml.property  name="levels"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	private Levels levels;
+	/**
+	 * @uml.property  name="rand"
+	 */
 	Random rand = new Random();
 	
 	public GameMenu(Board board, Levels levels) {
@@ -23,9 +37,10 @@ public class GameMenu
 		this.levels = levels;
 	}
 
-	/*
+	/**
 	 * used when newGame is chosen from the alternative in the game menu
 	 * starts a new game, can choose from 3 different levels/maps
+	 * @throws IOException
 	 */
 	
 	public void newGame() throws IOException
@@ -41,9 +56,10 @@ public class GameMenu
 		
 	}
 	
-	/*
+	/**
 	 * used when restart is chosen from the game menu
 	 * restarts the same level that was chosen before
+	 * @throws IOException
 	 */
 	
 	public void restart() throws IOException
@@ -57,7 +73,7 @@ public class GameMenu
 		status = false;
 	}
 	
-	/*
+	/**
 	 * used when quit is chosen from the game menu
 	 * exits the game
 	 */
@@ -67,7 +83,7 @@ public class GameMenu
 		System.exit(0);
 	}
 	
-	/*
+	/**
 	 * used when pause is chosen from the game menu
 	 * pauses the game and also resumes the game when chosen	 
 	 */
@@ -93,7 +109,7 @@ public class GameMenu
 		
 	}
 	
-	/*
+	/**
 	 * starts one of the 3 level
 	 * is chosen by random by this method
 	 */

@@ -1,6 +1,6 @@
 package bobman;
 
-/*
+/**
  * this class handles, what happens when player1 
  * and player2 collide 
  * 
@@ -10,7 +10,16 @@ package bobman;
 
 public class Collision 
 {
-	private Player player1,player2;
+	/**
+	 * @uml.property  name="player1"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private Player player1;
+	/**
+	 * @uml.property  name="player2"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private Player player2;
 	
 	public Collision(Levels levels) {
 		super();
@@ -18,7 +27,7 @@ public class Collision
 		this.player2 = levels.getPlayer2();
 	}
 	
-	/*
+	/**
 	 * this method paints the picture when the players collide
 	 */
 	public void playerCollision(Player collider,int side)
@@ -72,7 +81,7 @@ public class Collision
 		}
 	}
 	
-	/*
+	/**
 	 * this method tells us what should happen when our first player is looking
 	 * right and collides with the other player from different directions
 	 */
@@ -128,9 +137,12 @@ public class Collision
 		
 	}
 	
-	/*
+	/**
 	 * this method tells us what should happen when our first player is looking
 	 * up and collides with the other player from different directions
+	 * @param collider
+	 * @param collided
+	 * @param side
 	 */
 	
 	public void firstPlayerLooksUp(Player collider,Player collided,int side)
@@ -184,9 +196,12 @@ public class Collision
 		
 	}
 	
-	/*
+	/**
 	 * this method tells us what should happen when our first player is looking
 	 * down and collides with the other player from different directions
+	 * @param collider
+	 * @param collided
+	 * @param side
 	 */
 	
 	public void firstPlayerLooksDown(Player collider,Player collided,int side)
@@ -240,9 +255,12 @@ public class Collision
 		
 	}
 	
-	/*
+	/**
 	 * this method tells us what should happen when our first player is looking
 	 * left and collides with the other player from different directions
+	 * @param collider
+	 * @param collided
+	 * @param side
 	 */
 	
 	public void firstPlayerLooksLeft(Player collider,Player collided,int side)
@@ -296,7 +314,11 @@ public class Collision
 		
 	}
 	
-	
+	/**
+	 * after leaving collision 
+	 * @param collider
+	 * @param side
+	 */
 	
 	public void LeaveCollision(Player collider,int side)
 	{
@@ -346,7 +368,7 @@ public class Collision
 	
 	
 
-	/*
+	/**
 	 * this method is called upon if the fire and player collide
 	 * @param victim
 	 */
@@ -359,7 +381,7 @@ public class Collision
 		respawn(victim);
 	}
 
-	/*
+	/**
 	 * this method respawns our player to their original position 
 	 * @param victim
 	 */

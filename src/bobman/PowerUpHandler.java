@@ -3,7 +3,7 @@ package bobman;
 import java.awt.Color;
 import java.util.TreeMap;
 
-/*
+/**
  * this class handles the power-ups that exist on the map
  * 
  * @author Liban Aden, Mehdi Adelzadeh
@@ -11,8 +11,18 @@ import java.util.TreeMap;
  */
 
 public class PowerUpHandler {
+	/**
+	 * @uml.property  name="tiles"
+	 */
 	TreeMap<Integer, Tiles> tiles;
+	/**
+	 * @uml.property  name="hasLight"
+	 */
 	private boolean hasLight;
+	/**
+	 * @uml.property  name="player"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="handler:bobman.Player"
+	 */
 	private Player player;
 	
 	public PowerUpHandler(Player player, TreeMap<Integer, Tiles> tiles)
@@ -23,9 +33,12 @@ public class PowerUpHandler {
 		
 	}
 	
-	/*
+	/**
 	 * if there is a lighting-icon power-up that a player picks up
 	 * it gets longer range on its bombs
+	 * @param a
+	 * @param b
+	 * @param fires
 	 */
 	
 	public void lighting(Tiles a,int b,TreeMap <Integer,Fire> fires)
@@ -164,7 +177,7 @@ public class PowerUpHandler {
 		}
 	}
 	
-	/*
+	/**
 	 * if the life-icon power-up is picked up
 	 * give extra health to player
 	 */
@@ -185,17 +198,20 @@ public class PowerUpHandler {
 	
 	}
 	
-	/*
-	 *  Returns if the tile has the powerup lighting
+	/**
+	 * Returns if the tile has the powerup lighting
+	 * @return  hasLight
+	 * @uml.property  name="hasLight"
 	 */
 
 	public boolean isHasLight() {
 		return hasLight;
 	}
 	
-	/*
-	 *  sets so that that the tile will have the powerup lighting or not
-	 *  @param hasLight
+	/**
+	 * sets so that that the tile will have the powerup lighting or not
+	 * @param  hasLight
+	 * @uml.property  name="hasLight"
 	 */
 
 	public void setHasLight(boolean hasLight) {

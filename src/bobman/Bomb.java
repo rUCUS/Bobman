@@ -4,7 +4,7 @@ package bobman;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-/*
+/**
  * This class creates bombs on a given position.
  * @author Danny Lam
  * @version 2016-02-26
@@ -14,8 +14,24 @@ public class Bomb extends JLabel
 {
 	
 	private static final long serialVersionUID = 2578658456631174653L;
-	private int xPos ,yPos;
-	private ImageIcon bombicon1,bombicon2;
+	/**
+	 * @uml.property  name="xPos"
+	 */
+	private int xPos;
+	/**
+	 * @uml.property  name="yPos"
+	 */
+	private int yPos;
+	/**
+	 * @uml.property  name="bombicon1"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon bombicon1;
+	/**
+	 * @uml.property  name="bombicon2"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon bombicon2;
 	
 
 	public Bomb(int player)
@@ -24,7 +40,7 @@ public class Bomb extends JLabel
 		whoseBomb(player);
 	}
 	
-	/*
+	/**
 	 * this method generates a bomb for a given player 
 	 * @param player
 	 */
@@ -44,9 +60,10 @@ public class Bomb extends JLabel
 		}
 	}
 	
-	/*
+	/**
 	 * returns the x-position of the bomb
-	 * @return xPos
+	 * @return  xPos
+	 * @uml.property  name="xPos"
 	 */
 
 	public int getxPos()
@@ -54,9 +71,10 @@ public class Bomb extends JLabel
 		return xPos;
 	}
 	
-	/*
+	/**
 	 * sets the x-position of the bomb
-	 * @param xPos
+	 * @param  xPos
+	 * @uml.property  name="xPos"
 	 */
 
 	public void setxPos(int xPos) 
@@ -64,9 +82,10 @@ public class Bomb extends JLabel
 		this.xPos = xPos;
 	}
 	
-	/*
+	/**
 	 * returns the y-position of bomb
-	 * @return yPos
+	 * @return  yPos
+	 * @uml.property  name="yPos"
 	 */
 
 	public int getyPos() 
@@ -74,9 +93,10 @@ public class Bomb extends JLabel
 		return yPos;
 	}
 	
-	/*
+	/**
 	 * sets the y-position of the bomb
-	 * @param yPos
+	 * @param  yPos
+	 * @uml.property  name="yPos"
 	 */
 
 	public void setyPos(int yPos) 
@@ -84,7 +104,7 @@ public class Bomb extends JLabel
 		this.yPos = yPos;
 	}
 	
-	/*
+	/**
 	 * this method resets the animation for the bomb
 	 * @param bombicon
 	 */
@@ -95,13 +115,13 @@ public class Bomb extends JLabel
 		this.setIcon(bombicon);
 	}
 	
-	/*
+	/**
 	 * returns the bomb for the given player 
 	 * @param status
 	 * @return bombicon1
 	 * @return bombicon2
 	 */
-
+	
 	public ImageIcon getBombicon(int status) 
 	{
 		switch(status)

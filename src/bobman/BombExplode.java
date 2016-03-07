@@ -3,7 +3,7 @@ package bobman;
 import java.awt.Color;
 import java.util.TreeMap;
 
-/*
+/**
  * this class creates our bomb with fire and its explosion range
  * 
  * @author Liban Aden, Danny Lam
@@ -12,10 +12,39 @@ import java.util.TreeMap;
 
 public class BombExplode
 {
+	/**
+	 * @uml.property  name="fires"
+	 * @uml.associationEnd  qualifier="valueOf:java.lang.Integer bobman.Tiles"
+	 */
 	private TreeMap <Integer,Fire> fires;
+	/**
+	 * @uml.property  name="tiles"
+	 */
 	private TreeMap<Integer,Tiles> tiles;
-	private Tiles bombScanner,bombScanner1;
-	private Fire fire,fire1;
+	/**
+	 * @uml.property  name="bombScanner"
+	 * @uml.associationEnd  
+	 */
+	private Tiles bombScanner;
+	/**
+	 * @uml.property  name="bombScanner1"
+	 * @uml.associationEnd  
+	 */
+	private Tiles bombScanner1;
+	/**
+	 * @uml.property  name="fire"
+	 * @uml.associationEnd  
+	 */
+	private Fire fire;
+	/**
+	 * @uml.property  name="fire1"
+	 * @uml.associationEnd  
+	 */
+	private Fire fire1;
+	/**
+	 * @uml.property  name="board"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="bombExplode:bobman.Board"
+	 */
 	private Board board;
 	public BombExplode(Board board,TreeMap<Integer, Tiles> tiles) 
 	{
@@ -26,7 +55,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method initialize our fire for player1's and
 	 * player2's bombs
 	 */
@@ -50,7 +79,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method is used when the bomb is exploded and it transfers
 	 * the fire to a certain area for both player1's and player2's bombs
 	 */
@@ -83,7 +112,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method directs our fire towards the left for 
 	 * player1's bombs
 	 */
@@ -154,7 +183,7 @@ public class BombExplode
 			
 	}
 	
-	/*
+	/**
 	 * this method directs our fire towards the right for 
 	 * player1's bombs
 	 */
@@ -224,7 +253,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method direct our fire downwards for 
 	 * player1's bombs
 	 */
@@ -292,7 +321,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method direct our fire upwards for 
 	 * player1's bombs
 	 */
@@ -360,7 +389,7 @@ public class BombExplode
 		}		
 	}
 	
-	/*
+	/**
 	 * this method generates fire on our bombs position
 	 * for player 2
 	 */
@@ -374,7 +403,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method generates fire on our bombs position
 	 * for player 1
 	 */
@@ -388,7 +417,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method directs our fire towards the left for 
 	 * player2's bombs
 	 */
@@ -456,7 +485,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method directs our fire towards the right for 
 	 * player2's bombs
 	 */
@@ -525,7 +554,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method direct our fire downwards for 
 	 * player2's bombs
 	 */
@@ -594,7 +623,7 @@ public class BombExplode
 		
 	}
 	
-	/*
+	/**
 	 * this method direct our fire upwards for 
 	 * player1's bombs
 	 */
@@ -662,7 +691,7 @@ public class BombExplode
 			}
 	}
 	
-	/*
+	/**
 	 * this method removes our fire for player1's bomb
 	 */
 	
@@ -685,7 +714,7 @@ public class BombExplode
 		}
 	}
 	
-	/*
+	/**
 	 * this class removes our fire for player2's bomb
 	 */
 	

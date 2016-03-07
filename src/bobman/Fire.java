@@ -3,7 +3,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 
-/*
+/**
  * this class creates our fire for a certain position depending on 
  * which of the player is planting the bomb 
  * 
@@ -15,8 +15,28 @@ public class Fire extends JLabel
 {
 	
 	private static final long serialVersionUID = 3117597669521741300L;
-	private int xPos,yPos;
-	private ImageIcon fireIcon,fireIcon2;
+	/**
+	 * @uml.property  name="xPos"
+	 */
+	private int xPos;
+	/**
+	 * @uml.property  name="yPos"
+	 * @uml.associationEnd  qualifier="valueOf:java.lang.Integer bobman.Tiles"
+	 */
+	private int yPos;
+	/**
+	 * @uml.property  name="fireIcon"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon fireIcon;
+	/**
+	 * @uml.property  name="fireIcon2"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private ImageIcon fireIcon2;
+	/**
+	 * @uml.property  name="isActive"
+	 */
 	private boolean isActive;
 
 	public Fire(int player,BombExplode bombExplode)
@@ -25,10 +45,11 @@ public class Fire extends JLabel
 		initFire(player);
 	}
 	
-	/*
+	/**
 	 * this method creates a fire-icon for both of the players bomb
 	 * @param player
 	 */
+	
 	public void initFire(int player) 
 	{
 		if (player ==1)
@@ -48,15 +69,16 @@ public class Fire extends JLabel
 			
 	}
 	
-	/*
-	 * returns isActive
+	/**
+	 * returns if it is active
 	 * @return isActive
 	 */
+	
 	public boolean isactive() {
 		return isActive;
 	}
 
-	/*
+	/**
 	 * this method makes the variable isActive true
 	 */
 	
@@ -65,7 +87,8 @@ public class Fire extends JLabel
 		isActive = true;
 	}
 	
-	/*
+
+	/**
 	 * this method activates fire for the specific tiles
 	 * @param a
 	 */
@@ -78,41 +101,46 @@ public class Fire extends JLabel
 				
 	}
 	
-	/*
+	/**
 	 * get the x-position for the fire
+	 * @return  xPos
+	 * @uml.property  name="xPos"
 	 */
 	
 	public int getxPos() {
 		return xPos;
 	}
 	
-	/*
+	/**
 	 * sets the x-position for the fire
-	 * @param xPos
+	 * @param  xPos
+	 * @uml.property  name="xPos"
 	 */
 	public void setxPos(int xPos) {
 		this.xPos = xPos;
 	}
 	
-	/*
+	/**
 	 * get the y-position for the fire
-	 * @return yPos
+	 * @return  yPos
+	 * @uml.property  name="yPos"
 	 */
 	
 	public int getyPos() {
 		return yPos;
 	}
 	
-	/*
+	/**
 	 * sets the y-position for the fire
-	 * @param yPos
+	 * @param  yPos
+	 * @uml.property  name="yPos"
 	 */
 	
 	public void setyPos(int yPos) {
 		this.yPos = yPos;
 	}
 	
-	/*
+	/**
 	 * this method makes the variable isActive false
 	 */
 	

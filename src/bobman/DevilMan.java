@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 import javax.swing.ImageIcon;
 
-/*
+/**
  * this class creates a player and this class also extends Player
  * 
  * @author Mehdi Adelzadeh
@@ -24,7 +24,7 @@ public class DevilMan extends Player
 		this.setHp(3);
 	}
 	
-	/*
+	/**
 	 * this method generates our player at a specific position
 	 */
 
@@ -39,7 +39,7 @@ public class DevilMan extends Player
 		setDown(new ImageIcon("src/sprite/downDemon.gif"));
 	}
 	
-	/*
+	/**
 	 * this method creates our player with a certain health and bomb-range
 	 */
 	

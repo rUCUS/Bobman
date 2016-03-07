@@ -10,7 +10,7 @@ import java.util.TreeMap;
 
 import javax.swing.JOptionPane;
 
-/*
+/**
  * this class creates our three levels
  * each has different attributes to them
  * 
@@ -20,13 +20,48 @@ import javax.swing.JOptionPane;
 
 public class Levels 
 {
-	private Player player1,player2;
+	/**
+	 * @uml.property  name="player1"
+	 * @uml.associationEnd  
+	 */
+	private Player player1;
+	/**
+	 * @uml.property  name="player2"
+	 * @uml.associationEnd  
+	 */
+	private Player player2;
+	/**
+	 * @uml.property  name="board"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="levels:bobman.Board"
+	 */
 	private Board board;
+	/**
+	 * @uml.property  name="ui"
+	 * @uml.associationEnd  
+	 */
 	private UserInterface Ui;
+	/**
+	 * @uml.property  name="tiles"
+	 * @uml.associationEnd  qualifier="valueOf:java.lang.Integer bobman.Tiles"
+	 */
 	private TreeMap<Integer,Tiles> tiles;
 	private static final Set<Integer> playerSpace = new HashSet<Integer>(Arrays.asList(14,15,16,27,40,128,141,152,153,154));
-	private int currentLevel,powers;
+	/**
+	 * @uml.property  name="currentLevel"
+	 */
+	private int currentLevel;
+	/**
+	 * @uml.property  name="powers"
+	 */
+	private int powers;
+	/**
+	 * @uml.property  name="rand"
+	 */
 	Random rand = new Random();
+	/**
+	 * @uml.property  name="collision"
+	 * @uml.associationEnd  
+	 */
 	private Collision collision;
 	
 	
@@ -36,62 +71,70 @@ public class Levels
 		this.tiles = tiles;
 	}
 	
-	/*
+	/**
 	 * returns our collision control
-	 * @returns collision
+	 * @return  collision
+	 * @uml.property  name="collision"
 	 */
 	
 	public Collision getCollision() {
 		return collision;
 	}
 	
-	/*
+	/**
 	 * sets our collision
-	 * @param collision
+	 * @param  collision
+	 * @uml.property  name="collision"
 	 */
 
 	public void setCollision(Collision collision) {
 		this.collision = collision;
 	}
 	
-	/*
+	/**
 	 * returns our player1
-	 * @returns player1
+	 * @return  player1
+	 * @uml.property  name="player1"
 	 */
 
 	public Player getPlayer1() {
 		return player1;
 	}
 	
-	/*
+	/**
 	 * sets our player1
-	 * @param player1
+	 * @param  player1
+	 * @uml.property  name="player1"
 	 */
 
 	public void setPlayer1(Player player1) {
 		this.player1 = player1;
 	}
 	
-	/*
+
+	/**
 	 * returns our player2
-	 * @returns player2
+	 * @return  player2
+	 * @uml.property  name="player2"
 	 */
 
 	public Player getPlayer2() {
 		return player2;
 	}
 	
-	/*
+	/**
 	 * sets our player2
-	 * @param player2
+	 * @param  player2
+	 * @uml.property  name="player2"
 	 */
 
 	public void setPlayer2(Player player2) {
 		this.player2 = player2;
 	}
 
-	/*
+	/**
 	 * the method creates/initialize our basic level 
+	 * @throws IOException
 	 */
 	
 	public void initBaseLevel() throws IOException 
@@ -121,7 +164,6 @@ public class Levels
 					l.getOrder()));
 					l.notDestroyable();
 					l.notWalkable();
-					l.removeFloor();
 					
 				}
 				else if (l.getxPos() % 2 == 0 && l.getyPos()% 2 == 0)
@@ -131,15 +173,15 @@ public class Levels
 					l.getOrder()));
 					l.notDestroyable();
 					l.notWalkable();
-					l.removeFloor();
 				}
 			
 		}		
 		
 	}
 	
-	/*
+	/**
 	 * the method creates 4 options for our players to choose from
+	 * @throws IOException
 	 */
 	
 	public void chooseLevel() throws IOException 
@@ -151,9 +193,10 @@ public class Levels
 		
 	}
 	
-	/*
+	/**
 	 * this method tells what should happen depending on which option has been chosen
 	 * from the method chooseLevel
+	 * @throws IOException
 	 */
 	
 	public void sameLevel() throws IOException
@@ -174,9 +217,12 @@ public class Levels
 		}
 	}
 	
-	/*
+	/**
 	 * which player-character that should be assigned to each player depending
 	 * on chosen option
+	 * @param player
+	 * @return i
+	 * @return 0
 	 */
 	
 	public int choosePlayer(int player)
@@ -203,7 +249,7 @@ public class Levels
 		
 	}
 	
-	/*
+	/**
 	 * here we pick our player-character
 	 */
 	
@@ -250,8 +296,9 @@ public class Levels
 			this.Ui = new UserInterface(player1,player2);
 	}
 	
-	/*
+	/**
 	 * we create our level 1 and here we acknowledge our different player attributes 
+	 * @throws IOException
 	 */
 
 	public void levelOne() throws IOException
@@ -281,7 +328,6 @@ public class Levels
 				if(!(used.contains(p.getOrder())))
 				{
 					used.add(p.getOrder());
-					p.removeFloor();
 					p.add(new Dwall(p.getxPos(),p.getY(),p.getOrder()));
 					p.setBackground(Color.black);
 					p.notWalkable();
@@ -311,8 +357,9 @@ public class Levels
 		board.setVisible(true);
 	}
 	
-	/*
+	/**
 	 * we create our level 2 and here we set default value for our players
+	 * @throws IOException
 	 */
 	
 	public void levelTwo() throws IOException
@@ -345,7 +392,6 @@ public class Levels
 				{
 					powers = rand.nextInt(15);
 					used.add(p.getOrder());
-					p.removeFloor();
 					p.add(new Dwall(p.getxPos(),p.getY(),p.getOrder()));
 					p.setBackground(Color.black);
 					p.notWalkable();
@@ -384,7 +430,7 @@ public class Levels
 		board.setVisible(true);
 	}
 	
-	/*
+	/**
 	 * we create our level 3 and we give our players all the power-ups
 	 */
 	
@@ -430,50 +476,56 @@ public class Levels
 		board.setVisible(true);
 	}
 	
-	/*
-	 * @returns the level we are playing 
+	/**
+	 * the level we are playing 
+	 * @return  currentLevel
+	 * @uml.property  name="currentLevel"
 	 */
 	
 	public int getCurrentLevel() {
 		return currentLevel;
 	}
 	
-	/*
-	 * @returns the class board
+	/**
+	 * the class board
+	 * @return  board
+	 * @uml.property  name="board"
 	 */
 
 	public Board getBoard() {
 		return board;
 	}
 	
-	/*
+	/**
 	 * sets our board
-	 * @param board
+	 * @param  board
+	 * @uml.property  name="board"
 	 */
 
 	public void setBoard(Board board) {
 		this.board = board;
 	}
 	
-	/*
+	/**
 	 * sets the current level
-	 * @param currentLevel
+	 * @param  currentLevel
+	 * @uml.property  name="currentLevel"
 	 */
 
 	public void setCurrentLevel(int currentLevel) {
 		this.currentLevel = currentLevel;
 	}
 	
-	/*
+	/**
 	 * removes our key listening
 	 */
-
+	
 	public void removeListener()
 	{
 		board.removeKeyListener(Ui);
 	}
 	
-	/*
+	/**
 	 * sets our players life to 1
 	 */
 	
@@ -488,8 +540,9 @@ public class Levels
 		this.board.getPlayer2().setText("P2 life: ");
 	}
 
-	/*
+	/**
 	 * checks if our players get caught be the fire
+	 * @throws IOException
 	 */
 	
 	public void checkStatus() throws IOException 
@@ -515,8 +568,10 @@ public class Levels
 		
 	}
 	
-	/*
+	/**
 	 * announces a winner
+	 * @param a
+	 * @throws IOException
 	 */
 	
 	public void LoseHp(int a) throws IOException
