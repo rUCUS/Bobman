@@ -5,9 +5,9 @@ import java.util.TreeMap;
 
 /**
  * this class creates our bomb with fire and its explosion range
- * 
- * @author Liban Aden, Danny Lam
- * @version 2016-02-29
+ * @author     Liban Aden, Danny Lam
+ * @version     2016-02-29
+ * @uml.dependency   supplier="bobman.Powerup"
  */
 
 public class BombExplode

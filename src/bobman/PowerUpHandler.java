@@ -5,9 +5,9 @@ import java.util.TreeMap;
 
 /**
  * this class handles the power-ups that exist on the map
- * 
- * @author Liban Aden, Mehdi Adelzadeh
- * @version 2016-03-03
+ * @author       Liban Aden, Mehdi Adelzadeh
+ * @version       2016-03-03
+ * @uml.dependency   supplier="bobman.Powerup"
  */
 
 public class PowerUpHandler {

@@ -6,9 +6,9 @@ import javax.swing.JLabel;
 
 /**
  * Handles what picture will spawn when a powerup appears
- * 
- * @author Liban Aden
- * @version 2016-03-01
+ * @author   Liban Aden
+ * @version   2016-03-01
+ * @uml.dependency   supplier="bobman.PowerUpHandler"
  */
 
 public class Powerup extends JLabel

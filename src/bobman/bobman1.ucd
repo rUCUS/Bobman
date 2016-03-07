@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="bobman1" size="3267,2986" id="bobman" metadata="uml2-1.0" initialized="true" zoom="0.5" scrolledY="554" tag="10" key="32303037303533312D313020426F626D616E">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.16/@sourceConnections.3" name="Bomb" location="1515,2575" size="129,157" id="bobman/Bomb">
+    <children xsi:type="editmodel:CompartmentEditModel" size="61,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="xPos" id="bobman/Bomb#xPos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="yPos" id="bobman/Bomb#yPos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Bomb" id="bobman/Bomb#Bomb(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getBombicon" id="bobman/Bomb#getBombicon(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetAnimation" id="bobman/Bomb#resetAnimation(Ljavax.swing.ImageIcon;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="whoseBomb" id="bobman/Bomb#whoseBomb(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0 //@children.16/@sourceConnections.0 //@children.16/@sourceConnections.1 //@children.16/@sourceConnections.7" name="Collision" location="1949,2325" size="160,211" id="bobman/Collision">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="137,162">
+      <children xsi:type="editmodel:MethodEditModel" name="Collision" id="bobman/Collision#Collision(Lbobman.Levels;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="FireCollision" id="bobman/Collision#FireCollision(Lbobman.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="LeaveCollision" id="bobman/Collision#LeaveCollision(Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="firstPlayerLooksDown" id="bobman/Collision#firstPlayerLooksDown(Lbobman.Player;Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="firstPlayerLooksLeft" id="bobman/Collision#firstPlayerLooksLeft(Lbobman.Player;Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="firstPlayerLooksRight" id="bobman/Collision#firstPlayerLooksRight(Lbobman.Player;Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="firstPlayerLooksUp" id="bobman/Collision#firstPlayerLooksUp(Lbobman.Player;Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="playerCollision" id="bobman/Collision#playerCollision(Lbobman.Player;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="respawn" id="bobman/Collision#respawn(Lbobman.Player;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.5 //@children.6/@sourceConnections.8 //@children.16/@sourceConnections.2 //@children.14/@sourceConnections.1 //@children.7/@sourceConnections.0" name="PowerUpHandler" location="584,2519" size="190,139" id="bobman/PowerUpHandler" runTimeClassModel="giveExtra(),tiles,hasLight,PowerUpHandler(Lbobman.Player;Ljava.util.TreeMap;),lighting(Lbobman.Tiles;ILjava.util.TreeMap;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="167,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="hasLight" id="bobman/PowerUpHandler#hasLight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tiles" id="bobman/PowerUpHandler#tiles"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="112,54">
+      <children xsi:type="editmodel:MethodEditModel" name="PowerUpHandler" id="bobman/PowerUpHandler#PowerUpHandler(Lbobman.Player;Ljava.util.TreeMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="giveExtra" id="bobman/PowerUpHandler#giveExtra()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="lighting" id="bobman/PowerUpHandler#lighting(Lbobman.Tiles;ILjava.util.TreeMap;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/PowerUpHandler->bobman/Powerup*bobman/PowerUpHandler->bobman/Powerup*bobman/PowerUpHandler->bobman/Powerup*bobman/PowerUpHandler->bobman/Powerup*bobman/PowerUpHandler->bobman/Powerup*bobman/PowerUpHandler->bobman/Powerup" source="//@children.2" target="//@children.7" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,90" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="105,33"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/PowerUpHandler->bobman/Board*bobman/PowerUpHandler->bobman/Board*bobman/PowerUpHandler->bobman/Board*bobman/PowerUpHandler->bobman/Board*bobman/PowerUpHandler->bobman/Board*bobman/PowerUpHandler->bobman/Board" source="//@children.2" target="//@children.10" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="185,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="4,229"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/PowerUpHandler->bobman/Player*bobman/PowerUpHandler-Soyatec::Import->bobman/Player*bobman/PowerUpHandler->bobman/Player*bobman/PowerUpHandler->bobman/Player*bobman/PowerUpHandler->bobman/Player*bobman/PowerUpHandler->bobman/Player*bobman/PowerUpHandler->bobman/Player" source="//@children.2" target="//@children.16" targetEnd="//@children.2/@sourceConnections.2/@children.2" label="//@children.2/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="173,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,323"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/PowerUpHandler->bobman/Tiles*bobman/PowerUpHandler-Soyatec::Import->bobman/Tiles*bobman/PowerUpHandler->bobman/Tiles*bobman/PowerUpHandler->bobman/Tiles*bobman/PowerUpHandler->bobman/Tiles*bobman/PowerUpHandler->bobman/Tiles*bobman/PowerUpHandler->bobman/Tiles" source="//@children.2" target="//@children.17" targetEnd="//@children.2/@sourceConnections.3/@children.2" label="//@children.2/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="124,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="6,319"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/PowerUpHandler->bobman/Fire*bobman/PowerUpHandler-Soyatec::Import->bobman/Fire*bobman/PowerUpHandler->bobman/Fire*bobman/PowerUpHandler->bobman/Fire*bobman/PowerUpHandler->bobman/Fire*bobman/PowerUpHandler->bobman/Fire*bobman/PowerUpHandler->bobman/Fire" source="//@children.2" target="//@children.12" targetEnd="//@children.2/@sourceConnections.4/@children.2" label="//@children.2/@sourceConnections.4/@children.0" sourceEnd="//@children.2/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="57,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="99,175"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.5 //@children.6/@sourceConnections.4 //@children.5/@sourceConnections.1" name="GameMenu" location="2235,1664" size="123,175" id="bobman/GameMenu">
+    <children xsi:type="editmodel:CompartmentEditModel" size="88,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="rand" id="bobman/GameMenu#rand"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,108">
+      <children xsi:type="editmodel:MethodEditModel" name="GameMenu" id="bobman/GameMenu#GameMenu(Lbobman.Board;Lbobman.Levels;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Pause" id="bobman/GameMenu#Pause()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Quit" id="bobman/GameMenu#Quit()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="newGame" id="bobman/GameMenu#newGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="randomGame" id="bobman/GameMenu#randomGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="restart" id="bobman/GameMenu#restart()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Levels@levels+bobman/GameMenu@" source="//@children.3" target="//@children.6" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,67" id="bobman/Levels@levels+bobman/GameMenu@|bobman/GameMenu#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="levels" location="131,161" id="bobman/Levels@levels+bobman/GameMenu@|bobman/Levels#levels" multiplicityLabel="//@children.3/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.3/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - levels" location="1727,1700" size="39,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1727,1727" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/GameMenu->bobman/ClockD" source="//@children.3" target="//@children.8" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="83,175" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="39,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0" name="WelcomeMenu" location="2782,50" size="148,121" id="bobman/WelcomeMenu">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,72">
+      <children xsi:type="editmodel:MethodEditModel" name="WelcomeMenu" id="bobman/WelcomeMenu#WelcomeMenu(Lbobman.GameEngine;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="actionPerformed" id="bobman/WelcomeMenu#actionPerformed(Ljava.awt.event.ActionEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initButtons" id="bobman/WelcomeMenu#initButtons()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initMenu" id="bobman/WelcomeMenu#initMenu()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.8" name="GameEngine" location="2099,870" size="144,121" id="bobman/GameEngine">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="121,72">
+      <children xsi:type="editmodel:MethodEditModel" name="GameEngine" id="bobman/GameEngine#GameEngine()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="bobman/GameEngine#main([Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startTheGame" id="bobman/GameEngine#startTheGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startrandomGame" id="bobman/GameEngine#startrandomGame()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/GameEngine@gameEngine+bobman/WelcomeMenu@menu" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.0/@children.2" label="//@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="gameEngine" location="134,0" id="bobman/GameEngine@gameEngine+bobman/WelcomeMenu@menu|bobman/GameEngine#gameEngine" attachSource="true" multiplicityLabel="//@children.5/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - gameEngine" location="2154,850" size="71,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="2239,850" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="menu" location="0,111" id="bobman/GameEngine@gameEngine+bobman/WelcomeMenu@menu|bobman/WelcomeMenu#menu" multiplicityLabel="//@children.5/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + menu" location="2732,140" size="43,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="2769,167" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/GameEngine->bobman/GameMenu" source="//@children.5" target="//@children.3" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,121" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="3,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.6 //@children.3/@sourceConnections.0 //@children.17/@sourceConnections.4 //@children.11/@sourceConnections.4 //@children.16/@sourceConnections.6" name="Levels" location="1590,1560" size="131,319" id="bobman/Levels">
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="currentLevel" id="bobman/Levels#currentLevel"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rand" id="bobman/Levels#rand"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="108,234">
+      <children xsi:type="editmodel:MethodEditModel" name="Levels" id="bobman/Levels#Levels(Lbobman.Board;Ljava.util.TreeMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="LoseHp" id="bobman/Levels#LoseHp(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkStatus" id="bobman/Levels#checkStatus()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="chooseLevel" id="bobman/Levels#chooseLevel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="choosePlayer" id="bobman/Levels#choosePlayer(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="choosenPlayer" id="bobman/Levels#choosenPlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initBaseLevel" id="bobman/Levels#initBaseLevel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="levelOne" id="bobman/Levels#levelOne()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="levelThree" id="bobman/Levels#levelThree()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="levelTwo" id="bobman/Levels#levelTwo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeListener" id="bobman/Levels#removeListener()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetHp" id="bobman/Levels#resetHp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sameLevel" id="bobman/Levels#sameLevel()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Collision@collision+bobman/Levels@" source="//@children.6" target="//@children.1" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="131,309" id="bobman/Collision@collision+bobman/Levels@|bobman/Levels#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="collision" location="10,0" id="bobman/Collision@collision+bobman/Levels@|bobman/Collision#collision" multiplicityLabel="//@children.6/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - collision" location="1965,2304" size="51,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1933,2304" size="18,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Player@player1+bobman/Levels@" source="//@children.6" target="//@children.16" targetEnd="//@children.6/@sourceConnections.1/@children.2" label="//@children.6/@sourceConnections.1/@children.0" sourceEnd="//@children.6/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,302" id="bobman/Player@player1+bobman/Levels@|bobman/Levels#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="player1" location="129,15" id="bobman/Player@player1+bobman/Levels@|bobman/Player#player1" multiplicityLabel="//@children.6/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - player1" location="1289,1842" size="47,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1289,1869" size="18,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/UserInterface@ui+bobman/Levels@" source="//@children.6" target="//@children.9" targetEnd="//@children.6/@sourceConnections.2/@children.2" label="//@children.6/@sourceConnections.2/@children.0" sourceEnd="//@children.6/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="79,319" id="bobman/UserInterface@ui+bobman/Levels@|bobman/Levels#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="ui" location="50,0" id="bobman/UserInterface@ui+bobman/Levels@|bobman/UserInterface#ui" multiplicityLabel="//@children.6/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - ui" location="1675,2154" size="19,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1643,2154" size="18,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Player@player2+bobman/Levels@" source="//@children.6" target="//@children.16" targetEnd="//@children.6/@sourceConnections.3/@children.2" label="//@children.6/@sourceConnections.3/@children.0" sourceEnd="//@children.6/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,282" id="bobman/Player@player2+bobman/Levels@|bobman/Levels#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="player2" location="70,0" id="bobman/Player@player2+bobman/Levels@|bobman/Player#player2" multiplicityLabel="//@children.6/@sourceConnections.3/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.3/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - player2" location="1170,1826" size="47,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1231,1826" size="18,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Levels->bobman/GameMenu" source="//@children.6" target="//@children.3" targetEnd="//@children.6/@sourceConnections.4/@children.2" label="//@children.6/@sourceConnections.4/@children.0" sourceEnd="//@children.6/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="131,191" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,87"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Levels->bobman/Wall" source="//@children.6" target="//@children.19" targetEnd="//@children.6/@sourceConnections.5/@children.2" label="//@children.6/@sourceConnections.5/@children.0" sourceEnd="//@children.6/@sourceConnections.5/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,54" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,85"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Levels->bobman/Dwall" source="//@children.6" target="//@children.18" targetEnd="//@children.6/@sourceConnections.6/@children.2" label="//@children.6/@sourceConnections.6/@children.0" sourceEnd="//@children.6/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,90" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="87,85"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Levels->bobman/Sonic" source="//@children.6" target="//@children.14" targetEnd="//@children.6/@sourceConnections.7/@children.2" label="//@children.6/@sourceConnections.7/@children.0" sourceEnd="//@children.6/@sourceConnections.7/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,256" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="84,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Levels->bobman/PowerUpHandler" source="//@children.6" target="//@children.2" targetEnd="//@children.6/@sourceConnections.8/@children.2" label="//@children.6/@sourceConnections.8/@children.0" sourceEnd="//@children.6/@sourceConnections.8/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,217" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="172,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Levels->bobman/BombExplode" source="//@children.6" target="//@children.11" targetEnd="//@children.6/@sourceConnections.9/@children.2" label="//@children.6/@sourceConnections.9/@children.0" sourceEnd="//@children.6/@sourceConnections.9/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,164" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,76"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Levels->bobman/DevilMan" source="//@children.6" target="//@children.15" targetEnd="//@children.6/@sourceConnections.10/@children.2" label="//@children.6/@sourceConnections.10/@children.0" sourceEnd="//@children.6/@sourceConnections.10/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,295" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="78,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.2 //@children.2/@sourceConnections.0" name="Powerup" location="311,2576" size="105,67" id="bobman/Powerup" runTimeClassModel="Powerup(I)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="72,18">
+      <children xsi:type="editmodel:MethodEditModel" name="Powerup" id="bobman/Powerup#Powerup(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Powerup->bobman/PowerUpHandler" source="//@children.7" target="//@children.2" targetEnd="//@children.7/@sourceConnections.0/@children.2" label="//@children.7/@sourceConnections.0/@children.0" sourceEnd="//@children.7/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="105,13" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,70"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.2 //@children.3/@sourceConnections.1" name="ClockD" location="2279,2246" size="154,229" id="bobman/ClockD">
+    <children xsi:type="editmodel:CompartmentEditModel" size="131,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="clockRunning" id="bobman/ClockD#clockRunning"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="displayString" id="bobman/ClockD#displayString"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,144">
+      <children xsi:type="editmodel:MethodEditModel" name="ClockD" id="bobman/ClockD#ClockD(Lbobman.Board;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clockStarter" id="bobman/ClockD#clockStarter()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clockStop" id="bobman/ClockD#clockStop()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTime" id="bobman/ClockD#getTime()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reset" id="bobman/ClockD#reset()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetClock" id="bobman/ClockD#resetClock()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="stepClock" id="bobman/ClockD#stepClock()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="timeTick" id="bobman/ClockD#timeTick()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/NumD@seconds+bobman/ClockD@" source="//@children.8" target="//@children.13" targetEnd="//@children.8/@sourceConnections.0/@children.2" label="//@children.8/@sourceConnections.0/@children.0" sourceEnd="//@children.8/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="154,114" id="bobman/NumD@seconds+bobman/ClockD@|bobman/ClockD#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="seconds" location="0,60" id="bobman/NumD@seconds+bobman/ClockD@|bobman/NumD#seconds" multiplicityLabel="//@children.8/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.8/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - seconds" location="2657,2340" size="50,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="2701,2367" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/NumD@minutes+bobman/ClockD@" source="//@children.8" target="//@children.13" targetEnd="//@children.8/@sourceConnections.1/@children.2" label="//@children.8/@sourceConnections.1/@children.0" sourceEnd="//@children.8/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="154,134" id="bobman/NumD@minutes+bobman/ClockD@|bobman/ClockD#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="minutes" location="0,100" id="bobman/NumD@minutes+bobman/ClockD@|bobman/NumD#minutes" multiplicityLabel="//@children.8/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.8/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - minutes" location="2657,2407" size="50,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="2701,2380" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.2 //@children.16/@sourceConnections.4 //@children.16/@sourceConnections.5" name="UserInterface" location="1619,2175" size="142,121" id="bobman/UserInterface">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,72">
+      <children xsi:type="editmodel:MethodEditModel" name="UserInterface" id="bobman/UserInterface#UserInterface(Lbobman.Player;Lbobman.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyPressed" id="bobman/UserInterface#keyPressed(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyReleased" id="bobman/UserInterface#keyReleased(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyTyped" id="bobman/UserInterface#keyTyped(Ljava.awt.event.KeyEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1 //@children.11/@sourceConnections.8" name="Board" location="765,1826" size="136,229" id="bobman/Board">
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="rucus" id="bobman/Board#rucus"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rucus1" id="bobman/Board#rucus1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="wastetime1" id="bobman/Board#wastetime1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="wastetime2" id="bobman/Board#wastetime2"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,108">
+      <children xsi:type="editmodel:MethodEditModel" name="Board" id="bobman/Board#Board()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="actionPerformed" id="bobman/Board#actionPerformed(Ljava.awt.event.ActionEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initBoard" id="bobman/Board#initBoard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initStartmenu" id="bobman/Board#initStartmenu()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="pauseTheGame" id="bobman/Board#pauseTheGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startTheGame" id="bobman/Board#startTheGame()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@resetTile2+bobman/Board@" source="//@children.10" target="//@children.17" targetEnd="//@children.10/@sourceConnections.0/@children.2" label="//@children.10/@sourceConnections.0/@children.0" sourceEnd="//@children.10/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="126,0" id="bobman/Tiles@resetTile2+bobman/Board@|bobman/Board#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="resetTile2" location="0,309" id="bobman/Tiles@resetTile2+bobman/Board@|bobman/Tiles#resetTile2" multiplicityLabel="//@children.10/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - resetTile2" location="1214,1112" size="59,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1255,1139" size="18,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@resetTile1+bobman/Board@" source="//@children.10" target="//@children.17" targetEnd="//@children.10/@sourceConnections.1/@children.2" label="//@children.10/@sourceConnections.1/@children.0" sourceEnd="//@children.10/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="136,15" id="bobman/Tiles@resetTile1+bobman/Board@|bobman/Board#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="resetTile1" location="71,319" id="bobman/Tiles@resetTile1+bobman/Board@|bobman/Tiles#resetTile1" multiplicityLabel="//@children.10/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - resetTile1" location="1359,1149" size="59,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1327,1149" size="18,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Board@board+bobman/ClockD@clock" source="//@children.10" target="//@children.8" targetEnd="//@children.10/@sourceConnections.2/@children.2" label="//@children.10/@sourceConnections.2/@children.0" sourceEnd="//@children.10/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="board" location="136,219" id="bobman/Board@board+bobman/ClockD@clock|bobman/Board#board" attachSource="true" multiplicityLabel="//@children.10/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - board" location="907,2024" size="38,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="907,2051" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="clock" location="10,0" id="bobman/Board@board+bobman/ClockD@clock|bobman/ClockD#clock" multiplicityLabel="//@children.10/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + clock" location="2295,2226" size="42,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="2275,2226" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@tiles+bobman/Board@" source="//@children.10" target="//@children.17" targetEnd="//@children.10/@sourceConnections.3/@children.2" label="//@children.10/@sourceConnections.3/@children.0" sourceEnd="//@children.10/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="106,0" id="bobman/Tiles@tiles+bobman/Board@|bobman/Board#" attachSource="true">
+        <children xsi:type="editmodel:QualifierAttributeEditModel" name="valueOf" location="844,1809" size="54,22" id=""/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="tiles" location="0,269" id="bobman/Tiles@tiles+bobman/Board@|bobman/Tiles#tiles" multiplicityLabel="//@children.10/@sourceConnections.3/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.3/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - tiles" location="1242,1072" size="31,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1255,1099" size="18,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Board@board+bobman/BombExplode@bombExplode" source="//@children.10" target="//@children.11" targetEnd="//@children.10/@sourceConnections.4/@children.2" label="//@children.10/@sourceConnections.4/@children.0" sourceEnd="//@children.10/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="board" location="0,219" id="bobman/Board@board+bobman/BombExplode@bombExplode|bobman/Board#board" attachSource="true" multiplicityLabel="//@children.10/@sourceConnections.4/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.4/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - board" location="719,2024" size="38,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="751,2051" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="bombExplode" location="130,0" id="bobman/Board@board+bobman/BombExplode@bombExplode|bobman/BombExplode#bombExplode" multiplicityLabel="//@children.10/@sourceConnections.4/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.4/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + bombExplode" location="431,2034" size="82,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="527,2034" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Board@board+bobman/GameMenu@gameMenu" source="//@children.10" target="//@children.3" targetEnd="//@children.10/@sourceConnections.5/@children.2" label="//@children.10/@sourceConnections.5/@children.0" sourceEnd="//@children.10/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="board" location="136,6" id="bobman/Board@board+bobman/GameMenu@gameMenu|bobman/Board#board" attachSource="true" multiplicityLabel="//@children.10/@sourceConnections.5/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.5/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - board" location="907,1812" size="38,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="907,1839" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="gameMenu" location="0,168" id="bobman/Board@board+bobman/GameMenu@gameMenu|bobman/GameMenu#gameMenu" multiplicityLabel="//@children.10/@sourceConnections.5/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.5/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + gameMenu" location="2157,1812" size="70,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="2221,1839" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Board@board+bobman/Levels@levels" source="//@children.10" target="//@children.6" targetEnd="//@children.10/@sourceConnections.6/@children.2" label="//@children.10/@sourceConnections.6/@children.0" sourceEnd="//@children.10/@sourceConnections.6/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="board" location="136,26" id="bobman/Board@board+bobman/Levels@levels|bobman/Board#board" attachSource="true" multiplicityLabel="//@children.10/@sourceConnections.6/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.6/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - board" location="907,1832" size="38,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="907,1859" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="levels" location="0,292" id="bobman/Board@board+bobman/Levels@levels|bobman/Levels#levels" multiplicityLabel="//@children.10/@sourceConnections.6/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.6/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + levels" location="1539,1832" size="44,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1577,1859" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Board@board+bobman/Player@" source="//@children.10" target="//@children.16" targetEnd="//@children.10/@sourceConnections.7/@children.2" label="//@children.10/@sourceConnections.7/@children.0" sourceEnd="//@children.10/@sourceConnections.7/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="board" location="136,124" id="bobman/Board@board+bobman/Player@|bobman/Board#board" attachSource="true" multiplicityLabel="//@children.10/@sourceConnections.7/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.7/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - board" location="907,1930" size="38,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="907,1957" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,103" id="bobman/Board@board+bobman/Player@|bobman/Player#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Board@board+bobman/GameEngine@" source="//@children.10" target="//@children.5" targetEnd="//@children.10/@sourceConnections.8/@children.2" label="//@children.10/@sourceConnections.8/@children.0" sourceEnd="//@children.10/@sourceConnections.8/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="board" location="136,10" id="bobman/Board@board+bobman/GameEngine@|bobman/Board#board" attachSource="true" multiplicityLabel="//@children.10/@sourceConnections.8/@children.1/@children.1" roleLabel="//@children.10/@sourceConnections.8/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - board" location="907,1843" size="38,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="907,1816" size="18,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,121" id="bobman/Board@board+bobman/GameEngine@|bobman/GameEngine#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.4 //@children.17/@sourceConnections.1 //@children.17/@sourceConnections.2 //@children.17/@sourceConnections.3 //@children.6/@sourceConnections.9" name="BombExplode" location="390,2054" size="140,247" id="bobman/BombExplode" runTimeClassModel="fireLeft1(),fireUp1(),fireCenter1(),initFires(),BombExplode(Lbobman.Board;Ljava.util.TreeMap;),fireRight1(),fireCenter(),BombExploded(Lbobman.Tiles;I),fireReset1(),fireDown1(),fireReset2()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,198">
+      <children xsi:type="editmodel:MethodEditModel" name="BombExplode" id="bobman/BombExplode#BombExplode(Lbobman.Board;Ljava.util.TreeMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="BombExploded" id="bobman/BombExplode#BombExploded(Lbobman.Tiles;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireCenter" id="bobman/BombExplode#fireCenter()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireCenter1" id="bobman/BombExplode#fireCenter1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireDown1" id="bobman/BombExplode#fireDown1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireLeft1" id="bobman/BombExplode#fireLeft1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireReset1" id="bobman/BombExplode#fireReset1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireReset2" id="bobman/BombExplode#fireReset2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireRight1" id="bobman/BombExplode#fireRight1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="fireUp1" id="bobman/BombExplode#fireUp1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initFires" id="bobman/BombExplode#initFires()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Fire@fire1+bobman/BombExplode@" source="//@children.11" target="//@children.12" targetEnd="//@children.11/@sourceConnections.0/@children.2" label="//@children.11/@sourceConnections.0/@children.0" sourceEnd="//@children.11/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" id="bobman/Fire@fire1+bobman/BombExplode@|bobman/BombExplode#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="fire1" location="92,175" id="bobman/Fire@fire1+bobman/BombExplode@|bobman/Fire#fire1" multiplicityLabel="//@children.11/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.11/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - fire1" location="263,1921" size="32,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="309,1921" size="18,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Fire@fire+bobman/BombExplode@" source="//@children.11" target="//@children.12" targetEnd="//@children.11/@sourceConnections.1/@children.2" label="//@children.11/@sourceConnections.1/@children.0" sourceEnd="//@children.11/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,14" id="bobman/Fire@fire+bobman/BombExplode@|bobman/BombExplode#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="fire" location="20,175" id="bobman/Fire@fire+bobman/BombExplode@|bobman/Fire#fire" multiplicityLabel="//@children.11/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.11/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - fire" location="197,1921" size="26,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="237,1921" size="18,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/BombExplode->bobman/Powerup*bobman/BombExplode->bobman/Powerup*bobman/BombExplode->bobman/Powerup*bobman/BombExplode->bobman/Powerup" source="//@children.11" target="//@children.7" targetEnd="//@children.11/@sourceConnections.2/@children.2" label="//@children.11/@sourceConnections.2/@children.0" sourceEnd="//@children.11/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="12,247" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="91,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/BombExplode->bobman/Player*bobman/BombExplode->bobman/Player*bobman/BombExplode->bobman/Player*bobman/BombExplode->bobman/Player" source="//@children.11" target="//@children.16" targetEnd="//@children.11/@sourceConnections.3/@children.2" label="//@children.11/@sourceConnections.3/@children.0" sourceEnd="//@children.11/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,123" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,330"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/BombExplode->bobman/Levels*bobman/BombExplode->bobman/Levels*bobman/BombExplode->bobman/Levels*bobman/BombExplode->bobman/Levels" source="//@children.11" target="//@children.6" targetEnd="//@children.11/@sourceConnections.4/@children.2" label="//@children.11/@sourceConnections.4/@children.0" sourceEnd="//@children.11/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,96" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,184"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/BombExplode->bobman/PowerUpHandler*bobman/BombExplode->bobman/PowerUpHandler*bobman/BombExplode->bobman/PowerUpHandler*bobman/BombExplode->bobman/PowerUpHandler" source="//@children.11" target="//@children.2" targetEnd="//@children.11/@sourceConnections.5/@children.2" label="//@children.11/@sourceConnections.5/@children.0" sourceEnd="//@children.11/@sourceConnections.5/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="136,247" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="58,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/BombExplode->bobman/Tiles*bobman/BombExplode-Soyatec::Import->bobman/Tiles*bobman/BombExplode->bobman/Tiles*bobman/BombExplode->bobman/Tiles*bobman/BombExplode->bobman/Tiles" source="//@children.11" target="//@children.17" targetEnd="//@children.11/@sourceConnections.6/@children.2" label="//@children.11/@sourceConnections.6/@children.0" sourceEnd="//@children.11/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,30" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,256"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/BombExplode->bobman/Fire*bobman/BombExplode->bobman/Fire*bobman/BombExplode-Soyatec::Import->bobman/Fire*bobman/BombExplode->bobman/Fire*bobman/BombExplode->bobman/Fire*bobman/BombExplode->bobman/Fire*bobman/BombExplode->bobman/Fire*bobman/BombExplode->bobman/Fire*bobman/BombExplode->bobman/Fire" source="//@children.11" target="//@children.12" targetEnd="//@children.11/@sourceConnections.7/@children.2" label="//@children.11/@sourceConnections.7/@children.0" sourceEnd="//@children.11/@sourceConnections.7/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="5,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="102,160"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/BombExplode->bobman/Board*bobman/BombExplode-Soyatec::Import->bobman/Board*bobman/BombExplode->bobman/Board*bobman/BombExplode->bobman/Board*bobman/BombExplode->bobman/Board" source="//@children.11" target="//@children.10" targetEnd="//@children.11/@sourceConnections.8/@children.2" label="//@children.11/@sourceConnections.8/@children.0" sourceEnd="//@children.11/@sourceConnections.8/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="45,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,15" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="15,229"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.17/@sourceConnections.5 //@children.11/@sourceConnections.0 //@children.11/@sourceConnections.1 //@children.2/@sourceConnections.4 //@children.11/@sourceConnections.7" name="Fire" location="210,1740" size="102,175" id="bobman/Fire">
+    <children xsi:type="editmodel:CompartmentEditModel" size="61,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="xPos" id="bobman/Fire#xPos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,108">
+      <children xsi:type="editmodel:MethodEditModel" name="Fire" id="bobman/Fire#Fire(ILbobman.BombExplode;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initFire" id="bobman/Fire#initFire(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isactive" id="bobman/Fire#isactive()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="notActive" id="bobman/Fire#notActive()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setActive" id="bobman/Fire#setActive()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setLocate" id="bobman/Fire#setLocate(Lbobman.Tiles;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.0 //@children.8/@sourceConnections.1" name="NumD" location="2714,2300" size="133,121" id="bobman/NumD">
+    <children xsi:type="editmodel:CompartmentEditModel" size="65,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="value" id="bobman/NumD#value"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,54">
+      <children xsi:type="editmodel:MethodEditModel" name="NumD" id="bobman/NumD#NumD(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDisplayValue" id="bobman/NumD#getDisplayValue()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="increment" id="bobman/NumD#increment()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.7" name="Sonic" location="1064,2474" size="100,103" id="bobman/Sonic">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="77,54">
+      <children xsi:type="editmodel:MethodEditModel" name="Sonic" id="bobman/Sonic#Sonic(Ljava.util.TreeMap;Lbobman.Board;IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPlayer" id="bobman/Sonic#initPlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPos" id="bobman/Sonic#initPos()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="bobman/Player&lt;-bobman/Sonic" source="//@children.14" target="//@children.15/@sourceConnections.0" targetEnd="//@children.14/@sourceConnections.0/@children.1" sourceEnd="//@children.14/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="50,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Sonic->bobman/PowerUpHandler" source="//@children.14" target="//@children.2" targetEnd="//@children.14/@sourceConnections.1/@children.2" label="//@children.14/@sourceConnections.1/@children.0" sourceEnd="//@children.14/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,74" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="190,29"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Sonic->bobman/Player" source="//@children.14" target="//@children.16" targetEnd="//@children.14/@sourceConnections.2/@children.2" label="//@children.14/@sourceConnections.2/@children.0" sourceEnd="//@children.14/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="94,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="4,520"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.10" name="DevilMan" location="1215,2474" size="109,103" id="bobman/DevilMan">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="77,54">
+      <children xsi:type="editmodel:MethodEditModel" name="DevilMan" id="bobman/DevilMan#DevilMan(Ljava.util.TreeMap;Lbobman.Board;IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPlayer" id="bobman/DevilMan#initPlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPos" id="bobman/DevilMan#initPos()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.14/@sourceConnections.0" autoLocated="true" id="bobman/Player&lt;-bobman/DevilMan" source="//@children.15" target="//@children.16" targetEnd="//@children.15/@sourceConnections.0/@children.1" sourceEnd="//@children.15/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="92,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="35,535" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/DevilMan->bobman/Player" source="//@children.15" target="//@children.16" targetEnd="//@children.15/@sourceConnections.1/@children.2" label="//@children.15/@sourceConnections.1/@children.0" sourceEnd="//@children.15/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="33,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="94,535"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.7 //@children.17/@sourceConnections.6 //@children.17/@sourceConnections.7 //@children.11/@sourceConnections.3 //@children.6/@sourceConnections.1 //@children.6/@sourceConnections.3 //@children.15/@sourceConnections.0 //@children.15/@sourceConnections.1 //@children.14/@sourceConnections.2 //@children.2/@sourceConnections.2" name="Player" location="1154,1847" size="129,535" id="bobman/Player">
+    <children xsi:type="editmodel:CompartmentEditModel" size="68,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="hp" id="bobman/Player#hp"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="range" id="bobman/Player#range"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="status" id="bobman/Player#status"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="xPos" id="bobman/Player#xPos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,414">
+      <children xsi:type="editmodel:MethodEditModel" name="Player" id="bobman/Player#Player(Ljava.util.TreeMap;Lbobman.Board;IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRange" id="bobman/Player#getRange()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTiles" id="bobman/Player#getTiles()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdownDown" id="bobman/Player#getdownDown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getleftLeft" id="bobman/Player#getleftLeft()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getrightRight" id="bobman/Player#getrightRight()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getupUp" id="bobman/Player#getupUp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initBomb" id="bobman/Player#initBomb()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPlayer" id="bobman/Player#initPlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initPos" id="bobman/Player#initPos()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveDown" id="bobman/Player#moveDown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveLeft" id="bobman/Player#moveLeft()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveRight" id="bobman/Player#moveRight()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveUp" id="bobman/Player#moveUp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetWalkable" id="bobman/Player#resetWalkable(Lbobman.Tiles;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetWalkable1" id="bobman/Player#resetWalkable1(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetWalkable2" id="bobman/Player#resetWalkable2(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startPos" id="bobman/Player#startPos(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwBomb" id="bobman/Player#throwBomb(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwdown" id="bobman/Player#throwdown(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwleft" id="bobman/Player#throwleft(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwright" id="bobman/Player#throwright(Lbobman.Tiles;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="throwup" id="bobman/Player#throwup(Lbobman.Tiles;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Player@player1+bobman/Collision@" source="//@children.16" target="//@children.1" targetEnd="//@children.16/@sourceConnections.0/@children.2" label="//@children.16/@sourceConnections.0/@children.0" sourceEnd="//@children.16/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="player1" location="129,506" id="bobman/Player@player1+bobman/Collision@|bobman/Player#player1" attachSource="true" multiplicityLabel="//@children.16/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.16/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - player1" location="1289,2332" size="47,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1289,2359" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,28" id="bobman/Player@player1+bobman/Collision@|bobman/Collision#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Player@player2+bobman/Collision@" source="//@children.16" target="//@children.1" targetEnd="//@children.16/@sourceConnections.1/@children.2" label="//@children.16/@sourceConnections.1/@children.0" sourceEnd="//@children.16/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="player2" location="129,466" id="bobman/Player@player2+bobman/Collision@|bobman/Player#player2" attachSource="true" multiplicityLabel="//@children.16/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.16/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - player2" location="1289,2292" size="47,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1289,2319" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,8" id="bobman/Player@player2+bobman/Collision@|bobman/Collision#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Player@player+bobman/PowerUpHandler@handler" source="//@children.16" target="//@children.2" targetEnd="//@children.16/@sourceConnections.2/@children.2" label="//@children.16/@sourceConnections.2/@children.0" sourceEnd="//@children.16/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="player" location="0,352" id="bobman/Player@player+bobman/PowerUpHandler@handler|bobman/Player#player" attachSource="true" multiplicityLabel="//@children.16/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.16/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - player" location="1106,2178" size="41,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1141,2205" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="handler" location="190,25" id="bobman/Player@player+bobman/PowerUpHandler@handler|bobman/PowerUpHandler#handler" multiplicityLabel="//@children.16/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.16/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + handler" location="781,2551" size="52,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="781,2524" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Bomb@bomb+bobman/Player@" source="//@children.16" target="//@children.0" targetEnd="//@children.16/@sourceConnections.3/@children.2" label="//@children.16/@sourceConnections.3/@children.0" sourceEnd="//@children.16/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="129,525" id="bobman/Bomb@bomb+bobman/Player@|bobman/Player#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="bomb" location="10,0" id="bobman/Bomb@bomb+bobman/Player@|bobman/Bomb#bomb" multiplicityLabel="//@children.16/@sourceConnections.3/@children.2/@children.1" roleLabel="//@children.16/@sourceConnections.3/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - bomb" location="1531,2554" size="38,13" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1511,2554" size="6,13" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Player@player1+bobman/UserInterface@" source="//@children.16" target="//@children.9" targetEnd="//@children.16/@sourceConnections.4/@children.2" label="//@children.16/@sourceConnections.4/@children.0" sourceEnd="//@children.16/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="player1" location="129,388" id="bobman/Player@player1+bobman/UserInterface@|bobman/Player#player1" attachSource="true" multiplicityLabel="//@children.16/@sourceConnections.4/@children.1/@children.1" roleLabel="//@children.16/@sourceConnections.4/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - player1" location="1289,2214" size="47,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1289,2241" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,60" id="bobman/Player@player1+bobman/UserInterface@|bobman/UserInterface#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Player@player2+bobman/UserInterface@" source="//@children.16" target="//@children.9" targetEnd="//@children.16/@sourceConnections.5/@children.2" label="//@children.16/@sourceConnections.5/@children.0" sourceEnd="//@children.16/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="player2" location="129,348" id="bobman/Player@player2+bobman/UserInterface@|bobman/Player#player2" attachSource="true" multiplicityLabel="//@children.16/@sourceConnections.5/@children.1/@children.1" roleLabel="//@children.16/@sourceConnections.5/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - player2" location="1289,2174" size="47,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1289,2201" size="6,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,40" id="bobman/Player@player2+bobman/UserInterface@|bobman/UserInterface#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Player->bobman/Levels" source="//@children.16" target="//@children.6" targetEnd="//@children.16/@sourceConnections.6/@children.2" label="//@children.16/@sourceConnections.6/@children.0" sourceEnd="//@children.16/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="129,45" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,306"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Player->bobman/Collision" source="//@children.16" target="//@children.1" targetEnd="//@children.16/@sourceConnections.7/@children.2" label="//@children.16/@sourceConnections.7/@children.0" sourceEnd="//@children.16/@sourceConnections.7/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="124,535" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,32"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.0 //@children.10/@sourceConnections.1 //@children.10/@sourceConnections.3 //@children.18/@sourceConnections.0 //@children.17/@sourceConnections.0 //@children.18/@sourceConnections.1 //@children.19/@sourceConnections.1 //@children.2/@sourceConnections.3 //@children.11/@sourceConnections.6" name="Tiles" location="1281,824" size="147,319" id="bobman/Tiles">
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,180">
+      <children xsi:type="editmodel:AttributeEditModel" name="destroyable" id="bobman/Tiles#destroyable"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasFire" id="bobman/Tiles#hasFire"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasHp" id="bobman/Tiles#hasHp"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasLight" id="bobman/Tiles#hasLight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasPlayer" id="bobman/Tiles#hasPlayer"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasPlayers" id="bobman/Tiles#hasPlayers"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasPowerUp" id="bobman/Tiles#hasPowerUp"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="walkable" id="bobman/Tiles#walkable"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="xPos" id="bobman/Tiles#xPos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="yPos" id="bobman/Tiles#yPos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Tiles" id="bobman/Tiles#Tiles(III)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initTiles" id="bobman/Tiles#initTiles()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="makeWalkable" id="bobman/Tiles#makeWalkable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="notDestroyable" id="bobman/Tiles#notDestroyable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="notWalkable" id="bobman/Tiles#notWalkable()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@order+bobman/Tiles@" source="//@children.17" target="//@children.17" targetEnd="//@children.17/@sourceConnections.0/@children.2" label="//@children.17/@sourceConnections.0/@children.0" sourceEnd="//@children.17/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="order" location="20,0" id="bobman/Tiles@order+bobman/Tiles@|bobman/Tiles#order" anchorKind="FixedAtEdge" attachSource="true" multiplicityLabel="//@children.17/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.17/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - order" location="1307,804" size="36,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1275,804" size="18,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,20" id="bobman/Tiles@order+bobman/Tiles@|bobman/Tiles#" anchorKind="FixedAtEdge">
+        <children xsi:type="editmodel:QualifierAttributeEditModel" name="valueOf" location="1232,833" size="54,22" id=""/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@bombScanner1+bobman/BombExplode@" source="//@children.17" target="//@children.11" targetEnd="//@children.17/@sourceConnections.1/@children.2" label="//@children.17/@sourceConnections.1/@children.0" sourceEnd="//@children.17/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="bombScanner1" location="0,226" id="bobman/Tiles@bombScanner1+bobman/BombExplode@|bobman/Tiles#bombScanner1" attachSource="true" multiplicityLabel="//@children.17/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.17/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - bombScanner1" location="1189,1030" size="84,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1255,1057" size="18,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,10" id="bobman/Tiles@bombScanner1+bobman/BombExplode@|bobman/BombExplode#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@fires+bobman/BombExplode@" source="//@children.17" target="//@children.11" targetEnd="//@children.17/@sourceConnections.2/@children.2" label="//@children.17/@sourceConnections.2/@children.0" sourceEnd="//@children.17/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="fires" location="0,206" id="bobman/Tiles@fires+bobman/BombExplode@|bobman/Tiles#fires" attachSource="true" multiplicityLabel="//@children.17/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.17/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - fires" location="1242,1010" size="31,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1255,1037" size="18,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,0" id="bobman/Tiles@fires+bobman/BombExplode@|bobman/BombExplode#">
+        <children xsi:type="editmodel:QualifierAttributeEditModel" name="valueOf" location="526,2054" size="54,22" id=""/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@bombScanner+bobman/BombExplode@" source="//@children.17" target="//@children.11" targetEnd="//@children.17/@sourceConnections.3/@children.2" label="//@children.17/@sourceConnections.3/@children.0" sourceEnd="//@children.17/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="bombScanner" location="0,278" id="bobman/Tiles@bombScanner+bobman/BombExplode@|bobman/Tiles#bombScanner" attachSource="true" multiplicityLabel="//@children.17/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.17/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - bombScanner" location="1195,1082" size="78,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1255,1109" size="18,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="140,50" id="bobman/Tiles@bombScanner+bobman/BombExplode@|bobman/BombExplode#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@tiles+bobman/Levels@" source="//@children.17" target="//@children.6" targetEnd="//@children.17/@sourceConnections.4/@children.2" label="//@children.17/@sourceConnections.4/@children.0" sourceEnd="//@children.17/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="tiles" location="137,319" id="bobman/Tiles@tiles+bobman/Levels@|bobman/Tiles#tiles" attachSource="true" multiplicityLabel="//@children.17/@sourceConnections.4/@children.1/@children.1" roleLabel="//@children.17/@sourceConnections.4/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - tiles" location="1380,1149" size="31,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1425,1149" size="18,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" id="bobman/Tiles@tiles+bobman/Levels@|bobman/Levels#">
+        <children xsi:type="editmodel:QualifierAttributeEditModel" name="valueOf" location="1541,1560" size="54,22" id=""/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@yPos+bobman/Fire@" source="//@children.17" target="//@children.12" targetEnd="//@children.17/@sourceConnections.5/@children.2" label="//@children.17/@sourceConnections.5/@children.0" sourceEnd="//@children.17/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="yPos" location="10,319" id="bobman/Tiles@yPos+bobman/Fire@|bobman/Tiles#yPos" attachSource="true" multiplicityLabel="//@children.17/@sourceConnections.5/@children.1/@children.1" roleLabel="//@children.17/@sourceConnections.5/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - yPos" location="1297,1149" size="33,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1265,1149" size="18,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="102,10" id="bobman/Tiles@yPos+bobman/Fire@|bobman/Fire#">
+        <children xsi:type="editmodel:QualifierAttributeEditModel" name="valueOf" location="308,1740" size="54,22" id=""/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@yPos+bobman/Player@" source="//@children.17" target="//@children.16" targetEnd="//@children.17/@sourceConnections.6/@children.2" label="//@children.17/@sourceConnections.6/@children.0" sourceEnd="//@children.17/@sourceConnections.6/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="yPos" location="10,319" id="bobman/Tiles@yPos+bobman/Player@|bobman/Tiles#yPos" attachSource="true" multiplicityLabel="//@children.17/@sourceConnections.6/@children.1/@children.1" roleLabel="//@children.17/@sourceConnections.6/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - yPos" location="1250,1149" size="33,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1297,1149" size="18,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="129,10" id="bobman/Tiles@yPos+bobman/Player@|bobman/Player#">
+        <children xsi:type="editmodel:QualifierAttributeEditModel" name="valueOf" location="1279,1847" size="54,22" id=""/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="bobman/Tiles@tiles+bobman/Player@" source="//@children.17" target="//@children.16" targetEnd="//@children.17/@sourceConnections.7/@children.2" label="//@children.17/@sourceConnections.7/@children.0" sourceEnd="//@children.17/@sourceConnections.7/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="tiles" location="0,294" id="bobman/Tiles@tiles+bobman/Player@|bobman/Tiles#tiles" attachSource="true" multiplicityLabel="//@children.17/@sourceConnections.7/@children.1/@children.1" roleLabel="//@children.17/@sourceConnections.7/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - tiles" location="1242,1098" size="31,13" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1255,1125" size="18,13" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="124,0" id="bobman/Tiles@tiles+bobman/Player@|bobman/Player#">
+        <children xsi:type="editmodel:QualifierAttributeEditModel" name="valueOf" location="1229,1830" size="54,22" id=""/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.6" name="Dwall" location="1214,1259" size="92,85" id="bobman/Dwall">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Dwall" id="bobman/Dwall#Dwall(III)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initTiles" id="bobman/Dwall#initTiles()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.19/@sourceConnections.0" autoLocated="true" id="bobman/Tiles&lt;-bobman/Dwall" source="//@children.18" target="//@children.17" targetEnd="//@children.18/@sourceConnections.0/@children.1" sourceEnd="//@children.18/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="52,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="19,319" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Dwall->bobman/Tiles" source="//@children.18" target="//@children.17" targetEnd="//@children.18/@sourceConnections.1/@children.2" label="//@children.18/@sourceConnections.1/@children.0" sourceEnd="//@children.18/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="79,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="12,319"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.5" name="Wall" location="1350,1259" size="92,85" id="bobman/Wall">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Wall" id="bobman/Wall#Wall(III)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initTiles" id="bobman/Wall#initTiles()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="bobman/Tiles&lt;-bobman/Wall" source="//@children.19" target="//@children.18/@sourceConnections.0" targetEnd="//@children.19/@sourceConnections.0/@children.1" sourceEnd="//@children.19/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="46,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="bobman/Wall->bobman/Tiles" source="//@children.19" target="//@children.17" targetEnd="//@children.19/@sourceConnections.1/@children.2" label="//@children.19/@sourceConnections.1/@children.0" sourceEnd="//@children.19/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="38,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="107,319"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" showScope="InPackage" properties="wireOptions=7;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
